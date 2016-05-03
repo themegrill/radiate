@@ -1,20 +1,21 @@
+/* global radiateScriptParam */
 jQuery(document).ready(function() {
 
-	if( radiateScriptParam.radiate_image_link == ''){
+	if( radiateScriptParam.radiate_image_link === ''){
 		var divheight = jQuery('.header-wrap').height()+'px';
-		jQuery('body').css({ "margin-top": divheight });
+		jQuery('body').css({ 'margin-top': divheight });
 	}
 
-	jQuery(".header-search-icon").click(function(){
-		jQuery("#masthead .search-form").toggle('slow');
+	jQuery('.header-search-icon').click(function(){
+		jQuery('#masthead .search-form').toggle('slow');
 	});
 
-	jQuery(window).bind('scroll', function(e) {
+	jQuery(window).bind('scroll', function() {
 		header_image_effect();
 	});
 
    // Scroll to top
-   jQuery("#scroll-up").hide();
+   jQuery('#scroll-up').hide();
    jQuery(function () {
       jQuery(window).scroll(function () {
          if (jQuery(this).scrollTop() > 1000) {
@@ -36,5 +37,5 @@ jQuery(document).ready(function() {
 
 function header_image_effect() {
 	var scrollPosition = jQuery(window).scrollTop();
-	jQuery('#parallax-bg').css('top', (0 - (scrollPosition * .2)) + 'px');
+	jQuery('#parallax-bg').css('top', (0 - (scrollPosition * 0.2)) + 'px');
 }
