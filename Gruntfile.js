@@ -19,28 +19,21 @@ module.exports = function( grunt ){
 				'Gruntfile.js',
 				'<%= dirs.js %>/*.js',
 				'!<%= dirs.js %>/*.min.js',
-            '!<%= dirs.js %>/html5shiv.js',
-            '!<%= dirs.js %>/skip-link-focus-fix.js',
-            '!<%= dirs.js %>/navigation.js'
+				'!<%= dirs.js %>/html5shiv.js'
 			]
 		},
 
 		// Generate POT files.
 		makepot: {
-			options: {
-				type: 'wp-theme',
-				domainPath: 'languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'themegrill@gmail.com',
-					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
-				}
-			},
 			dist: {
 				options: {
+					type: 'wp-theme',
+					domainPath: 'languages',
 					potFilename: 'radiate.pot',
-					exclude: [
-						'deploy/.*' // Exclude deploy directory
-					]
+					potHeaders: {
+						'report-msgid-bugs-to': 'themegrill@gmail.com',
+						'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
+					}
 				}
 			}
 		},
@@ -73,13 +66,34 @@ module.exports = function( grunt ){
 				],
 				expand: true
 			}
-		}
+		},
 
+		// Compress files and folders.
+		compress: {
+			options: {
+				archive: 'radiate.zip'
+			},
+			files: {
+				src: [
+					'**',
+					'!.*',
+					'!*.md',
+					'!*.zip',
+					'!.*/**',
+					'!Gruntfile.js',
+					'!package.json',
+					'!node_modules/**'
+				],
+				dest: 'radiate',
+				expand: true
+			}
+		}
 	});
 
 	// Load NPM tasks to be used here
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
+	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 
 	// Register tasks
@@ -90,5 +104,10 @@ module.exports = function( grunt ){
 	grunt.registerTask( 'dev', [
 		'default',
 		'makepot'
+	]);
+
+	grunt.registerTask( 'zip', [
+		'dev',
+		'compress'
 	]);
 };
