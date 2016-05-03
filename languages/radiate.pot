@@ -1,23 +1,17 @@
-# Radiate WordPress Theme. Translation template file.
-# This file is distributed under the same license as the Radiate Theme.
+# Copyright (C) 2016 ThemeGrill
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radiate\n"
-"POT-Creation-Date: 2015-01-26 16:33+0545\n"
-"PO-Revision-Date: 2015-07-21 16:56+0545\n"
-"Last-Translator: ThemeGrill <themegrill@gmail.com>\n"
-"Language-Team: ThemeGrill <themegrill@gmail.com>\n"
-"Language: en\n"
+"Project-Id-Version: Radiate 1.2.2\n"
+"Report-Msgid-Bugs-To: themegrill@gmail.com\n"
+"POT-Creation-Date: 2016-05-03 10:08:25+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;esc_attr_x:1,2c;_ex:1,2c;"
-"esc_attr__;esc_attr_e\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ..\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -30,22 +24,18 @@ msgid ""
 msgstr ""
 
 #: archive.php:33
-#, php-format
 msgid "Author: %s"
 msgstr ""
 
 #: archive.php:41
-#, php-format
 msgid "Day: %s"
 msgstr ""
 
 #: archive.php:44
-#, php-format
 msgid "Month: %s"
 msgstr ""
 
 #: archive.php:47
-#, php-format
 msgid "Year: %s"
 msgstr ""
 
@@ -74,7 +64,6 @@ msgid "Archives"
 msgstr ""
 
 #: comments.php:32
-#, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
@@ -101,9 +90,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:25
@@ -118,17 +105,16 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:20 content-single.php:24 content.php:43
+#: content-page.php:24 content-single.php:24 content.php:43
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:25 content-single.php:57 content.php:77
+#: content-page.php:29 content-single.php:57 content.php:77
 msgid "Edit"
 msgstr ""
 
+#: content-single.php:34 content-single.php:44 content.php:54 content.php:64
 #. translators: used between list items, there is a space after the comma
-#: content-single.php:34 content-single.php:44 content.php:54
-#: content.php:64
 msgid ", "
 msgstr ""
 
@@ -157,7 +143,6 @@ msgid "WordPress"
 msgstr ""
 
 #: footer.php:22
-#, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
@@ -173,7 +158,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:39
+#: header.php:47
 msgid "Skip to content"
 msgstr ""
 
@@ -237,11 +222,6 @@ msgstr ""
 msgid "View PRO version"
 msgstr ""
 
-#: inc/extras.php:100
-#, php-format
-msgid "Page %s"
-msgstr ""
-
 #: inc/template-tags.php:25
 msgid "Posts navigation"
 msgstr ""
@@ -258,16 +238,6 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:61
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
-
-#: inc/template-tags.php:62
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
 #: inc/template-tags.php:84
 msgid "Pingback:"
 msgstr ""
@@ -281,12 +251,10 @@ msgid "Post author"
 msgstr ""
 
 #: inc/template-tags.php:102
-#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
 #: inc/template-tags.php:104
-#, php-format
 msgid "<a class=\"comment-permalink\" href=\"%1$s\">Permalink</a>"
 msgstr ""
 
@@ -299,8 +267,48 @@ msgid "Reply"
 msgstr ""
 
 #: search.php:18
-#, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar.php:26
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Radiate"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://themegrill.com/themes/radiate/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Radiate is a clean, creative and light retina ready responsive blogging "
+"theme supporting parallax header image. It integrates primary color option, "
+"custom background, custom css and few other features through WordPress "
+"customizer. The theme is translation ready and you can get free support on "
+"http://themegrill.com/support-forum. View demo at "
+"http://demo.themegrill.com/radiate. Available Translations: French, German, "
+"Russian, Swedish, Dutch, Norwegian, Brazilian Portuguese and Spanish."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeGrill"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themegrill.com/"
+msgstr ""
+
+#: inc/template-tags.php:61
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: inc/template-tags.php:62
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: searchform.php:12
@@ -316,8 +324,4 @@ msgstr ""
 #: searchform.php:15
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
-
-#: sidebar.php:26
-msgid "Meta"
 msgstr ""
