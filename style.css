@@ -1412,3 +1412,32 @@ a#scroll-up:hover {
       width:33.33%;
    }
 }
+
+/* WooCommerce CSS
+----------------------------------------------- */
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  background-color: #444444;
+  color: #fff;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, 
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  color: #fff;
+}
+.woocommerce .woocommerce-message {
+  border-top-color: #444444;
+}
+#content a:hover{
+	text-decoration: none;
+}
+.woocommerce ul.products li.product .price del{
+	display: inline-block;
+	margin-right: 10px;
+}
+.woocommerce ul.products li.product .price .amount,
+.entry-summary .price .amount{
+	color: #444444;
+}
+.woocommerce .star-rating span::before,.woocommerce p.stars a{
+	color: #FFD700;
+}
