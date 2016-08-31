@@ -32,7 +32,7 @@ Radiate is distributed under the terms of the GNU GPL
 == THEME USAGE ==
 
 = Theme Instruction =
-Get theme instruction at http://themegrill.com/theme-instruction/radiate
+Get theme instruction at http://docs.themegrill.com/radiate/
 
 = Free Support =
 Get free support at http://themegrill.com/support-forum
@@ -58,12 +58,16 @@ Images used for these pages in front section are the featured images of those re
 /**********************************************************/
 
 == TRANSLATIONS ==
-If you've translated this theme into your language, feel free to send the translation over to themegrill@gmail.com
-and we will include it within the theme from next version update.
+If you want to translate this theme to your language, Please visit:- https://translate.wordpress.org/projects/wp-themes/radiate
 
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.3 - 2016-08-31 =
+* Feature - Theme is now compatible with WooCommerce.
+* Feature - Added new responsive menu design.
+* Feature - Added RTL support.
+
 = Version 1.2.2 =
 * Removed backward compatibility for the WordPress title tag
 
