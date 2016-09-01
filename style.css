@@ -9,7 +9,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: radiate
 Domain Path: /languages/
-Tags: light, white, two-columns, right-sidebar, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: two-columns, right-sidebar, custom-header, flexible-header, custom-background, custom-menu, custom-colors, post-formats, sticky-post, threaded-comments, translation-ready, featured-images, rtl-language-support, theme-options, blog
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -41,13 +41,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 html {
     font-size: 62.5%;
     /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-    
+
     overflow-y: scroll;
     /* Keeps page centered in all browsers regardless of content height */
-    
+
     -webkit-text-size-adjust: 100%;
     /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-    
+
     -ms-text-size-adjust: 100%;
     /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
@@ -72,7 +72,7 @@ ul {
 }
 table {
     /* tables still need 'cellspacing="0"' in the markup */
-    
+
     border-collapse: collapse;
     border-spacing: 0;
     margin: 0 0 15px;
@@ -108,7 +108,7 @@ a:focus {
 a:hover,
 a:active {
     /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-    
+
     outline: 0;
 }
 a img {
@@ -308,7 +308,7 @@ figure {
 img {
     height: auto;
     /* Make sure images are scaled correctly. */
-    
+
     max-width: 100%;
     /* Adhere to container width. */
 }
@@ -323,13 +323,13 @@ select,
 textarea {
     font-size: 100%;
     /* Corrects font size not being inherited in all browsers */
-    
+
     margin: 0;
     /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-    
+
     vertical-align: baseline;
     /* Improves appearance and consistency in all browsers */
-    
+
     *vertical-align: middle;
     /* Improves appearance and consistency in all browsers */
 }
@@ -357,7 +357,7 @@ input[type="submit"]:hover {
     opacity: 0.8;
     filter: alpha(opacity=80);
     /* For IE8 and earlier */
-    
+
     text-decoration: none;
     cursor: pointer;
 }
@@ -365,29 +365,29 @@ input[type="checkbox"],
 input[type="radio"] {
     box-sizing: border-box;
     /* Addresses box sizing set to content-box in IE8/9 */
-    
+
     padding: 0;
     /* Addresses excess padding in IE8/9 */
 }
 input[type="search"] {
     -webkit-appearance: textfield;
     /* Addresses appearance set to searchfield in S5, Chrome */
-    
+
     -webkit-box-sizing: content-box;
     /* Addresses box sizing set to border-box in S5, Chrome (include -moz to radiate-proof) */
-    
+
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration {
     /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-    
+
     -webkit-appearance: none;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-    
+
     border: 0;
     padding: 0;
 }
@@ -419,11 +419,11 @@ input[type="search"] {
 textarea {
     overflow: auto;
     /* Removes default vertical scrollbar in IE6/7/8/9 */
-    
+
     padding-left: 3px;
     vertical-align: top;
     /* Improves readability and alignment in all browsers */
-    
+
     width: 98%;
 }
 
@@ -769,7 +769,7 @@ img.header-image {
     opacity: 0.8;
     filter: alpha(opacity=80);
     /* For IE8 and earlier */
-    
+
     box-shadow: #000 0 0 0;
 }
 .page-content,
@@ -1275,7 +1275,7 @@ img.header-image {
 /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer {
     /* Theme Footer (when set to scrolling) */
-    
+
     display: none;
 }
 
@@ -1426,7 +1426,7 @@ a#scroll-up:hover {
     #page {
         width: 100%;
     }
-    
+
     .inner-wrap {
         width: 96%;
     }
@@ -1435,7 +1435,7 @@ a#scroll-up:hover {
     body.admin-bar .header-wrap {
         top: 45px;
     }
-    
+
     body.admin-bar #parallax-bg {
         top: 14px;
     }
@@ -1446,11 +1446,11 @@ a#scroll-up:hover {
     .better-responsive-menu #site-navigation ul li .sub-menu {
         display: none;
     }
-    
+
     .main-small-navigation li {
         position: relative;
     }
-    
+
     .sub-toggle {
         background-color: #a91313;
         cursor: pointer;
@@ -1460,65 +1460,65 @@ a#scroll-up:hover {
         right: 11px;
         top: 6px;
     }
-    
+
     .genericon-expand::before {
         content: "";
         line-height: 22px !important;
         color: #fff;
     }
-    
+
     #primary,
     #secondary {
         float: none;
         width: 100%;
     }
-    
+
     .site-branding {
         margin-right: 0;
     }
-    
+
     .menu-toggle,
     .main-navigation.toggled .nav-menu {
         display: block;
     }
-    
+
     .main-navigation ul {
         display: none;
     }
-    
+
     .site-branding {
         max-width: 60%;
     }
-    
+
     .main-navigation {
         margin: 10px 25px 0 0;
         margin: 1rem 2.5rem 0 0;
     }
-    
+
     .site-header .menu-toggle {
         background-color: rgba(0, 0, 0, 0);
         color: #632E9B;
         float: right;
     }
-    
+
     .site-header .menu-toggle:hover {
         color: #632E9B;
         background-color: rgba(0, 0, 0, 0);
     }
-    
+
     .main-small-navigation ul {
         width: 100%;
     }
-    
+
     .main-small-navigation ul ul {
         margin-left: 0;
     }
-    
+
     .tg-one-third {
         width: 100%;
         float: none;
     }
-    
+
     .main-small-navigation ul.menunav-menu {
         display: inline-block;
         width: 100%;
@@ -1531,20 +1531,20 @@ a#scroll-up:hover {
     body {
         margin-top: 0 !important;
     }
-    
+
     .header-wrap {
         position: relative;
     }
-    
+
     body.admin-bar .header-wrap {
         top: 0;
     }
-    
+
     .site-title {
         font-size: 22px;
         padding-top: 16px;
     }
-    
+
     .gallery-columns-4 .gallery-item,
     .gallery-columns-5 .gallery-item,
     .gallery-columns-6 .gallery-item,
@@ -1614,7 +1614,7 @@ a#scroll-up:hover {
   background-color: #444444;
   color: #fff;
 }
-.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, 
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
   color: #fff;
 }
