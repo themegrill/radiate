@@ -1443,7 +1443,7 @@ a#scroll-up:hover {
 
 /* All Mobile Portrait size smaller than 768 (devices and browsers) */
 @media screen and (max-width: 768px) {
-    #site-navigation ul li .sub-menu {
+    .better-responsive-menu #site-navigation ul li .sub-menu {
         display: none;
     }
     
@@ -1519,7 +1519,7 @@ a#scroll-up:hover {
         float: none;
     }
     
-    .menu-main-container {
+    .main-small-navigation ul.menunav-menu {
         display: inline-block;
         width: 100%;
         position: absolute;
