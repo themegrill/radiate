@@ -1519,7 +1519,7 @@ a#scroll-up:hover {
         float: none;
     }
     
-    .menu-main-container {
+    .main-small-navigation ul.menunav-menu {
         display: inline-block;
         width: 100%;
         position: absolute;
