@@ -73,6 +73,9 @@ function radiate_setup() {
    add_theme_support('html5', array(
        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
    ));
+
+   // Enable support for WooCommerce
+   add_theme_support( 'woocommerce' );
 }
 endif; // radiate_setup
 add_action( 'after_setup_theme', 'radiate_setup' );
