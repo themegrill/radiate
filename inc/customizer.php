@@ -33,6 +33,66 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	// remove control
 	$wp_customize->remove_control('blogdescription');
 
+	// Theme important links
+	class Radiate_Important_Links extends WP_Customize_Control {
+
+		public $type = "radiate-important-links";
+
+		public function render_content() {
+			//Add Theme instruction, Support Forum, Demo Link, Rating Link
+			$important_links = array(
+			'view-pro' => array(
+				'link' => esc_url('http://themegrill.com/themes/radiate/'),
+				'text' => esc_html__('View Pro', 'radiate'),
+			),
+			'support' => array(
+				'link' => esc_url('http://themegrill.com/support-forum/'),
+				'text' => esc_html__('Support', 'radiate'),
+			),
+			'documentation' => array(
+				'link' => esc_url('http://docs.themegrill.com/radiate/'),
+				'text' => esc_html__('Documentation', 'radiate'),
+			),
+			'demo' => array(
+				'link' => esc_url('http://demo.themegrill.com/radiate/'),
+				'text' => esc_html__('View Demo', 'radiate'),
+			),
+			'rating' => array(
+				'link' => esc_url('http://wordpress.org/support/view/theme-reviews/radiate?filter=5'),
+				'text' => esc_html__('Rate this theme', 'radiate'),
+			),
+			);
+			foreach ($important_links as $important_link) {
+				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
+			}
+		}
+	}
+
+	$wp_customize->add_section('radiate_important_links',
+		array(
+			'priority' => 1,
+			'title'    => esc_html__('Radiate Important Links', 'radiate'),
+		)
+	);
+
+	$wp_customize->add_setting('radiate_important_links',
+		array(
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'radiate_sanitize_important_links'
+		)
+	);
+
+	$wp_customize->add_control(
+		new radiate_Important_Links($wp_customize,
+			'important_links',
+			array(
+				'label'    => esc_html__('Important Links', 'radiate'),
+				'section'  => 'radiate_important_links',
+				'settings' => 'radiate_important_links'
+			)
+		)
+	);
+
 	// rename existing section
 	$wp_customize->add_section( 'title_tagline' , array(
 		'title' => __('Site Title', 'radiate' ),
@@ -269,6 +329,11 @@ function radiate_register_theme_customizer( $wp_customize ) {
       }
    }
 
+   	// Fake sanitize function
+	function radiate_sanitize_important_links() {
+		return false;
+	}
+
 }
 add_action( 'customize_register', 'radiate_register_theme_customizer' );
 
@@ -293,18 +358,35 @@ add_action( 'wp_head', 'radiate_customizer_css' );
 
 /*****************************************************************************************/
 
-/**
- * Enqueue scripts for customizer
- */
-function radiate_customizer_js() {
-   wp_enqueue_script( 'radiate_customizer_script', get_template_directory_uri() . '/js/radiate_customizer.js', array("jquery"), 'false', true  );
+add_action( 'customize_controls_print_footer_scripts', 'radiate_customizer_custom_scripts' );
 
-   wp_localize_script( 'radiate_customizer_script', 'radiate_customizer_obj', array(
+function radiate_customizer_custom_scripts() { ?>
+<style>
+	/* Theme Instructions Panel CSS */
+	li#accordion-section-radiate_important_links h3.accordion-section-title, li#accordion-section-radiate_important_links h3.accordion-section-title:focus { background-color: #289DCC !important; color: #fff !important; }
+	li#accordion-section-radiate_important_links h3.accordion-section-title:hover { background-color: #289DCC !important; color: #fff !important; }
+	li#accordion-section-radiate_important_links h3.accordion-section-title:after { color: #fff !important; }
+	/* Upsell button CSS */
+	.customize-control-radiate-important-links a {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+		background: #008EC2;
+		color: #fff;
+		display: block;
+		margin: 15px 0 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 600;
+	}
 
-      'info' => __( 'Theme Info', 'radiate' ),
-      'pro' => __('View PRO version','radiate')
+	.customize-control-radiate-important-links a{
+		padding: 8px 0;
+	}
 
-   ) );
+	.customize-control-radiate-important-links a:hover {
+		color: #ffffff;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+		background:#2380BA;
+	}
+</style>
+<?php
 }
-add_action( 'customize_controls_enqueue_scripts', 'radiate_customizer_js' );
-?>
