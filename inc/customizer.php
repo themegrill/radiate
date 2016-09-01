@@ -227,7 +227,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'radiate_responsive_menu_style',
 		array(
-			'default'           => 0,
+			'default'           => 1,
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'radiate_checkbox_sanitize'
 		)
