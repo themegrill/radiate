@@ -63,7 +63,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version 1.2.3 - 2016-08-31 =
+= Version 1.2.3 - 2016-09-01 =
 * Feature - Theme is now compatible with WooCommerce.
 * Feature - Added new responsive menu design.
 * Feature - Added RTL support.
