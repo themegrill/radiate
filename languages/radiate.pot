@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Radiate 1.2.2\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-05-03 10:08:25+00:00\n"
+"POT-Creation-Date: 2016-09-01 12:08:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:88
 msgid "Sidebar"
 msgstr ""
 
@@ -166,60 +166,88 @@ msgstr ""
 msgid "Header Image One"
 msgstr ""
 
-#: inc/customizer.php:38
+#: inc/customizer.php:46
+msgid "View Pro"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Support"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Documentation"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "View Demo"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Radiate Important Links"
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "Important Links"
+msgstr ""
+
+#: inc/customizer.php:98
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer.php:70
+#: inc/customizer.php:130
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:80
+#: inc/customizer.php:140
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:160
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:170
 msgid "Front Page Featured Section"
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:201
 msgid "First featured page"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:209
 msgid "Second featured page"
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:217
 msgid "Third featured page"
 msgstr ""
 
-#: inc/customizer.php:166
+#: inc/customizer.php:226
 msgid "Author Bio"
 msgstr ""
 
-#: inc/customizer.php:184
+#: inc/customizer.php:244
 msgid "Check to enable the Author Bio in the single post page."
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:254
 msgid "Header Search Icon"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:272
 msgid "Check to hide Header Search Icon."
 msgstr ""
 
-#: inc/customizer.php:272
-msgid "Theme Info"
+#: inc/customizer.php:282
+msgid "Responsive Menu Style"
 msgstr ""
 
-#: inc/customizer.php:273
-msgid "View PRO version"
+#: inc/customizer.php:300
+msgid "Switch to new responsive menu style."
 msgstr ""
 
 #: inc/template-tags.php:25
@@ -289,8 +317,7 @@ msgid ""
 "custom background, custom css and few other features through WordPress "
 "customizer. The theme is translation ready and you can get free support on "
 "http://themegrill.com/support-forum. View demo at "
-"http://demo.themegrill.com/radiate. Available Translations: French, German, "
-"Russian, Swedish, Dutch, Norwegian, Brazilian Portuguese and Spanish."
+"http://demo.themegrill.com/radiate."
 msgstr ""
 
 #. Author of the plugin/theme
