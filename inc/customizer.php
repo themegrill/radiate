@@ -215,6 +215,34 @@ function radiate_register_theme_customizer( $wp_customize ) {
       )
    );
 
+	// Responsive Menu Style
+	$wp_customize->add_section(
+		'radiate_menu_section',
+		array(
+			'title'     => __( 'Responsive Menu Style', 'radiate' ),
+			'priority'  => 280
+		)
+	);
+
+	$wp_customize->add_setting(
+		'radiate_responsive_menu_style',
+		array(
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'radiate_checkbox_sanitize'
+		)
+	);
+
+	$wp_customize->add_control(
+		'radiate_responsive_menu_style',
+		array(
+			'type'      => 'checkbox',
+			'label'     => __('Switch to new responsive menu style.', 'radiate'),
+			'section'   => 'radiate_menu_section',
+			'settings'  => 'radiate_responsive_menu_style'
+		)
+	);
+
 	function radiate_sanitize_hex_color( $color ) {
 		if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
 			return '#' . $unhashed;
@@ -250,7 +278,7 @@ function radiate_customizer_css() {
 	if( $primary_color && $primary_color != '#632e9b') {
 		$customizer_css = ' blockquote{border-color:#EAEAEA #EAEAEA #EAEAEA '.$primary_color.'}.site-title a:hover,a{color:'.$primary_color.'}#masthead .search-form,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a{background-color:'.$primary_color.'}.header-search-icon:before{color:'.$primary_color.'}button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,#content .entry-meta span a:hover,#content .entry-title a:hover,.comment .comment-reply-link:hover,.comments-area .comment-author-link a:hover,.entry-meta span:hover,.site-header .menu-toggle,.site-header .menu-toggle:hover{color:'.$primary_color.'}.main-small-navigation ul li ul li a:hover,.main-small-navigation ul li:hover,.main-small-navigation ul li a:hover,.main-small-navigation ul li ul li:hover>a,.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item,.main-small-navigation ul li.current-menu-item ul li a:hover{background-color:'.$primary_color.'}#featured_pages a.more-link:hover{border-color:'.$primary_color.';color:'.$primary_color.'}a#back-top:before{background-color:'.$primary_color.'}a#scroll-up span{color:'.$primary_color.'}
 			.woocommerce ul.products li.product .onsale,.woocommerce span.onsale,.woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
-			.wocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, 
+			.wocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover,
 			.woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {background-color: '.$primary_color.'}
 			.woocommerce .woocommerce-message::before { color: '.$primary_color.'; }';
 	?>
