@@ -137,3 +137,24 @@ function radiate_wrapper_start() {
 function radiate_wrapper_end() {
   echo '</div>';
 }
+
+/**
+ * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
+ */
+function radiate_customm_css_migrate() {
+	if ( get_option( 'radiate_custom_css_transfer' ) ) {
+		return;
+	}
+	$theme_custom_css = get_theme_mod( 'radiate_custom_css', '' );
+	if ( ! empty( $theme_custom_css ) && function_exists( 'wp_update_custom_css_post' ) ) {
+		$wordpress_core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+		$return = wp_update_custom_css_post( $wordpress_core_css . $theme_custom_css );
+		if ( ! is_wp_error( $return ) ) {
+			// Set the transfer as complete
+			update_option( 'radiate_custom_css_transfer', 1 );
+			// Remove the old theme_mod option for the Custom CSS Box provided via theme
+			remove_theme_mod( 'radiate_custom_css' );
+		}
+	}
+}
+add_action( 'after_setup_theme', 'radiate_customm_css_migrate' );
