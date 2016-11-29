@@ -353,8 +353,8 @@ function radiate_customizer_css() {
 	<style type="text/css"><?php echo $customizer_css; ?></style>
 	<?php
 	}
-	$radiate_custom_css = get_theme_mod( 'radiate_custom_css', '' );
-	if( !empty( $radiate_custom_css ) && ! function_exists( 'wp_update_custom_css_post' ) ) {
+	$radiate_custom_css = get_theme_mod( 'radiate_custom_css' );
+	if( $radiate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
 		?><style type="text/css"><?php echo esc_html( $radiate_custom_css ); ?></style><?php
 	}
