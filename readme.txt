@@ -62,6 +62,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 
 /**********************************************************/
 
+= Version TBD =
+* Feature - Migrated the Custom CSS code added in theme settings to Additional CSS section introduced in WordPress 4.7
+
 == CHANGE LOG ==
 = Version 1.2.3 - 2016-09-01 =
 * Feature - Theme is now compatible with WooCommerce.

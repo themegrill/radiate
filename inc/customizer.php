@@ -99,19 +99,6 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		'priority' => 20
 	) );
 
-	class RADIATE_ADDITIONAL_Control extends WP_Customize_Control {
-		public $type = 'textarea';
-
-		public function render_content() {
-			?>
-			<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-			</label>
-			<?php
-		}
-	}
-
 	$wp_customize->add_setting(
 		'radiate_color_scheme',
 			array(
@@ -134,35 +121,51 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section(
-		'radiate_custom_css_section',
-		array(
-			'title'     => __( 'Custom CSS', 'radiate' ),
-			'priority'  => 200
-		)
-	);
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 
-	$wp_customize->add_setting(
-		'radiate_custom_css',
-		array(
-		'default'    =>  '',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'wp_filter_nohtml_kses',
-      'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-		)
-	);
+		class RADIATE_ADDITIONAL_Control extends WP_Customize_Control {
+			public $type = 'textarea';
 
-	$wp_customize->add_control(
-		new RADIATE_ADDITIONAL_Control (
-			$wp_customize,
+			public function render_content() {
+				?>
+				<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+				</label>
+				<?php
+			}
+		}
+
+		$wp_customize->add_section(
+			'radiate_custom_css_section',
+			array(
+				'title'     => __( 'Custom CSS', 'radiate' ),
+				'priority'  => 200
+			)
+		);
+
+		$wp_customize->add_setting(
 			'radiate_custom_css',
 			array(
-				'label'    	=> __( 'Add your custom css here and design live! (for advanced users)' , 'radiate' ),
-				'section'   => 'radiate_custom_css_section',
-				'settings'  => 'radiate_custom_css'
+				'default'    =>  '',
+				'capability' => 'edit_theme_options',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+				'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 			)
-		)
-	);
+		);
+
+		$wp_customize->add_control(
+			new RADIATE_ADDITIONAL_Control (
+				$wp_customize,
+				'radiate_custom_css',
+				array(
+					'label'    	=> __( 'Add your custom css here and design live! (for advanced users)' , 'radiate' ),
+					'section'   => 'radiate_custom_css_section',
+					'settings'  => 'radiate_custom_css'
+				)
+			)
+		);
+	}
 
 	$wp_customize->add_section(
 		'radiate_featured_section',
@@ -350,9 +353,11 @@ function radiate_customizer_css() {
 	<style type="text/css"><?php echo $customizer_css; ?></style>
 	<?php
 	}
-	?>
-	<style type="text/css"><?php echo trim( get_theme_mod( 'radiate_custom_css' ) ); ?></style>
-	<?php
+	$radiate_custom_css = get_theme_mod( 'radiate_custom_css' );
+	if( $radiate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
+		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
+		?><style type="text/css"><?php echo esc_html( $radiate_custom_css ); ?></style><?php
+	}
 }
 add_action( 'wp_head', 'radiate_customizer_css' );
 
