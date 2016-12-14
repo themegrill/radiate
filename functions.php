@@ -120,10 +120,9 @@ function radiate_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	$radiate_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$radiate_user_agent)) {
-		wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5shiv.min.js', true );
-	}
+	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.3', false );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' );
+
 }
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
 
