@@ -1452,7 +1452,7 @@ a#scroll-up:hover {
     }
 
     .sub-toggle {
-        background-color: #a91313;
+        background-color: #4b009b;
         cursor: pointer;
         display: block;
         padding: 0px 6px;
@@ -1509,7 +1509,14 @@ a#scroll-up:hover {
 
     .main-small-navigation ul {
         width: 100%;
+        display: inline-block;
     }
+.main-small-navigation .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
 
     .main-small-navigation ul ul {
         margin-left: 0;

@@ -50,7 +50,8 @@ function radiate_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if( get_theme_mod( 'radiate_responsive_menu_style', '1' == '1' ) ) {
+	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == '1' ) {
+
 		$classes[] = 'better-responsive-menu';
 	}
 
