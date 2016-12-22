@@ -736,6 +736,9 @@ img.header-image {
 .main-navigation ul ul a {
     min-width: 200px;
 }
+.better-responsive-menu .main-navigation ul ul a {
+    min-width: auto;
+}
 
 /* =Content
 ----------------------------------------------- */
@@ -1452,7 +1455,7 @@ a#scroll-up:hover {
     }
 
     .sub-toggle {
-        background-color: #a91313;
+        background-color: #4b009b;
         cursor: pointer;
         display: block;
         padding: 0px 6px;
@@ -1509,6 +1512,7 @@ a#scroll-up:hover {
 
     .main-small-navigation ul {
         width: 100%;
+        display: inline-block;
     }
 
     .main-small-navigation ul ul {
@@ -1519,34 +1523,52 @@ a#scroll-up:hover {
         width: 100%;
         float: none;
     }
+    .main-small-navigation ul {
+    width: 200px;
+    margin-left: -134px;
+	}
 
-    .main-small-navigation ul.menunav-menu {
+    .full-width-menu .main-small-navigation ul.menunav-menu,
+    .full-width-menu .main-small-navigation .menu > ul {
         display: inline-block;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
     }
-.better-responsive-menu .main-navigation ul {
-    background-color: #fff;
-    left: 0;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-}
-.better-responsive-menu .main-navigation li {
-    line-height: 40px;
-    width: 100%;
-}
-.better-responsive-menu .main-navigation ul li ul{
-    position: static;
-}
-.better-responsive-menu .main-navigation ul ul li{
-    font-size: 1.8rem;
-}
-.better-responsive-menu .main-navigation ul ul li a{
-    padding-left: 40px;
-}
+    .full-width-menu .main-navigation .menu > ul {
+    	display: none;
+    }
+
+	.better-responsive-menu .main-navigation .menu-primary-container > ul,
+	.better-responsive-menu .main-navigation .menu > ul {
+	    background-color: #fff;
+	    right: 60px;
+	    position: absolute;
+	    top: 100%;
+	    width: 200px;
+	    margin-left: -134px;
+	}
+    .full-width-menu .main-small-navigation ul,
+    .full-width-menu.better-responsive-menu .main-navigation ul{
+		width:100%;
+		margin-left: 0;
+		right: 0;
+    }
+	.better-responsive-menu .main-navigation li,
+	.full-width-menu .main-navigation li  {
+	    line-height: 40px;
+	    width: 100%;
+	}
+	.better-responsive-menu .main-navigation ul li ul{
+	    position: static;
+	}
+	.better-responsive-menu .main-navigation ul ul li{
+	    font-size: 1.8rem;
+	}
+	.better-responsive-menu .main-navigation ul ul li a{
+	    padding-left: 40px;
+	}
 }
 @media only screen and (max-width: 600px) {
     body {

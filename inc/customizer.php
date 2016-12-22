@@ -278,19 +278,38 @@ function radiate_register_theme_customizer( $wp_customize ) {
       )
    );
 
-	// Responsive Menu Style
+   // New menu design
 	$wp_customize->add_section(
 		'radiate_menu_section',
 		array(
-			'title'     => __( 'Responsive Menu Style', 'radiate' ),
-			'priority'  => 280
+			'title'     => esc_html__('Menu Style', 'radiate' ),
+			'panel' => 'nav_menus',
 		)
 	);
 
 	$wp_customize->add_setting(
+		'radiate_new_menu_enable',
+		array(
+			'default' 				=> 0,
+			'capability' 			=> 'edit_theme_options',
+			'sanitize_callback' 	=> 'radiate_checkbox_sanitize'
+		)
+	);
+
+	$wp_customize->add_control(
+		'radiate_new_menu_enable',
+		array(
+			'type' 			=> 'checkbox',
+			'label' 		=> esc_html__('Switch to full width menu style.', 'radiate'),
+			'section' 		=> 'radiate_menu_section',
+			'settings' 		=> 'radiate_new_menu_enable'
+		)
+	);
+
+   $wp_customize->add_setting(
 		'radiate_responsive_menu_style',
 		array(
-			'default'           => 1,
+			'default'           => 0,
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'radiate_checkbox_sanitize'
 		)
@@ -300,7 +319,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		'radiate_responsive_menu_style',
 		array(
 			'type'      => 'checkbox',
-			'label'     => __('Switch to new responsive menu style.', 'radiate'),
+			'label'     => esc_html__('Switch to new responsive menu style.', 'radiate'),
 			'section'   => 'radiate_menu_section',
 			'settings'  => 'radiate_responsive_menu_style'
 		)
@@ -340,19 +359,56 @@ function radiate_register_theme_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'radiate_register_theme_customizer' );
 
+if ( ! function_exists( 'radiate_darkcolor' ) ) :
+/**
+ * Generate darker color
+ * Source: http://stackoverflow.com/questions/3512311/how-to-generate-lighter-darker-color-with-php
+ */
+function radiate_darkcolor($hex, $steps) {
+	// Steps should be between -255 and 255. Negative = darker, positive = lighter
+	$steps = max(-255, min(255, $steps));
+
+	// Normalize into a six character long hex string
+	$hex = str_replace('#', '', $hex);
+	if (strlen($hex) == 3) {
+		$hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+	}
+
+	// Split into three parts: R, G and B
+	$color_parts = str_split($hex, 2);
+	$return = '#';
+
+	foreach ($color_parts as $color) {
+		$color   = hexdec($color); // Convert to decimal
+		$color   = max(0,min(255,$color + $steps)); // Adjust color
+		$return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+	}
+
+	return $return;
+}
+endif;
+
 
 function radiate_customizer_css() {
-	$primary_color =  get_theme_mod( 'radiate_color_scheme' );
+	$primary_color 	=  get_theme_mod( 'radiate_color_scheme' );
+	$primary_dark	= radiate_darkcolor($primary_color, -50);
 	if( $primary_color && $primary_color != '#632e9b') {
 		$customizer_css = ' blockquote{border-color:#EAEAEA #EAEAEA #EAEAEA '.$primary_color.'}.site-title a:hover,a{color:'.$primary_color.'}#masthead .search-form,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a{background-color:'.$primary_color.'}.header-search-icon:before{color:'.$primary_color.'}button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,#content .entry-meta span a:hover,#content .entry-title a:hover,.comment .comment-reply-link:hover,.comments-area .comment-author-link a:hover,.entry-meta span:hover,.site-header .menu-toggle,.site-header .menu-toggle:hover{color:'.$primary_color.'}.main-small-navigation ul li ul li a:hover,.main-small-navigation ul li:hover,.main-small-navigation ul li a:hover,.main-small-navigation ul li ul li:hover>a,.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item,.main-small-navigation ul li.current-menu-item ul li a:hover{background-color:'.$primary_color.'}#featured_pages a.more-link:hover{border-color:'.$primary_color.';color:'.$primary_color.'}a#back-top:before{background-color:'.$primary_color.'}a#scroll-up span{color:'.$primary_color.'}
 			.woocommerce ul.products li.product .onsale,.woocommerce span.onsale,.woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
 			.wocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover,
 			.woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {background-color: '.$primary_color.'}
-			.woocommerce .woocommerce-message::before { color: '.$primary_color.'; }';
+			.woocommerce .woocommerce-message::before { color: '.$primary_color.'; }
+			.main-small-navigation ul li ul li.current-menu-item > a { background: '.$primary_color.'; }
+
+			@media (max-width: 768px){.better-responsive-menu .sub-toggle{background:'.$primary_dark.'}}';
 	?>
 	<style type="text/css"><?php echo $customizer_css; ?></style>
 	<?php
 	}
+// 	.main-small-navigation ul li ul li.current-menu-item > a {
+//     background: #ce3785;
+//     color: #fff;
+// }
 	$radiate_custom_css = get_theme_mod( 'radiate_custom_css' );
 	if( $radiate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
