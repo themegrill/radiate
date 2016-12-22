@@ -379,11 +379,17 @@ function radiate_customizer_css() {
 			.wocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover,
 			.woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {background-color: '.$primary_color.'}
 			.woocommerce .woocommerce-message::before { color: '.$primary_color.'; }
+			.main-small-navigation ul li ul li.current-menu-item > a { background: '.$primary_color.'; }
+
 			@media (max-width: 768px){.better-responsive-menu .sub-toggle{background:'.$primary_dark.'}}';
 	?>
 	<style type="text/css"><?php echo $customizer_css; ?></style>
 	<?php
 	}
+// 	.main-small-navigation ul li ul li.current-menu-item > a {
+//     background: #ce3785;
+//     color: #fff;
+// }
 	$radiate_custom_css = get_theme_mod( 'radiate_custom_css' );
 	if( $radiate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom Styles -->';
