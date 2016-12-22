@@ -278,16 +278,35 @@ function radiate_register_theme_customizer( $wp_customize ) {
       )
    );
 
-	// Responsive Menu Style
+   // New menu design
 	$wp_customize->add_section(
 		'radiate_menu_section',
 		array(
-			'title'     => __( 'Responsive Menu Style', 'radiate' ),
-			'priority'  => 280
+			'title'     => esc_html__('Menu Style', 'radiate' ),
+			'panel' => 'nav_menus',
 		)
 	);
 
 	$wp_customize->add_setting(
+		'radiate_new_menu_enable',
+		array(
+			'default' 				=> 0,
+			'capability' 			=> 'edit_theme_options',
+			'sanitize_callback' 	=> 'radiate_checkbox_sanitize'
+		)
+	);
+
+	$wp_customize->add_control(
+		'radiate_new_menu_enable',
+		array(
+			'type' 			=> 'checkbox',
+			'label' 		=> esc_html__('Switch to full width menu style.', 'radiate'),
+			'section' 		=> 'radiate_menu_section',
+			'settings' 		=> 'radiate_new_menu_enable'
+		)
+	);
+
+   $wp_customize->add_setting(
 		'radiate_responsive_menu_style',
 		array(
 			'default'           => 0,
@@ -300,7 +319,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		'radiate_responsive_menu_style',
 		array(
 			'type'      => 'checkbox',
-			'label'     => __('Switch to new responsive menu style.', 'radiate'),
+			'label'     => esc_html__('Switch to new responsive menu style.', 'radiate'),
 			'section'   => 'radiate_menu_section',
 			'settings'  => 'radiate_responsive_menu_style'
 		)

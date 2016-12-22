@@ -50,8 +50,13 @@ function radiate_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == '1' ) {
+	// New Menu Design
+	if ( get_theme_mod( 'radiate_new_menu_enable', '0' ) == 1) {
+		$classes[] = 'full-width-menu';
+	}
 
+	// Better Responsive Menu Design
+	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == 1) {
 		$classes[] = 'better-responsive-menu';
 	}
 
