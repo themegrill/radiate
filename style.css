@@ -1526,14 +1526,18 @@ a#scroll-up:hover {
     .main-small-navigation ul {
     width: 200px;
     margin-left: -134px;
-}
+	}
 
-    .full-width-menu .main-small-navigation ul.menunav-menu {
+    .full-width-menu .main-small-navigation ul.menunav-menu,
+    .full-width-menu .main-small-navigation .menu > ul {
         display: inline-block;
         width: 100%;
         position: absolute;
         top: 100%;
         left: 0;
+    }
+    .full-width-menu .main-navigation .menu > ul {
+    	display: none;
     }
 
 	.better-responsive-menu .main-navigation .menu-primary-container > ul,
@@ -1551,7 +1555,8 @@ a#scroll-up:hover {
 		margin-left: 0;
 		right: 0;
     }
-	.better-responsive-menu .main-navigation li {
+	.better-responsive-menu .main-navigation li,
+	.full-width-menu .main-navigation li  {
 	    line-height: 40px;
 	    width: 100%;
 	}
