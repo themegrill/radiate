@@ -736,9 +736,6 @@ img.header-image {
 .main-navigation ul ul a {
     min-width: 200px;
 }
-.better-responsive-menu .main-navigation ul ul a {
-    min-width: auto;
-}
 
 /* =Content
 ----------------------------------------------- */
@@ -1549,6 +1546,10 @@ a#scroll-up:hover {
 	    width: 200px;
 	    margin-left: -134px;
 	}
+	.better-responsive-menu .main-navigation ul ul a {
+    min-width: auto;
+}
+
     .full-width-menu .main-small-navigation ul,
     .full-width-menu.better-responsive-menu .main-navigation ul{
 		width:100%;

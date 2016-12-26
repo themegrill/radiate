@@ -278,12 +278,12 @@ function radiate_register_theme_customizer( $wp_customize ) {
       )
    );
 
-   // New menu design
+   	// Responsive Menu Style
 	$wp_customize->add_section(
 		'radiate_menu_section',
 		array(
-			'title'     => esc_html__('Menu Style', 'radiate' ),
-			'panel' => 'nav_menus',
+			'title'     => esc_html__( 'Responsive Menu Style', 'radiate' ),
+			'priority'  => 280
 		)
 	);
 
