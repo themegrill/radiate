@@ -1547,8 +1547,8 @@ a#scroll-up:hover {
 	    margin-left: -134px;
 	}
 	.better-responsive-menu .main-navigation ul ul a {
-    min-width: auto;
-}
+	    min-width: auto;
+	}
 
     .full-width-menu .main-small-navigation ul,
     .full-width-menu.better-responsive-menu .main-navigation ul{
