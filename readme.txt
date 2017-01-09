@@ -63,6 +63,8 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Added - Support for Video Headers introduced in WordPress 4.7.
 
 = Version 1.2.4 - 2016-12-26 =
 * Fixes - Responsive menu design issue fixes
