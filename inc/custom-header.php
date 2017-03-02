@@ -19,15 +19,16 @@
  */
 function radiate_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'radiate_custom_header_args', array(
-		'default-image'          => '%s/images/header/header-image-one.jpg',
-		'default-text-color'     => '444444',
-		'width'                  => 1500,
-		'height'                 => 450,
-		'flex-width'				 => true,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'radiate_header_style',
-		'admin-head-callback'    => 'radiate_admin_header_style',
-		'admin-preview-callback' => 'radiate_admin_header_image',
+		'default-image'				=> '%s/images/header/header-image-one.jpg',
+		'default-text-color'		=> '444444',
+		'width'						=> 1500,
+		'height'					=> 450,
+		'flex-width'				=> true,
+		'flex-height'				=> true,
+		'video'						=> true,
+		'wp-head-callback'			=> 'radiate_header_style',
+		'admin-head-callback'		=> 'radiate_admin_header_style',
+		'admin-preview-callback'	=> 'radiate_admin_header_image',
 	) ) );
 
 	/*
@@ -39,7 +40,7 @@ function radiate_custom_header_setup() {
 			'url'           => '%s/images/header/header-image-one.jpg',
 			'thumbnail_url' => '%s/images/header/header-image-one-thumbnail.jpg',
 			'description'   => __( 'Header Image One', 'radiate' )
-			)	
+			)
 	) );
 }
 add_action( 'after_setup_theme', 'radiate_custom_header_setup' );
@@ -123,10 +124,14 @@ function radiate_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
+		<?php if ( function_exists( 'the_custom_header_markup' ) ) {
+			the_custom_header_markup();
+		} else { ?>
+			<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php if ( get_header_image() ) : ?>
+			<img src="<?php header_image(); ?>" alt="">
+			<?php endif; ?>
+		<?php } ?>
 	</div>
 <?php
 }

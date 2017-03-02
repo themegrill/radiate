@@ -19,7 +19,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="parallax-bg"></div>
+<div id="parallax-bg">
+	<?php if ( get_header_image() && function_exists( 'the_custom_header_markup' ) && is_front_page() && has_header_video() ) :
+		the_custom_header_markup();
+	endif; ?>
+</div>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
