@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function radiate_demo_importer_packages( $packages ) {
 	$new_packages = array(
 		'radiate-free' => array(
-			'name'    => __( 'Radiate', 'radiate' ),
+			'name'    => esc_html__( 'Radiate', 'radiate' ),
 			'preview' => 'https://demo.themegrill.com/radiate/',
 		),
 	);
