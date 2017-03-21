@@ -42,19 +42,19 @@ function radiate_register_theme_customizer( $wp_customize ) {
 			//Add Theme instruction, Support Forum, Demo Link, Rating Link
 			$important_links = array(
 			'view-pro' => array(
-				'link' => esc_url('http://themegrill.com/themes/radiate/'),
+				'link' => esc_url('https://themegrill.com/themes/radiate/'),
 				'text' => esc_html__('View Pro', 'radiate'),
 			),
 			'support' => array(
-				'link' => esc_url('http://themegrill.com/support-forum/'),
+				'link' => esc_url('https://themegrill.com/support-forum/'),
 				'text' => esc_html__('Support', 'radiate'),
 			),
 			'documentation' => array(
-				'link' => esc_url('http://docs.themegrill.com/radiate/'),
+				'link' => esc_url('https://docs.themegrill.com/radiate/'),
 				'text' => esc_html__('Documentation', 'radiate'),
 			),
 			'demo' => array(
-				'link' => esc_url('http://demo.themegrill.com/radiate/'),
+				'link' => esc_url('https://demo.themegrill.com/radiate/'),
 				'text' => esc_html__('View Demo', 'radiate'),
 			),
 			'rating' => array(
