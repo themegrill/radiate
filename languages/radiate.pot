@@ -1,14 +1,14 @@
-# Copyright (C) 2016 ThemeGrill
+# Copyright (C) 2017 ThemeGrill
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radiate 1.2.2\n"
+"Project-Id-Version: Radiate 1.2.5\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2016-09-01 12:08:33+00:00\n"
+"POT-Creation-Date: 2017-04-28 09:58:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -154,15 +154,15 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:88
+#: functions.php:91
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:47
+#: header.php:51
 msgid "Skip to content"
 msgstr ""
 
-#: inc/custom-header.php:41
+#: inc/custom-header.php:42
 msgid "Header Image One"
 msgstr ""
 
@@ -198,56 +198,64 @@ msgstr ""
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:117
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:142
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:162
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 
-#: inc/customizer.php:170
+#: inc/customizer.php:173
 msgid "Front Page Featured Section"
 msgstr ""
 
-#: inc/customizer.php:201
+#: inc/customizer.php:204
 msgid "First featured page"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:212
 msgid "Second featured page"
 msgstr ""
 
-#: inc/customizer.php:217
+#: inc/customizer.php:220
 msgid "Third featured page"
 msgstr ""
 
-#: inc/customizer.php:226
+#: inc/customizer.php:229
 msgid "Author Bio"
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:247
 msgid "Check to enable the Author Bio in the single post page."
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:257
 msgid "Header Search Icon"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:275
 msgid "Check to hide Header Search Icon."
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:285
 msgid "Responsive Menu Style"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:303
+msgid "Switch to full width menu style."
+msgstr ""
+
+#: inc/customizer.php:322
 msgid "Switch to new responsive menu style."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Radiate"
 msgstr ""
 
 #: inc/template-tags.php:25
@@ -300,10 +308,6 @@ msgstr ""
 
 #: sidebar.php:26
 msgid "Meta"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Radiate"
 msgstr ""
 
 #. Theme URI of the plugin/theme
