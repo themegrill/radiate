@@ -18,6 +18,7 @@ Resources packed within the theme.
 * Image used as deafault header image(s) and used in the screenshot are from public domain http://unsplash.com/
 * Custom js file is our own creation and is licensed under the same license as this theme.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+* TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
