@@ -682,6 +682,10 @@ img.header-image {
     color: #ffffff;
 }
 
+.main-navigation ul li.focus >ul{
+	display: block;
+}
+
 /* Dropdown */
 .sub-toggle {
   display: none;
