@@ -64,7 +64,7 @@ function radiate_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'radiate_body_classes' );
 
-add_action('wp_head', 'radiate_internal_css');
+add_action('wp_head', 'radiate_internal_css', 100);
 /**
  * Hooks the Custom Internal CSS to head section
  */
