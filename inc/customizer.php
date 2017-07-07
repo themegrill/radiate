@@ -58,7 +58,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 				'text' => esc_html__('View Demo', 'radiate'),
 			),
 			'rating' => array(
-				'link' => esc_url('http://wordpress.org/support/view/theme-reviews/radiate?filter=5'),
+				'link' => esc_url('https://wordpress.org/support/theme/radiate/reviews/?filter=5'),
 				'text' => esc_html__('Rate this theme', 'radiate'),
 			),
 			);
