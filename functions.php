@@ -99,6 +99,12 @@ function radiate_widgets_init() {
 add_action( 'widgets_init', 'radiate_widgets_init' );
 
 /**
+ * Assign the Radiate version to a variable.
+ */
+$theme            = wp_get_theme( 'radiate' );
+$radiate_version = $theme['Version'];
+
+/**
  * Enqueue scripts and styles.
  */
 function radiate_scripts() {
@@ -159,6 +165,13 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 if ( class_exists( 'TG_Demo_Importer' ) ) {
 	require get_template_directory() . '/inc/demo-config.php';
+}
+
+/**
+ * Load admin area for the welcome page
+ */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-radiate-admin.php';
 }
 
 /**
