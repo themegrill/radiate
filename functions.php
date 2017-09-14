@@ -179,5 +179,3 @@ if ( is_admin() ) {
  */
 require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-radiate.php';
-
-?>

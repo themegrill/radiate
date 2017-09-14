@@ -65,6 +65,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 
 == CHANGE LOG ==
 = TBD =
+* Tweak - Add theme support for Jetpack Responsive Videos.
 * Tweaks - Added welcome page
 * Fix - Submenu issue fixed
 
