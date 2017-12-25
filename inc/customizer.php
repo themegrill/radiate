@@ -96,9 +96,10 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'radiate_color_scheme',
 			array(
-				'default'     	=> '#632E9B',
-            'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'radiate_sanitize_hex_color',
+				'default'     	       => '#632E9B',
+                'capability'           => 'edit_theme_options',
+                'transport'            => 'postMessage',
+				'sanitize_callback'    => 'radiate_sanitize_hex_color',
 				'sanitize_js_callback' => 'radiate_sanitize_escaping'
 			)
 	);
@@ -357,7 +358,7 @@ add_action( 'customize_register', 'radiate_register_theme_customizer' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function radiate_customize_preview_js() {
-	wp_enqueue_script( 'radiate_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'radiate_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), false, true );
 }
 add_action( 'customize_preview_init', 'radiate_customize_preview_js' );
 
