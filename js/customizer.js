@@ -36,7 +36,6 @@
 
 	// Primary color option
 	wp.customize( 'radiate_color_scheme', function ( value ) {
-			console.log( 'chalyo' );
 		value.bind( function ( primaryColor ) {
 			// Store internal style for primary color
 			var primaryColorStyle = '<style id="radiate-internal-primary-color"> blockquote{border-color:#EAEAEA #EAEAEA #EAEAEA ' + primaryColor + '}' +
