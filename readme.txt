@@ -64,7 +64,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.7 -2018-03-22 =
 * Tweak - Add theme support for Jetpack Responsive Videos.
 * Tweaks - Added welcome page
 * Fix - Submenu issue fixed
