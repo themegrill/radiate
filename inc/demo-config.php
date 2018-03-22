@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Setup demo importer packages.
  *
  * @param  array $packages
+ *
  * @return array
  */
 function radiate_demo_importer_packages( $packages ) {
@@ -24,8 +25,14 @@ function radiate_demo_importer_packages( $packages ) {
 			'name'    => esc_html__( 'Radiate', 'radiate' ),
 			'preview' => 'https://demo.themegrill.com/radiate/',
 		),
+		'radiate-pro'  => array(
+			'name'     => esc_html__( 'Radiate Pro', 'radiate' ),
+			'preview'  => 'https://demo.themegrill.com/radiate-pro/',
+			'pro_link' => 'https://themegrill.com/themes/radiate/',
+		),
 	);
 
 	return array_merge( $new_packages, $packages );
 }
+
 add_filter( 'themegrill_demo_importer_packages', 'radiate_demo_importer_packages' );
