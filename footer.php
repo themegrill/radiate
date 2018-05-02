@@ -19,7 +19,7 @@
 			<?php _e( 'Proudly  powered by ', 'radiate' ); ?>
 			<a href="http://wordpress.org/" rel="generator"><?php _e( 'WordPress', 'radiate' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'radiate' ), 'Radiate', '<a href="'.esc_url('https://themegrill.com/').'" rel="designer">ThemeGrill</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'radiate' ), 'Radiate', '<a href="'.esc_url('https://themegrill.com/').'" rel="author">ThemeGrill</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
    <a href="#masthead" id="scroll-up"><span class="genericon genericon-collapse"></span></a>
