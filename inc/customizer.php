@@ -222,33 +222,83 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
+		//Related post
+	$wp_customize->add_section(
+		'radiate_related_posts_section',
+		 array(
+			'priority' => 245,
+			'title'    => esc_html__( 'Related Posts', 'radiate' ),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'radiate_related_posts_activate',
+		array(
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'radiate_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'radiate_related_posts_activate',
+		array(
+			'type'     => 'checkbox',
+			'label'    => esc_html__( 'Check to activate the related posts', 'radiate' ),
+			'section'  => 'radiate_related_posts_section',
+			'settings' => 'radiate_related_posts_activate',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'radiate_related_posts',
+		array(
+			'default'           => 'categories',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'radiate_sanitize_radio',
+		)
+	);
+
+	$wp_customize->add_control(
+		'radiate_related_posts',
+		array(
+			'type'     => 'radio',
+			'label'    => esc_html__( 'Related Posts Must Be Shown As:', 'radiate' ),
+			'section'  => 'radiate_related_posts_section',
+			'settings' => 'radiate_related_posts',
+			'choices'  => array(
+				'categories' => esc_html__( 'Related Posts By Categories', 'radiate' ),
+				'tags'       => esc_html__( 'Related Posts By Tags', 'radiate' ),
+		),
+	) );
+
 	// Author Bio
-   $wp_customize->add_section(
-      'radiate_author_bio',
-      array(
-         'title'     => __( 'Author Bio', 'radiate' ),
-         'priority'  => 250
-      )
-   );
+	$wp_customize->add_section(
+		'radiate_author_bio',
+		array(
+			'title'     => __( 'Author Bio', 'radiate' ),
+			'priority'  => 250
+		)
+	);
 
-   $wp_customize->add_setting(
-      'radiate_author_bio_show',
-         array(
-         'default' => 0,
-         'capability' => 'edit_theme_options',
-         'sanitize_callback' => 'radiate_checkbox_sanitize'
-      )
-   );
+	$wp_customize->add_setting(
+		'radiate_author_bio_show',
+		array(
+			'default' => 0,
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'radiate_checkbox_sanitize'
+		)
+	);
 
-   $wp_customize->add_control(
-      'radiate_author_bio_show',
-         array(
-         'type' => 'checkbox',
-         'label' => __('Check to enable the Author Bio in the single post page.', 'radiate'),
-         'section' => 'radiate_author_bio',
-         'settings' => 'radiate_author_bio_show'
-      )
-   );
+	$wp_customize->add_control(
+		'radiate_author_bio_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Check to enable the Author Bio in the single post page.', 'radiate'),
+			'section' => 'radiate_author_bio',
+			'settings' => 'radiate_author_bio_show'
+		)
+	);
 
    // Hide Search Icon
    $wp_customize->add_section(
