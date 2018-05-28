@@ -236,7 +236,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		array(
 			'default'           => 0,
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_checkbox',
+			'sanitize_callback' => 'radiate_checkbox_sanitize',
 		)
 	);
 
@@ -400,6 +400,15 @@ function radiate_register_theme_customizer( $wp_customize ) {
          return '';
       }
    }
+
+	function radiate_sanitize_radio( $input, $setting ) {
+		// Ensuring that the input is a slug.
+		$input = sanitize_key( $input );
+		// Get the list of choices from the control associated with the setting.
+		$choices = $setting->manager->get_control( $setting->id )->choices;
+		// If the input is a valid key, return it, else, return the default.
+		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
 
    	// Fake sanitize function
 	function radiate_sanitize_important_links() {
