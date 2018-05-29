@@ -865,6 +865,27 @@ img.header-image {
 .entry-meta .edit-link:before {
     content: '\f411';
 }
+/* Related Post */
+
+.related-posts-main-title {
+	margin-bottom: 20px;
+}
+.related-posts-wrapper .tg-one-third {
+	background-color: #ffffff;
+	padding: 3rem 3rem 2rem;
+}
+.related-posts-wrapper .entry-title {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+.related-posts-wrapper .entry-meta .posted-on,
+.related-posts-wrapper .entry-meta .byline {
+    padding-right: 10px;
+}
+.related-posts-wrapper .entry-meta .comments-link {
+	padding-right: 0;
+}
 
 /* =Featured pages section - front page
 ----------------------------------------------- */
