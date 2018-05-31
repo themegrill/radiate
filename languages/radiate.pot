@@ -1,14 +1,14 @@
-# Copyright (C) 2017 ThemeGrill
+# Copyright (C) 2018 ThemeGrill
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radiate 1.2.6\n"
+"Project-Id-Version: Radiate 1.2.8\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2017-05-10 10:16:50+00:00\n"
+"POT-Creation-Date: 2018-05-31 06:12:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: content-single.php:54 content.php:74
+#: content-single.php:54 content.php:74 inc/related-posts.php:66
 msgid "1 Comment"
 msgstr ""
 
@@ -162,28 +162,185 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/custom-header.php:42
-msgid "Header Image One"
+#: inc/admin/class-radiate-admin.php:37 inc/admin/class-radiate-admin.php:117
+msgid "About"
 msgstr ""
 
-#: inc/customizer.php:46
-msgid "View Pro"
+#: inc/admin/class-radiate-admin.php:74
+msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/customizer.php:50
-msgid "Support"
+#: inc/admin/class-radiate-admin.php:78
+msgid "Cheatin&#8217; huh?"
 msgstr ""
 
+#: inc/admin/class-radiate-admin.php:92
+msgid "Dismiss"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:93
+msgid ""
+"Welcome! Thank you for choosing Radiate! To fully take advantage of the "
+"best our theme can offer please make sure you visit our %swelcome page%s."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:95
+msgid "Get started with Radiate"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:132
+msgid "Theme Info"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:134 inc/customizer.php:58
+msgid "View Demo"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:136
+msgid "View PRO version"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:138 inc/customizer.php:62
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:146
+msgid "Supported Plugins"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:149
+msgid "Free Vs Pro"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:152
+msgid "Changelog"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:185
+msgid "Import Demo"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:186
+msgid "Needs ThemeGrill Demo Importer plugin."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:187
+#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:190
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:191
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:192
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:196 inc/admin/class-radiate-admin.php:198
 #: inc/customizer.php:54
 msgid "Documentation"
 msgstr ""
 
-#: inc/customizer.php:58
-msgid "View Demo"
+#: inc/admin/class-radiate-admin.php:197
+msgid "Please view our documentation page to setup the theme."
 msgstr ""
 
-#: inc/customizer.php:62
-msgid "Rate this theme"
+#: inc/admin/class-radiate-admin.php:202
+msgid "Got theme support question?"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:203
+msgid "Please put it in our dedicated support forum."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:204
+msgid "Support Forum"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:208
+msgid "Need more features?"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:209 inc/admin/class-radiate-admin.php:287
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:210 inc/admin/class-radiate-admin.php:290
+#: inc/customizer.php:46
+msgid "View Pro"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:214
+msgid "Got sales related question?"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:215
+msgid "Please send it via our sales contact page."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:216
+msgid "Contact Page"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:222 inc/admin/class-radiate-admin.php:230
+msgid "Translate"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:226
+msgid "Click below to translate this theme into your own language."
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:254
+msgid "This theme recommends following plugins:"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:256
+msgid "Social Icons"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:257 inc/admin/class-radiate-admin.php:260
+msgid " by ThemeGrill"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:259
+msgid "Easy Social Sharing"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:262
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:263
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:265
+msgid "Polylang"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:266 inc/admin/class-radiate-admin.php:270
+msgid "Fully Compatible in Pro Version"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:269
+msgid "WPML"
+msgstr ""
+
+#: inc/admin/class-radiate-admin.php:309
+msgid "View changelog below:"
+msgstr ""
+
+#: inc/custom-header.php:42
+msgid "Header Image One"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Support"
 msgstr ""
 
 #: inc/customizer.php:74
@@ -226,36 +383,72 @@ msgstr ""
 msgid "Third featured page"
 msgstr ""
 
-#: inc/customizer.php:229
-msgid "Author Bio"
+#: inc/customizer.php:230
+msgid "Related Posts"
 msgstr ""
 
 #: inc/customizer.php:247
+msgid "Check to activate the related posts"
+msgstr ""
+
+#: inc/customizer.php:266
+msgid "Related Posts Must Be Shown As:"
+msgstr ""
+
+#: inc/customizer.php:270
+msgid "Related Posts By Categories"
+msgstr ""
+
+#: inc/customizer.php:271
+msgid "Related Posts By Tags"
+msgstr ""
+
+#: inc/customizer.php:279
+msgid "Author Bio"
+msgstr ""
+
+#: inc/customizer.php:297
 msgid "Check to enable the Author Bio in the single post page."
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:307
 msgid "Header Search Icon"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:325
 msgid "Check to hide Header Search Icon."
 msgstr ""
 
-#: inc/customizer.php:285
+#: inc/customizer.php:335
 msgid "Responsive Menu Style"
 msgstr ""
 
-#: inc/customizer.php:303
+#: inc/customizer.php:353
 msgid "Switch to full width menu style."
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:372
 msgid "Switch to new responsive menu style."
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Radiate"
+msgstr ""
+
+#: inc/demo-config.php:29
+msgid "Radiate Pro"
+msgstr ""
+
+#: inc/related-posts.php:8
+msgid "You May Also Like"
+msgstr ""
+
+#: inc/related-posts.php:66
+msgid "0 Comment"
+msgstr ""
+
+#: inc/related-posts.php:66
+msgid " % Comments"
 msgstr ""
 
 #: inc/template-tags.php:25
@@ -562,10 +755,6 @@ msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2684
 msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2717
-msgid "Install"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2723
