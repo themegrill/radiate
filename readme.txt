@@ -64,6 +64,10 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Feature - Added Author Bio display option
+* Feature - Added Related posts display option
+
 = Version 1.2.7 -2018-03-22 =
 * Tweak - Add theme support for Jetpack Responsive Videos.
 * Tweaks - Added welcome page
