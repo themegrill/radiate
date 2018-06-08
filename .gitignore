@@ -18,3 +18,10 @@ project.properties
 
 # Windows junk
 Thumbs.db
+
+# Dependencies
+/node_modules/
+/deploy/
+/vendor/
+/dist/
+package-lock.json
