@@ -482,8 +482,8 @@ function radiate_customizer_custom_scripts() { ?>
 	<style>
 		/* Theme Instructions Panel CSS */
 		li#accordion-section-radiate_upsell_section h3.accordion-section-title {
-			background-color: #289DCC !important;
-			border-left-color: #0e749c !important;
+			background-color: #632E9B !important;
+			border-left-color: #491f75 !important;
 		}
 
 		#accordion-section-radiate_upsell_section h3 a:after {
@@ -512,7 +512,7 @@ function radiate_customizer_custom_scripts() { ?>
 		}
 
 		li#accordion-section-radiate_upsell_section h3.accordion-section-title:hover {
-			background-color: #1c8cb9 !important;
+			background-color: #5d428c !important;
 		}
 
 		/* Upsell button CSS */
