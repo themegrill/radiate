@@ -132,7 +132,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 
 				<a href="<?php echo esc_url( 'https://demo.themegrill.com/radiate/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'radiate' ); ?></a>
 
-				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'radiate' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/?utm_source=radiate-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'radiate' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/radiate/reviews/?filter=5' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'radiate' ); ?></a>
 			</p> <!-- /.radiate-actions -->
@@ -230,7 +230,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'radiate' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/' ); ?>" target="_blank " class="button button-secondary"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/?utm_source=radiate-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" target="_blank " class="button button-secondary"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
 							</p>
 						</div>
 
@@ -318,7 +318,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'radiate' ); ?></p>
 
 				<div class="btn-wrapper">
-					<a href="<?php echo esc_url( apply_filters( 'radiate_pro_theme_url', 'https://themegrill.com/themes/radiate/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'radiate_pro_theme_url', 'https://themegrill.com/themes/radiate/?utm_source=radiate-free-vs-pro-table&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
 				</div>
 
 			</div> <!-- /.about-wrap -->
