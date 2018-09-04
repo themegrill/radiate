@@ -33,66 +33,6 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	// remove control
 	$wp_customize->remove_control('blogdescription');
 
-	// Theme important links
-	class Radiate_Important_Links extends WP_Customize_Control {
-
-		public $type = "radiate-important-links";
-
-		public function render_content() {
-			//Add Theme instruction, Support Forum, Demo Link, Rating Link
-			$important_links = array(
-			'view-pro' => array(
-				'link' => esc_url('https://themegrill.com/themes/radiate/'),
-				'text' => esc_html__('View Pro', 'radiate'),
-			),
-			'support' => array(
-				'link' => esc_url('https://themegrill.com/support-forum/'),
-				'text' => esc_html__('Support', 'radiate'),
-			),
-			'documentation' => array(
-				'link' => esc_url('https://docs.themegrill.com/radiate/'),
-				'text' => esc_html__('Documentation', 'radiate'),
-			),
-			'demo' => array(
-				'link' => esc_url('https://demo.themegrill.com/radiate/'),
-				'text' => esc_html__('View Demo', 'radiate'),
-			),
-			'rating' => array(
-				'link' => esc_url('https://wordpress.org/support/theme/radiate/reviews/?filter=5'),
-				'text' => esc_html__('Rate this theme', 'radiate'),
-			),
-			);
-			foreach ($important_links as $important_link) {
-				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
-			}
-		}
-	}
-
-	$wp_customize->add_section('radiate_important_links',
-		array(
-			'priority' => 1,
-			'title'    => esc_html__('Radiate Important Links', 'radiate'),
-		)
-	);
-
-	$wp_customize->add_setting('radiate_important_links',
-		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_important_links'
-		)
-	);
-
-	$wp_customize->add_control(
-		new radiate_Important_Links($wp_customize,
-			'important_links',
-			array(
-				'label'    => esc_html__('Important Links', 'radiate'),
-				'section'  => 'radiate_important_links',
-				'settings' => 'radiate_important_links'
-			)
-		)
-	);
-
 	// rename existing section
 	$wp_customize->add_section( 'title_tagline' , array(
 		'title' => __('Site Title', 'radiate' ),
