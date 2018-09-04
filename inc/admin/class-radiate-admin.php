@@ -21,8 +21,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		/**
 		 * Constructor.
 		 */
-		public function __construct()
-		{
+		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 			add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 			add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
@@ -31,18 +30,19 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		/**
 		 * Add admin menu.
 		 */
-		public function admin_menu()
-		{
+		public function admin_menu() {
 			$theme = wp_get_theme( get_template() );
-			$page = add_theme_page( esc_html__( 'About', 'radiate' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'radiate' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'radiate-welcome', array( $this, 'welcome_screen' ) );
+			$page  = add_theme_page( esc_html__( 'About', 'radiate' ) . ' ' . $theme->display( 'Name' ), esc_html__( 'About', 'radiate' ) . ' ' . $theme->display( 'Name' ), 'activate_plugins', 'radiate-welcome', array(
+				$this,
+				'welcome_screen',
+			) );
 			add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
 		}
 
 		/**
 		 * Enqueue styles.
 		 */
-		public function enqueue_styles()
-		{
+		public function enqueue_styles() {
 			global $radiate_version;
 			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/css/admin/welcome.css', array(), $radiate_version );
 		}
@@ -59,8 +59,8 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 				update_option( 'radiate_admin_notice_welcome', 1 );
 
-			// No option? Let run the notice wizard again..
-			} elseif( ! get_option( 'radiate_admin_notice_welcome' ) ) {
+				// No option? Let run the notice wizard again..
+			} elseif ( ! get_option( 'radiate_admin_notice_welcome' ) ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 			}
 		}
@@ -103,8 +103,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		 *
 		 * @access private
 		 */
-		private function intro()
-		{
+		private function intro() {
 			global $radiate_version;
 
 			$theme = wp_get_theme( get_template() );
@@ -114,7 +113,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 			?>
 			<div class="radiate-theme-info">
 				<h1>
-					<?php esc_html_e('About', 'radiate'); ?>
+					<?php esc_html_e( 'About', 'radiate' ); ?>
 					<?php echo $theme->display( 'Name' ); ?>
 					<?php printf( '%s', $major_version ); ?>
 				</h1>
@@ -129,26 +128,43 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 			</div> <!-- /.radiate-theme-info -->
 
 			<p class="radiate-actions">
-				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'radiate' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/?utm_source=radiate-about&utm_medium=theme-info-link&utm_campaign=theme-info' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'radiate' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://demo.themegrill.com/radiate/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'radiate' ); ?></a>
 
-				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'radiate' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/?utm_source=radiate-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'radiate' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/radiate/reviews/?filter=5' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'radiate' ); ?></a>
 			</p> <!-- /.radiate-actions -->
 
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'radiate-welcome' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome' ), 'themes.php' ) ) ); ?>">
+				<a class="nav-tab <?php if ( empty( $_GET['tab'] ) && $_GET['page'] == 'radiate-welcome' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome' ), 'themes.php' ) ) ); ?>">
 					<?php echo $theme->display( 'Name' ); ?>
 				</a>
-				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome', 'tab' => 'supported_plugins' ), 'themes.php' ) ) ); ?>">
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+					'page' => 'radiate-welcome',
+					'tab'  => 'supported_plugins',
+				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Supported Plugins', 'radiate' ); ?>
 				</a>
-				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>">
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+					'page' => 'radiate-welcome',
+					'tab'  => 'free_vs_pro',
+				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Free Vs Pro', 'radiate' ); ?>
 				</a>
-				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome', 'tab' => 'changelog' ), 'themes.php' ) ) ); ?>">
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) {
+					echo 'nav-tab-active';
+				} ?>" href="<?php echo esc_url( admin_url( add_query_arg( array(
+					'page' => 'radiate-welcome',
+					'tab'  => 'changelog',
+				), 'themes.php' ) ) ); ?>">
 					<?php esc_html_e( 'Changelog', 'radiate' ); ?>
 				</a>
 			</h2>
@@ -158,21 +174,19 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		/**
 		 * Welcome screen page
 		 */
-		public function welcome_screen()
-		{
+		public function welcome_screen() {
 			$current_tab = empty( $_GET['tab'] ) ? 'about' : sanitize_title( $_GET['tab'] );
 
 			// Look for a {$current_tab}_screen method.
 			if ( is_callable( array( $this, $current_tab . '_screen' ) ) ) {
-				return $this->{ $current_tab . '_screen' }();
+				return $this->{$current_tab . '_screen'}();
 			}
 
 			// Fallback to about screen.
 			return $this->about_screen();
 		}
 
-		public function about_screen()
-		{
+		public function about_screen() {
 			$theme = wp_get_theme( get_template() );
 			?>
 			<div class="wrap about-wrap">
@@ -182,38 +196,50 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				<div class="changelog point-releases">
 					<div class="under-the-hood two-col">
 						<div class="col">
-		                  <h3><?php esc_html_e( 'Import Demo', 'radiate' ); ?></h3>
-		                  <p><?php esc_html_e( 'Needs ThemeGrill Demo Importer plugin.', 'radiate' ) ?></p>
-		                  <p><a href="<?php echo esc_url( network_admin_url( 'plugin-install.php?tab=search&type=term&s=themegrill-demo-importer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'radiate' ); ?></a></p>
-		               </div>
+							<h3><?php esc_html_e( 'Import Demo', 'radiate' ); ?></h3>
+							<p><?php esc_html_e( 'Needs ThemeGrill Demo Importer plugin.', 'radiate' ) ?></p>
+							<p>
+								<a href="<?php echo esc_url( network_admin_url( 'plugin-install.php?tab=search&type=term&s=themegrill-demo-importer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'radiate' ); ?></a>
+							</p>
+						</div>
 						<div class="col">
 							<h3><?php esc_html_e( 'Theme Customizer', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'radiate' ) ?></p>
-							<p><a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'radiate' ); ?></a></p>
+							<p>
+								<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-secondary"><?php esc_html_e( 'Customize', 'radiate' ); ?></a>
+							</p>
 						</div>
 
 						<div class="col">
 							<h3><?php esc_html_e( 'Documentation', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'radiate' ) ?></p>
-							<p><a href="<?php echo esc_url( 'https://docs.themegrill.com/radiate/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Documentation', 'radiate' ); ?></a></p>
+							<p>
+								<a href="<?php echo esc_url( 'https://docs.themegrill.com/radiate/?utm_source=radiate-about&utm_medium=documentation-link&utm_campaign=documentation' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Documentation', 'radiate' ); ?></a>
+							</p>
 						</div>
 
 						<div class="col">
 							<h3><?php esc_html_e( 'Got theme support question?', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'radiate' ) ?></p>
-							<p><a href="<?php echo esc_url( 'https://themegrill.com/support-forum/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Support Forum', 'radiate' ); ?></a></p>
+							<p>
+								<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/?utm_source=radiate-about&utm_medium=support-forum-link&utm_campaign=support-forum' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Support Forum', 'radiate' ); ?></a>
+							</p>
 						</div>
 
 						<div class="col">
 							<h3><?php esc_html_e( 'Need more features?', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'radiate' ) ?></p>
-							<p><a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/' ); ?>" target="_blank " class="button button-secondary"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a></p>
+							<p>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/radiate/?utm_source=radiate-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" target="_blank " class="button button-secondary"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
+							</p>
 						</div>
 
 						<div class="col">
 							<h3><?php esc_html_e( 'Got sales related question?', 'radiate' ); ?></h3>
 							<p><?php esc_html_e( 'Please send it via our sales contact page.', 'radiate' ) ?></p>
-							<p><a href="<?php echo esc_url( 'https://themegrill.com/contact/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'radiate' ); ?></a></p>
+							<p>
+								<a href="<?php echo esc_url( 'https://themegrill.com/contact/?utm_source=radiate-about&utm_medium=contact-page-link&utm_campaign=contact-page' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'radiate' ); ?></a>
+							</p>
 						</div>
 
 						<div class="col">
@@ -244,8 +270,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		/**
 		 * Output the supported plugins screen.
 		 */
-		public function supported_plugins_screen()
-		{
+		public function supported_plugins_screen() {
 			?>
 			<div class="wrap about-wrap">
 
@@ -253,21 +278,27 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 
 				<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins:', 'radiate' ); ?></p>
 				<ol>
-					<li><a href="<?php echo esc_url('https://wordpress.org/plugins/social-icons/'); ?>" target="_blank"><?php esc_html_e('Social Icons', 'radiate'); ?></a>
-						<?php esc_html_e(' by ThemeGrill', 'radiate'); ?>
-					</li>
-					<li><a href="<?php echo esc_url('https://wordpress.org/plugins/easy-social-sharing/'); ?>" target="_blank"><?php esc_html_e('Easy Social Sharing', 'radiate' ); ?></a>
-						<?php esc_html_e(' by ThemeGrill', 'radiate'); ?>
-					</li>
-					<li><a href="<?php echo esc_url('https://wordpress.org/plugins/contact-form-7/'); ?>" target="_blank"><?php esc_html_e('Contact Form 7', 'radiate'); ?></a></li>
-					<li><a href="<?php echo esc_url('https://wordpress.org/plugins/woocommerce/'); ?>" target="_blank"><?php esc_html_e('WooCommerce', 'radiate'); ?></a></li>
 					<li>
-						<a href="<?php echo esc_url('https://wordpress.org/plugins/polylang/'); ?>" target="_blank"><?php esc_html_e('Polylang', 'radiate'); ?></a>
-						<?php esc_html_e('Fully Compatible in Pro Version', 'radiate'); ?>
+						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/social-icons/' ); ?>" target="_blank"><?php esc_html_e( 'Social Icons', 'radiate' ); ?></a>
+						<?php esc_html_e( ' by ThemeGrill', 'radiate' ); ?>
 					</li>
 					<li>
-						<a href="<?php echo esc_url('https://wpml.org/'); ?>" target="_blank"><?php esc_html_e('WPML', 'radiate'); ?></a>
-						<?php esc_html_e('Fully Compatible in Pro Version', 'radiate'); ?>
+						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/easy-social-sharing/' ); ?>" target="_blank"><?php esc_html_e( 'Easy Social Sharing', 'radiate' ); ?></a>
+						<?php esc_html_e( ' by ThemeGrill', 'radiate' ); ?>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/contact-form-7/' ); ?>" target="_blank"><?php esc_html_e( 'Contact Form 7', 'radiate' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><?php esc_html_e( 'WooCommerce', 'radiate' ); ?></a>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( 'https://wordpress.org/plugins/polylang/' ); ?>" target="_blank"><?php esc_html_e( 'Polylang', 'radiate' ); ?></a>
+						<?php esc_html_e( 'Fully Compatible in Pro Version', 'radiate' ); ?>
+					</li>
+					<li>
+						<a href="<?php echo esc_url( 'https://wpml.org/' ); ?>" target="_blank"><?php esc_html_e( 'WPML', 'radiate' ); ?></a>
+						<?php esc_html_e( 'Fully Compatible in Pro Version', 'radiate' ); ?>
 					</li>
 				</ol>
 
@@ -287,7 +318,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'radiate' ); ?></p>
 
 				<div class="btn-wrapper">
-					<a href="<?php echo esc_url( apply_filters( 'radiate_pro_theme_url', 'https://themegrill.com/themes/radiate/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'radiate_pro_theme_url', 'https://themegrill.com/themes/radiate/?utm_source=radiate-free-vs-pro-table&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View Pro', 'radiate' ); ?></a>
 				</div>
 
 			</div> <!-- /.about-wrap -->
@@ -297,8 +328,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		/**
 		 * Output the changelog screen.
 		 */
-		public function changelog_screen()
-		{
+		public function changelog_screen() {
 			global $wp_filesystem;
 
 			?>
@@ -309,16 +339,16 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				<p class="about-description"><?php esc_html_e( 'View changelog below:', 'radiate' ); ?></p>
 
 				<?php
-					$changelog_file = apply_filters( 'radiate_changelog_file', get_template_directory() . '/readme.txt' );
+				$changelog_file = apply_filters( 'radiate_changelog_file', get_template_directory() . '/readme.txt' );
 
-					// Check if the changelog file exists and is readable.
-					if ( $changelog_file && is_readable( $changelog_file ) ) {
-						WP_Filesystem();
-						$changelog = $wp_filesystem->get_contents( $changelog_file );
-						$changelog_list = $this->parse_changelog( $changelog );
+				// Check if the changelog file exists and is readable.
+				if ( $changelog_file && is_readable( $changelog_file ) ) {
+					WP_Filesystem();
+					$changelog      = $wp_filesystem->get_contents( $changelog_file );
+					$changelog_list = $this->parse_changelog( $changelog );
 
-						echo wp_kses_post( $changelog_list );
-					}
+					echo wp_kses_post( $changelog_list );
+				}
 				?>
 			</div> <!-- /.about-wrap -->
 			<?php
@@ -326,11 +356,12 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 
 		/**
 		 * Parse changelog from readme file.
+		 *
 		 * @param  string $content
+		 *
 		 * @return string
 		 */
-		private function parse_changelog( $content )
-		{
+		private function parse_changelog( $content ) {
 			$matches   = null;
 			$regexp    = '~==\s*CHANGE LOG\s*==(.*)($)~Uis';
 			$changelog = '';
