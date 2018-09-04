@@ -481,18 +481,38 @@ add_action( 'customize_controls_print_footer_scripts', 'radiate_customizer_custo
 function radiate_customizer_custom_scripts() { ?>
 	<style>
 		/* Theme Instructions Panel CSS */
-		li#accordion-section-radiate_important_links h3.accordion-section-title, li#accordion-section-radiate_important_links h3.accordion-section-title:focus {
+		li#accordion-section-radiate_upsell_section h3.accordion-section-title {
 			background-color: #289DCC !important;
-			color: #fff !important;
+			border-left-color: #0e749c !important;
 		}
 
-		li#accordion-section-radiate_important_links h3.accordion-section-title:hover {
-			background-color: #289DCC !important;
-			color: #fff !important;
+		#accordion-section-radiate_upsell_section h3 a:after {
+			content: '\f345';
+			color: #fff;
+			position: absolute;
+			top: 12px;
+			right: 10px;
+			z-index: 1;
+			font: 400 20px/1 dashicons;
+			speak: none;
+			display: block;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-decoration: none!important;
 		}
 
-		li#accordion-section-radiate_important_links h3.accordion-section-title:after {
+		li#accordion-section-radiate_upsell_section h3.accordion-section-title a {
+			display: block;
 			color: #fff !important;
+			text-decoration: none;
+		}
+
+		li#accordion-section-radiate_upsell_section h3.accordion-section-title a:focus {
+			box-shadow: none;
+		}
+
+		li#accordion-section-radiate_upsell_section h3.accordion-section-title:hover {
+			background-color: #1c8cb9 !important;
 		}
 
 		/* Upsell button CSS */
@@ -536,3 +556,4 @@ function radiate_customizer_custom_scripts() { ?>
 	</script>
 	<?php
 }
+
