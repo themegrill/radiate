@@ -66,6 +66,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Update - Screenshot updated as per new wordpress.org guideline
+* Update - Upsell link
 
 = Version 1.2.8 -2018-05-31 =
 * Feature - Added Author Bio display option
