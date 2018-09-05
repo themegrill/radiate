@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Radiate 1.2.8\n"
+"Project-Id-Version: Radiate 1.2.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2018-05-31 06:12:16+00:00\n"
+"POT-Creation-Date: 2018-09-05 10:55:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:37 inc/admin/class-radiate-admin.php:117
+#: inc/admin/class-radiate-admin.php:35 inc/admin/class-radiate-admin.php:116
 msgid "About"
 msgstr ""
 
@@ -188,150 +188,148 @@ msgstr ""
 msgid "Get started with Radiate"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:132
+#: inc/admin/class-radiate-admin.php:131
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:134 inc/customizer.php:58
+#: inc/admin/class-radiate-admin.php:133
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:136
+#: inc/admin/class-radiate-admin.php:135 inc/customizer.php:80
 msgid "View PRO version"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:138 inc/customizer.php:62
+#: inc/admin/class-radiate-admin.php:137
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:146
+#: inc/admin/class-radiate-admin.php:152
 msgid "Supported Plugins"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:149
+#: inc/admin/class-radiate-admin.php:160
 msgid "Free Vs Pro"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:152
+#: inc/admin/class-radiate-admin.php:168
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:185
+#: inc/admin/class-radiate-admin.php:199
 msgid "Import Demo"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:186
+#: inc/admin/class-radiate-admin.php:200
 msgid "Needs ThemeGrill Demo Importer plugin."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:187
+#: inc/admin/class-radiate-admin.php:202
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2717
 msgid "Install"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:190
+#: inc/admin/class-radiate-admin.php:206
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:191
+#: inc/admin/class-radiate-admin.php:207
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:192
+#: inc/admin/class-radiate-admin.php:209
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:196 inc/admin/class-radiate-admin.php:198
-#: inc/customizer.php:54
+#: inc/admin/class-radiate-admin.php:214 inc/admin/class-radiate-admin.php:217
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:197
+#: inc/admin/class-radiate-admin.php:215
 msgid "Please view our documentation page to setup the theme."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:202
+#: inc/admin/class-radiate-admin.php:222
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:203
+#: inc/admin/class-radiate-admin.php:223
 msgid "Please put it in our dedicated support forum."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:204
+#: inc/admin/class-radiate-admin.php:225
 msgid "Support Forum"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:208
+#: inc/admin/class-radiate-admin.php:230
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:209 inc/admin/class-radiate-admin.php:287
+#: inc/admin/class-radiate-admin.php:231 inc/admin/class-radiate-admin.php:318
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:210 inc/admin/class-radiate-admin.php:290
-#: inc/customizer.php:46
+#: inc/admin/class-radiate-admin.php:233 inc/admin/class-radiate-admin.php:321
 msgid "View Pro"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:214
+#: inc/admin/class-radiate-admin.php:238
 msgid "Got sales related question?"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:215
+#: inc/admin/class-radiate-admin.php:239
 msgid "Please send it via our sales contact page."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:216
+#: inc/admin/class-radiate-admin.php:241
 msgid "Contact Page"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:222 inc/admin/class-radiate-admin.php:230
+#: inc/admin/class-radiate-admin.php:248 inc/admin/class-radiate-admin.php:256
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:226
+#: inc/admin/class-radiate-admin.php:252
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:254
+#: inc/admin/class-radiate-admin.php:279
 msgid "This theme recommends following plugins:"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:256
+#: inc/admin/class-radiate-admin.php:282
 msgid "Social Icons"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:257 inc/admin/class-radiate-admin.php:260
+#: inc/admin/class-radiate-admin.php:283 inc/admin/class-radiate-admin.php:287
 msgid " by ThemeGrill"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:259
+#: inc/admin/class-radiate-admin.php:286
 msgid "Easy Social Sharing"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:262
+#: inc/admin/class-radiate-admin.php:290
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:263
+#: inc/admin/class-radiate-admin.php:293
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:265
+#: inc/admin/class-radiate-admin.php:296
 msgid "Polylang"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:266 inc/admin/class-radiate-admin.php:270
+#: inc/admin/class-radiate-admin.php:297 inc/admin/class-radiate-admin.php:301
 msgid "Fully Compatible in Pro Version"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:269
+#: inc/admin/class-radiate-admin.php:300
 msgid "WPML"
 msgstr ""
 
-#: inc/admin/class-radiate-admin.php:309
+#: inc/admin/class-radiate-admin.php:339
 msgid "View changelog below:"
 msgstr ""
 
@@ -339,95 +337,83 @@ msgstr ""
 msgid "Header Image One"
 msgstr ""
 
-#: inc/customizer.php:50
-msgid "Support"
-msgstr ""
-
-#: inc/customizer.php:74
-msgid "Radiate Important Links"
-msgstr ""
-
-#: inc/customizer.php:89
-msgid "Important Links"
-msgstr ""
-
-#: inc/customizer.php:98
+#: inc/customizer.php:90
 msgid "Site Title"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:109
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:142
+#: inc/customizer.php:134
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:162
+#: inc/customizer.php:154
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:165
 msgid "Front Page Featured Section"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:196
 msgid "First featured page"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:204
 msgid "Second featured page"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:212
 msgid "Third featured page"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:222
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:239
 msgid "Check to activate the related posts"
 msgstr ""
 
-#: inc/customizer.php:266
+#: inc/customizer.php:258
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:262
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:263
 msgid "Related Posts By Tags"
 msgstr ""
 
-#: inc/customizer.php:279
+#: inc/customizer.php:271
 msgid "Author Bio"
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:289
 msgid "Check to enable the Author Bio in the single post page."
 msgstr ""
 
-#: inc/customizer.php:307
+#: inc/customizer.php:299
 msgid "Header Search Icon"
 msgstr ""
 
-#: inc/customizer.php:325
+#: inc/customizer.php:317
 msgid "Check to hide Header Search Icon."
 msgstr ""
 
-#: inc/customizer.php:335
+#: inc/customizer.php:327
 msgid "Responsive Menu Style"
 msgstr ""
 
-#: inc/customizer.php:353
+#: inc/customizer.php:345
 msgid "Switch to full width menu style."
 msgstr ""
 
-#: inc/customizer.php:372
+#: inc/customizer.php:364
 msgid "Switch to new responsive menu style."
 msgstr ""
 
@@ -435,7 +421,7 @@ msgstr ""
 msgid "Radiate"
 msgstr ""
 
-#: inc/demo-config.php:29
+#: inc/demo-config.php:26
 msgid "Radiate Pro"
 msgstr ""
 
