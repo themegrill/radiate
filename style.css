@@ -1646,10 +1646,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		margin-top: 0 !important;
 	}
 
-	.header-wrap {
-		position: relative;
-	}
-
 	body.admin-bar .header-wrap {
 		top: 0;
 	}
