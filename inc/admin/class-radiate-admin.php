@@ -122,7 +122,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 					<div class="about-text"><?php echo $theme->display( 'Description' ); ?></div>
 
 					<div class="radiate-screenshot">
-						<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.png'; ?>" />
+						<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.jpg'; ?>" />
 					</div>
 				</div>
 			</div> <!-- /.radiate-theme-info -->
