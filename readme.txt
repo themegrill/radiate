@@ -66,6 +66,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Fix - Gallery padding for Gutenberg
+* Recommend - Zakra theme
 
 = Version 1.2.9 -2018-09-05 =
 * Update - Screenshot updated as per new wordpress.org guideline

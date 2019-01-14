@@ -2,9 +2,9 @@
 /**
  * Radiate functions and definitions
  *
- * @package ThemeGrill
+ * @package    ThemeGrill
  * @subpackage Radiate
- * @since Radiate 1.0
+ * @since      Radiate 1.0
  */
 
 /**
@@ -15,71 +15,75 @@ if ( ! isset( $content_width ) ) {
 }
 
 if ( ! function_exists( 'radiate_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function radiate_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on radiate, use a find and replace
-	 * to change 'radiate' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'radiate', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 * Post thumbail is used for pages that are shown in the featured section of Front page.
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function radiate_setup() {
 
-   // Supporting title tag via add_theme_support (since WordPress 4.1)
-   add_theme_support( 'title-tag' );
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on radiate, use a find and replace
+		 * to change 'radiate' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'radiate', get_template_directory() . '/languages' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'radiate' ),
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 * Post thumbail is used for pages that are shown in the featured section of Front page.
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'radiate_custom_background_args', array(
-		'default-color' => 'EAEAEA',
-		'default-image' => '',
-	) ) );
+		// Supporting title tag via add_theme_support (since WordPress 4.1)
+		add_theme_support( 'title-tag' );
 
-	// Adding excerpt option box for pages as well
-	add_post_type_support( 'page', 'excerpt' );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', 'radiate' ),
+		) );
 
-   // Cropping images to different sizes to be used in the theme
-   add_image_size( 'featured-image-medium', 768, 350, true );
+		// Enable support for Post Formats.
+		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-   /*
-    * Switch default core markup for search form, comment form, and comments
-    * to output valid HTML5.
-    */
-   add_theme_support('html5', array(
-       'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-   ));
+		// Setup the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'radiate_custom_background_args', array(
+			'default-color' => 'EAEAEA',
+			'default-image' => '',
+		) ) );
 
-   // Enable support for WooCommerce
-   add_theme_support( 'woocommerce' );
-   add_theme_support( 'wc-product-gallery-zoom' );
-   add_theme_support( 'wc-product-gallery-lightbox' );
-   add_theme_support( 'wc-product-gallery-slider' );
-}
+		// Adding excerpt option box for pages as well
+		add_post_type_support( 'page', 'excerpt' );
+
+		// Cropping images to different sizes to be used in the theme
+		add_image_size( 'featured-image-medium', 768, 350, true );
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		// Enable support for WooCommerce
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+	}
 endif; // radiate_setup
 add_action( 'after_setup_theme', 'radiate_setup' );
 
@@ -96,12 +100,13 @@ function radiate_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
+
 add_action( 'widgets_init', 'radiate_widgets_init' );
 
 /**
  * Assign the Radiate version to a variable.
  */
-$theme            = wp_get_theme( 'radiate' );
+$theme           = wp_get_theme( 'radiate' );
 $radiate_version = $theme['Version'];
 
 /**
@@ -113,8 +118,8 @@ function radiate_scripts() {
 
 	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
 
-   // Add Genericons, used in the main stylesheet.
-   wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
+	// Add Genericons, used in the main stylesheet.
+	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
 	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -123,7 +128,7 @@ function radiate_scripts() {
 	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), false, true );
 
 	$radiate_header_image_link = get_header_image();
-	wp_localize_script( 'radiate-custom-js', 'radiateScriptParam', array('radiate_image_link'=> $radiate_header_image_link ) );
+	wp_localize_script( 'radiate-custom-js', 'radiateScriptParam', array( 'radiate_image_link' => $radiate_header_image_link ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -133,6 +138,7 @@ function radiate_scripts() {
 	wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
 
 /**
@@ -168,10 +174,11 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
 }
 
 /**
- * Load admin area for the welcome page
+ * Calling in the admin area for the Welcome Page as well as for the new theme notice too.
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-admin.php';
+	require get_template_directory() . '/inc/admin/class-radiate-new-theme-notice.php';
 }
 
 /**
