@@ -64,6 +64,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+
 = Version 1.3.0 -2019-01-14 =
 * Fix - Gallery padding for Gutenberg
 * Recommend - Zakra theme
