@@ -13,6 +13,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function radiate_customize_register( $wp_customize ) {
+	require get_template_directory() . '/inc/customize-controls/class-radiate-additional-control.php';
+	require get_template_directory() . '/inc/customize-controls/class-radiate-upsell-section.php';
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -32,43 +35,9 @@ add_action( 'customize_preview_init', 'radiate_customize_preview_js' );
 /*****************************************************************************************/
 
 function radiate_register_theme_customizer( $wp_customize ) {
+
 	// remove control
 	$wp_customize->remove_control( 'blogdescription' );
-
-	/**
-	 * Class to include upsell link campaign for theme.
-	 *
-	 * Class RADIATE_Upsell_Section
-	 */
-	class RADIATE_Upsell_Section extends WP_Customize_Section {
-		public $type = 'radiate-upsell-section';
-		public $url  = '';
-		public $id   = '';
-
-		/**
-		 * Gather the parameters passed to client JavaScript via JSON.
-		 *
-		 * @return array The array to be exported to the client as JSON.
-		 */
-		public function json() {
-			$json        = parent::json();
-			$json['url'] = esc_url( $this->url );
-			$json['id']  = $this->id;
-
-			return $json;
-		}
-
-		/**
-		 * An Underscore (JS) template for rendering this section.
-		 */
-		protected function render_template() {
-			?>
-			<li id="accordion-section-{{ data.id }}" class="radiate-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
-				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
-			</li>
-			<?php
-		}
-	}
 
 // Register `RADIATE_Upsell_Section` type section.
 	$wp_customize->register_section_type( 'RADIATE_Upsell_Section' );
@@ -114,19 +83,6 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	);
 
 	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
-
-		class RADIATE_ADDITIONAL_Control extends WP_Customize_Control {
-			public $type = 'textarea';
-
-			public function render_content() {
-				?>
-				<label>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-				</label>
-				<?php
-			}
-		}
 
 		$wp_customize->add_section(
 			'radiate_custom_css_section',
@@ -498,7 +454,7 @@ function radiate_customizer_custom_scripts() { ?>
 			display: block;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			text-decoration: none!important;
+			text-decoration: none !important;
 		}
 
 		li#accordion-section-radiate_upsell_section h3.accordion-section-title a {
