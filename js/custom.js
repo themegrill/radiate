@@ -8,6 +8,11 @@ jQuery(document).ready(function() {
 
 	jQuery('.header-search-icon').click(function(){
 		jQuery('#masthead .search-form').toggle('slow');
+
+		// focus after some time to fix conflict with toggleClass
+		setTimeout( function () {
+			jQuery( '#masthead .search-form input' ).focus();
+		}, 200 );
 	});
 
 	jQuery(window).bind('scroll', function() {
