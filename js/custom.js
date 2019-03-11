@@ -30,6 +30,14 @@ jQuery(document).ready(function() {
 			}
 		} );
 
+		jQuery( document ).on( 'click', function( e ) {
+			var container = jQuery( '.search-form, .header-search-icon, .search-form input' );
+			if ( ! container.is( e.target ) ) {
+				hideSearchForm();
+			}
+
+		} );
+
 	});
 
 	jQuery(window).bind('scroll', function() {
