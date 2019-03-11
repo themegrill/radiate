@@ -6,6 +6,9 @@ jQuery(document).ready(function() {
 		jQuery('body').css({ 'margin-top': divheight });
 	}
 
+	var hideSearchForm = function() {
+		jQuery( '#masthead .search-form' ).hide( 'slow' );
+	};
 	jQuery('.header-search-icon').click(function(){
 		jQuery('#masthead .search-form').toggle('slow');
 
@@ -13,6 +16,20 @@ jQuery(document).ready(function() {
 		setTimeout( function () {
 			jQuery( '#masthead .search-form input' ).focus();
 		}, 200 );
+
+		// For esc key press.
+		jQuery( document ).on( 'keyup', function ( e ) {
+
+			// on esc key press.
+			if ( 27 === e.keyCode ) {
+				// if search box is opened
+				if ( jQuery( '#masthead' ).has( '.search-form' ) ) {
+					hideSearchForm();
+				}
+
+			}
+		} );
+
 	});
 
 	jQuery(window).bind('scroll', function() {
