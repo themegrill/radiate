@@ -18,6 +18,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+
 <div id="parallax-bg">
 	<?php if ( get_header_image() && function_exists( 'the_custom_header_markup' ) && is_front_page() && has_header_video() ) :
 		the_custom_header_markup();
