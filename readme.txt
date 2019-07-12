@@ -66,7 +66,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
-* Tweak - separate customize control class via different file.
+* Tweak - Separate customize control class via different file.
+* Tweak - Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
+* Remove - Removed dashboard message to align with the theme review guidelines
 
 = Version 1.3.0 -2019-01-16 =
 * Fix - Gallery padding for Gutenberg
