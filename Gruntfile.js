@@ -71,7 +71,7 @@ module.exports = function( grunt ){
 		// Compress files and folders.
 		compress: {
 			options: {
-				archive: 'radiate.zip'
+				archive: 'dist/radiate.zip'
 			},
 			files: {
 				src: [
