@@ -31,6 +31,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 	endif; ?>
 </div>
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'radiate' ); ?></a>
+
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-wrap clearfix">
