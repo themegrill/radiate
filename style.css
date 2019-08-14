@@ -695,7 +695,7 @@ img.header-image {
 	color: #ffffff;
 }
 
-.main-navigation ul li.focus >ul{
+.main-navigation ul li.focus >ul {
 	display: block;
 }
 
@@ -707,19 +707,27 @@ img.header-image {
 .main-navigation ul li:hover ul ul,
 .main-navigation ul ul li:hover ul ul,
 .main-navigation ul ul ul li:hover ul ul,
-.main-navigation ul ul ul ul li:hover ul ul {
-	display: none;
+.main-navigation ul ul ul ul li:hover ul ul,
+.main-navigation ul li.focus ul ul,
+.main-navigation ul ul li.focus ul ul,
+.main-navigation ul ul ul li.focus ul ul,
+.main-navigation ul ul ul ul li.focus ul ul{
+	left: -99999px;
 	z-index: 9999;
 }
 .main-navigation ul li:hover ul,
 .main-navigation ul ul li:hover ul,
 .main-navigation ul ul ul li:hover ul,
 .main-navigation ul ul ul ul li:hover ul,
-.main-navigation ul ul ul ul ul li:hover ul {
-	display: block;
+.main-navigation ul ul ul ul ul li:hover ul,
+.main-navigation ul li.focus ul,
+.main-navigation ul ul li.focus ul,
+.main-navigation ul ul ul li.focus ul,
+.main-navigation ul ul ul ul li.focus ul,
+.main-navigation ul ul ul ul ul li.focus ul {
+	left: auto;
 }
 .main-navigation ul ul {
-	display: none;
 	float: left;
 	left: 0;
 	position: absolute;
@@ -747,8 +755,14 @@ img.header-image {
 	color: #ffffff;
 }
 .main-navigation ul ul ul {
-	left: 100%;
+	left: -99999px;
 	top: 0;
+}
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul,
+.main-navigation ul ul ul li:hover > ul,
+.main-navigation ul ul ul li.focus > ul {
+	left: 100%;
 }
 .main-navigation ul ul a {
 	min-width: 200px;
