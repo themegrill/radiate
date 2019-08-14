@@ -56,7 +56,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h4 class="menu-toggle"></h4>
-				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'radiate' ); ?></a>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-primary-container' ) ); ?>
 			</nav><!-- #site-navigation -->
