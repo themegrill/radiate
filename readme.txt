@@ -67,6 +67,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 = Version TBD =
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
+* Tweak - Modify menu CSS for keyboard accessibility.
 
 = Version 1.3.1 -2019-07-12 =
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
