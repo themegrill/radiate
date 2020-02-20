@@ -178,6 +178,7 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-admin.php';
+	require get_template_directory() . '/inc/admin/class-radiate-tdi-notice.php';
 }
 
 /**
