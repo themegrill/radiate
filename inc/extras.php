@@ -13,12 +13,15 @@
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
  * @param array $args Configuration arguments.
+ *
  * @return array
  */
 function radiate_page_menu_args( $args ) {
 	$args['show_home'] = true;
+
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'radiate_page_menu_args' );
 
 /**
@@ -30,12 +33,13 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  * Setting the comment section for pages and custom post type as off by default
  */
 function radiate_default_comments_off( $data ) {
-    if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {
-        $data['comment_status'] = 0;
-    }
+	if ( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {
+		$data['comment_status'] = 0;
+	}
 
-    return $data;
+	return $data;
 }
+
 add_filter( 'wp_insert_post_data', 'radiate_default_comments_off' );
 
 
@@ -85,6 +89,7 @@ if ( ! function_exists( 'radiate_related_posts_function' ) ) {
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ *
  * @return array
  */
 function radiate_body_classes( $classes ) {
@@ -94,43 +99,58 @@ function radiate_body_classes( $classes ) {
 	}
 
 	// New Menu Design
-	if ( get_theme_mod( 'radiate_new_menu_enable', '0' ) == 1) {
+	if ( get_theme_mod( 'radiate_new_menu_enable', '0' ) == 1 ) {
 		$classes[] = 'full-width-menu';
 	}
 
 	// Better Responsive Menu Design
-	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == 1) {
+	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == 1 ) {
 		$classes[] = 'better-responsive-menu';
 	}
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'radiate_body_classes' );
 
-add_action('wp_head', 'radiate_internal_css', 100);
+add_action( 'wp_head', 'radiate_internal_css', 100 );
 /**
  * Hooks the Custom Internal CSS to head section
  */
 function radiate_internal_css() {
 	if ( get_header_image() ) :
 		$header_image_height = get_custom_header()->height;
-		if ( is_user_logged_in() ) { $height = $header_image_height - 32; }
-		else { $height = $header_image_height; }
+		if ( is_user_logged_in() ) {
+			$height = $header_image_height - 32;
+		} else {
+			$height = $header_image_height;
+		}
 		$heightsmall = $height - 68;
 
 		$header = get_header_image();
 
-		$header_image = "background-image: url('$header');";
-		$header_repeat = " background-repeat: repeat-x;";
-		$header_position = " background-position: center top;";
-		$header_attachment = " background-attachment: scroll;";
+		$header_image       = "background-image: url('$header');";
+		$header_repeat      = " background-repeat: repeat-x;";
+		$header_position    = " background-position: center top;";
+		$header_attachment  = " background-attachment: scroll;";
 		$header_image_style = $header_image . $header_repeat . $header_position . $header_attachment;
 		?>
 		<style type="text/css" id="custom-header-css">
-		#parallax-bg { <?php echo trim( $header_image_style ); ?> } #masthead { margin-bottom: <?php echo $height; ?>px; }
-		@media only screen and (max-width: 600px) { #masthead { margin-bottom: <?php echo $heightsmall; ?>px; }  }
+			#parallax-bg {
+			<?php echo trim( $header_image_style ); ?>
+			}
+
+			#masthead {
+				margin-bottom: <?php echo $height; ?>px;
+			}
+
+			@media only screen and (max-width: 600px) {
+				#masthead {
+					margin-bottom: <?php echo $heightsmall; ?>px;
+				}
+			}
 		</style>
-		<?php
+	<?php
 	endif;
 
 	if ( get_background_image() || get_background_color() ) :
@@ -139,52 +159,61 @@ function radiate_internal_css() {
 
 		$style = $color ? "background-color: #$color;" : '#EAEAEA';
 
-			if ( $image ) {
-				$image = " background-image: url('$image');";
+		if ( $image ) {
+			$image = " background-image: url('$image');";
 
-				$repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
-				if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-					$repeat = 'repeat';
-				$repeat = " background-repeat: $repeat;";
-
-				$position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
-				if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
-					$position = 'left';
-				$position = " background-position: top $position;";
-
-				$attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
-				if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-					$attachment = 'scroll';
-				$attachment = " background-attachment: $attachment;";
-
-				$style .= $image . $repeat . $position . $attachment;
+			$repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
+			if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
+				$repeat = 'repeat';
 			}
+			$repeat = " background-repeat: $repeat;";
+
+			$position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
+			if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) ) {
+				$position = 'left';
+			}
+			$position = " background-position: top $position;";
+
+			$attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
+			if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
+				$attachment = 'scroll';
+			}
+			$attachment = " background-attachment: $attachment;";
+
+			$style .= $image . $repeat . $position . $attachment;
+		}
 		?>
 		<style type="text/css" id="custom-background-css">
-		body.custom-background { background: none !important; } #content { <?php echo trim( $style ); ?> }
+			body.custom-background {
+				background: none !important;
+			}
+
+			#content {
+			<?php echo trim( $style ); ?>
+			}
 		</style>
-		<?php
+	<?php
 	endif;
 }
 
 /**
  * Making the theme Woocommrece compatible
  */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
-add_action('woocommerce_before_main_content', 'radiate_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'radiate_wrapper_end', 10);
+add_action( 'woocommerce_before_main_content', 'radiate_wrapper_start', 10 );
+add_action( 'woocommerce_after_main_content', 'radiate_wrapper_end', 10 );
 
 function radiate_wrapper_start() {
-  echo '<div id="primary">';
+	echo '<div id="primary">';
 }
 
 function radiate_wrapper_end() {
-  echo '</div>';
+	echo '</div>';
 }
 
 /**
@@ -196,7 +225,7 @@ function radiate_custom_css_migrate() {
 		$custom_css = get_theme_mod( 'radiate_custom_css' );
 		if ( $custom_css ) {
 			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return = wp_update_custom_css_post( $core_css . $custom_css );
+			$return   = wp_update_custom_css_post( $core_css . $custom_css );
 			if ( ! is_wp_error( $return ) ) {
 				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
 				remove_theme_mod( 'radiate_custom_css' );
@@ -205,6 +234,7 @@ function radiate_custom_css_migrate() {
 	}
 
 }
+
 add_action( 'after_setup_theme', 'radiate_custom_css_migrate' );
 
 if ( ! function_exists( 'radiate_pingback_header' ) ) :
@@ -221,3 +251,26 @@ if ( ! function_exists( 'radiate_pingback_header' ) ) :
 endif;
 
 add_action( 'wp_head', 'radiate_pingback_header' );
+
+/**
+ * Compare user's current version of plugin.
+ */
+if ( ! function_exists( 'radiate_plugin_version_compare' ) ) {
+	function radiate_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		$installed_plugins = get_plugins();
+
+		// Plugin not installed.
+		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
+			return false;
+		}
+
+		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+
+		return version_compare( $tdi_user_version, $version_to_compare, '<' );
+	}
+}
