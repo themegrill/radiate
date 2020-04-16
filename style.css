@@ -1871,8 +1871,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	.main-small-navigation ul {
 		overflow: auto;
 		max-height: 80vh;
-		width: 200px;
-		margin-left: -134px;
+    	max-height: 80vh;
+    	position: absolute;
+    	top: 100%;
+    	width: 100%;
+    	left: 0;
 	}
 
 	.full-width-menu .main-small-navigation ul.menunav-menu,
