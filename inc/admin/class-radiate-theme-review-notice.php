@@ -4,7 +4,7 @@
  *
  * @author  ThemeGrill
  * @package Radiate
- * @since   1.4.6
+ * @since   1.3.3
  */
 
 // Exit if accessed directly.
@@ -37,7 +37,6 @@ class Radiate_Theme_Review_Notice {
 
 		// Set the installed time in `radiate_theme_installed_time` option table.
 		$option = get_option( 'radiate_theme_installed_time' );
-
 
 		if ( ! $option ) {
 			update_option( 'radiate_theme_installed_time', time() );
