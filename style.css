@@ -1857,10 +1857,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	.main-small-navigation ul {
 		width: 100%;
 		display: inline-block;
+		margin-left: 0;
 	}
 
 	.main-small-navigation ul ul {
 		margin-left: 0;
+		position: relative;
 	}
 
 	.tg-one-third {
@@ -1870,9 +1872,8 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 	.main-small-navigation ul {
 		overflow: auto;
-		max-height: 80vh;
-    	max-height: 80vh;
     	position: absolute;
+    	max-height: 80vh;
     	top: 100%;
     	width: 100%;
     	left: 0;
