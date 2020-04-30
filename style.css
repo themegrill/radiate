@@ -763,7 +763,7 @@ img.header-image {
 	position: relative;
 	font-size: 18px;
 	font-size: 1.8rem;
-	line-height: 3.5;
+	line-height: 64px;
 	border-left: 1px solid #E1E4E6;
 }
 
@@ -1857,10 +1857,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	.main-small-navigation ul {
 		width: 100%;
 		display: inline-block;
+		margin-left: 0;
 	}
 
 	.main-small-navigation ul ul {
 		margin-left: 0;
+		position: relative;
 	}
 
 	.tg-one-third {
@@ -1870,9 +1872,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 	.main-small-navigation ul {
 		overflow: auto;
-		max-height: 80vh;
-		width: 200px;
-		margin-left: -134px;
+    	position: absolute;
+    	max-height: 80vh;
+    	top: 100%;
+    	width: 100%;
+    	left: 0;
 	}
 
 	.full-width-menu .main-small-navigation ul.menunav-menu,

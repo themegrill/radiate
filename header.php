@@ -57,7 +57,15 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h4 class="menu-toggle"></h4>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-primary-container' ) ); ?>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'menu_class'      => 'clearfix ',
+						'container_class' => 'menu-primary-container'
+					)
+				); 
+				?>
 			</nav><!-- #site-navigation -->
 		</div><!-- .inner-wrap header-wrap -->
 	</header><!-- #masthead -->
