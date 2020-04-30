@@ -65,7 +65,8 @@ If you want to translate this theme to your language, Please visit:- https://tra
 
 == CHANGE LOG ==
 = Version TBD =
-* Fix - Menu not accessible on small devices. 
+* Fix   - Menu not accessible on small devices.
+* Tweak - Add review notice message.
 
 = Version 1.3.2 -2020-02-20 =
 * Tweak - Update `screen-reader-text` CSS.
