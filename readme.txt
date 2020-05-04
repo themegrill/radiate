@@ -64,7 +64,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version TBD =
+= Version 1.3.3 -2020-05-04 =
 * Fix   - Menu not accessible on small devices.
 * Tweak - Add review notice message.
 
