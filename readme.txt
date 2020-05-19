@@ -66,6 +66,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Tweak - Added new required header fields for style.css.
+
 = Version 1.3.3 -2020-05-04 =
 * Fix   - Menu not accessible on small devices.
 * Tweak - Add review notice message.
