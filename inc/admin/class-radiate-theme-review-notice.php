@@ -75,9 +75,7 @@ class Radiate_Theme_Review_Notice {
 			</p>
 
 			<div class="links">
-				<a href="https://wordpress.org/support/theme/radiate/reviews/?filter=5#new-post" class="btn
-				button-primary"
-				   target="_blank">
+				<a href="https://wordpress.org/support/theme/radiate/reviews/?filter=5#new-post" class="btn button-primary" target="_blank">
 					<span class="dashicons dashicons-thumbs-up"></span>
 					<span><?php esc_html_e( 'Sure', 'radiate' ); ?></span>
 				</a>
@@ -92,8 +90,7 @@ class Radiate_Theme_Review_Notice {
 					<span><?php esc_html_e( 'I already did', 'radiate' ); ?></span>
 				</a>
 
-				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/radiate/' ); ?>" class="btn
-				button-secondary" target="_blank">
+				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/radiate/' ); ?>" class="btn button-secondary" target="_blank">
 					<span class="dashicons dashicons-edit"></span>
 					<span><?php esc_html_e( 'Got theme support question?', 'radiate' ); ?></span>
 				</a>
