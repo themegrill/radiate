@@ -107,6 +107,7 @@ add_action( 'widgets_init', 'radiate_widgets_init' );
  * Assign the Radiate version to a variable.
  */
 $radiate_theme = wp_get_theme( 'radiate' );
+
 define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
 
 /**
