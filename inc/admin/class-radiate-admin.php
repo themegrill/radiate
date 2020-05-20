@@ -58,14 +58,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 					'welcome_screen',
 				)
 			);
-			add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_styles' ) );
-		}
-
-		/**
-		 * Enqueue styles.
-		 */
-		public function enqueue_styles() {
-			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), RADIATE_THEME_VERSION );
+			add_action( 'admin_print_styles-' . $page, array( $this, 'enqueue_scripts' ) );
 		}
 
 
