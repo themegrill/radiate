@@ -181,6 +181,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-tdi-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-radiate-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-theme-review-notice.php';
 }
 
