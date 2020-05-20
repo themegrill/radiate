@@ -23,6 +23,24 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		}
+
+		/**
+		 * Localize array for import button AJAX request.
+		 */
+		public function enqueue_scripts() {
+			wp_enqueue_style( 'radiate-admin-style', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), SUFFICE_THEME_VERSION );
+
+			wp_enqueue_script( 'radiate-plugin-install-helper', get_template_directory_uri() . '/inc/admin/js/plugin-handle.js', array( 'jquery' ), SUFFICE_THEME_VERSION, true );
+
+			$welcome_data = array(
+				'uri'      => esc_url( admin_url( '/themes.php?page=demo-importer&browse=all&radiate-hide-notice=welcome' ) ),
+				'btn_text' => esc_html__( 'Processing...', 'radiate' ),
+				'nonce'    => wp_create_nonce( 'radiate_demo_import_nonce' ),
+			);
+
+			wp_localize_script( 'radiate-plugin-install-helper', 'radiateRedirectDemoPage', $welcome_data );
 		}
 
 		/**
