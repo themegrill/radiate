@@ -47,8 +47,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		 * Enqueue styles.
 		 */
 		public function enqueue_styles() {
-			global $radiate_version;
-			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), $radiate_version );
+			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), RADIATE_THEME_VERSION );
 		}
 
 
@@ -58,12 +57,11 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		 * @access private
 		 */
 		private function intro() {
-			global $radiate_version;
 
 			$theme = wp_get_theme( get_template() );
 
 			// Drop minor version if 0
-			$major_version = substr( $radiate_version, 0, 3 );
+			$major_version = substr( RADIATE_THEME_VERSION, 0, 3 );
 			?>
 			<div class="radiate-theme-info">
 				<h1>
