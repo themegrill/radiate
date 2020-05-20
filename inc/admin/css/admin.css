@@ -183,6 +183,34 @@ table tr .btn-wrapper .button:hover {
 }
 
 /**
+ * Notices.
+ */
+.radiate-notice {
+	position: relative;
+	padding: 6px 40px 6px 12px;
+}
+
+.radiate-notice .links {
+	margin: 0.5em 0;
+}
+
+.radiate-notice .links a {
+	margin: 2px;
+}
+
+.radiate-notice .links a > span {
+	vertical-align: middle;
+}
+
+.radiate-notice .notice-text .coupon-code {
+	display: inline-block;
+}
+
+.radiate-notice .notice-dismiss {
+	text-decoration: none;
+}
+
+/**
  * Welcome notice.
  */
 .radiate-message__content {
