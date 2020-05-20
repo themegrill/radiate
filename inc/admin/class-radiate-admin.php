@@ -48,7 +48,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 		 */
 		public function enqueue_styles() {
 			global $radiate_version;
-			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/css/admin/welcome.css', array(), $radiate_version );
+			wp_enqueue_style( 'radiate-welcome', get_template_directory_uri() . '/inc/admin/css/admin.css', array(), $radiate_version );
 		}
 
 
@@ -92,7 +92,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 			</p> <!-- /.radiate-actions -->
 
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( empty( $_GET['tab'] ) && $_GET['page'] == 'radiate-welcome' ) {
 					echo 'nav-tab-active';
@@ -101,7 +101,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'radiate-welcome' ), 'themes.php' ) ) ); ?>">
 					<?php echo $theme->display( 'Name' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				">
 					<?php esc_html_e( 'Supported Plugins', 'radiate' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
 					echo 'nav-tab-active';
@@ -147,7 +147,7 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 				">
 					<?php esc_html_e( 'Free Vs Pro', 'radiate' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) {
 					echo 'nav-tab-active';
