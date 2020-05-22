@@ -106,8 +106,9 @@ add_action( 'widgets_init', 'radiate_widgets_init' );
 /**
  * Assign the Radiate version to a variable.
  */
-$theme           = wp_get_theme( 'radiate' );
-$radiate_version = $theme['Version'];
+$radiate_theme = wp_get_theme( 'radiate' );
+
+define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
 
 /**
  * Enqueue scripts and styles.
@@ -179,6 +180,9 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-admin.php';
 	require get_template_directory() . '/inc/admin/class-radiate-tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-radiate-notice.php';
+	require get_template_directory() . '/inc/admin/class-radiate-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-radiate-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-theme-review-notice.php';
 }
 
