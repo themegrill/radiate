@@ -1,38 +1,57 @@
 <?php
-/**
- * Class to include upsell link campaign for theme.
- *
- * Class RADIATE_Upsell_Section
- *
- * @since 1.3.1
- */
 
-class RADIATE_Upsell_Section extends WP_Customize_Section {
-	public $type = 'radiate-upsell-section';
-	public $url  = '';
-	public $id   = '';
+class Radiate_Upsell_Custom_Control extends WP_Customize_Control {
 
-	/**
-	 * Gather the parameters passed to client JavaScript via JSON.
-	 *
-	 * @return array The array to be exported to the client as JSON.
-	 */
-	public function json() {
-		$json        = parent::json();
-		$json['url'] = esc_url( $this->url );
-		$json['id']  = $this->id;
+	public $type = "radiate-upsell-control";
 
-		return $json;
+	public function enqueue() {
+		wp_enqueue_style( 'radiate-customizer', get_template_directory_uri() . '/inc/customize-controls/assets/css/customizer-upsell.css', array(), SPACIOUS_THEME_VERSION );
 	}
 
-	/**
-	 * An Underscore (JS) template for rendering this section.
-	 */
-	protected function render_template() {
+	public function render_content() {
 		?>
-		<li id="accordion-section-{{ data.id }}" class="radiate-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
-			<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
-		</li>
+		<div class="radiate-upsell-wrapper">
+			<ul class="upsell-features">
+				<h3 class="upsell-heading"><?php esc_html_e( 'More Awesome Features', 'radiate' ); ?></h3>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Header Options', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Typography Options', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Block, Grid Blog', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '10+ Footer Layouts', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( '100+ Customizer Options', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Front Page Options', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'More Color Options', 'radiate' ); ?>
+				</li>
+			</ul>
+
+			<div class="launch-offer">
+				<?php
+				printf(
+				/* translators: %1$s discount coupon code., %2$s discount percentage */
+					esc_html__( 'Use the coupon code %1$s to get %2$s discount (limited time offer). Enjoy!', 'radiate' ),
+					'<span class="coupon-code">save10</span>',
+					'10%'
+				);
+				?>
+			</div>
+		</div> <!-- /.radiate-upsell-wrapper -->
+
+		<a class="upsell-cta" target="_blank"
+		   href="<?php echo esc_url( 'https://themegrill.com/radiate-pricing/?utm_source=radiate-customizer&utm_medium=view-pricing-link&utm_campaign=upgrade' ); ?>"><?php esc_html_e( 'View Pricing', 'radiate' ); ?></a>
 		<?php
 	}
+
 }
+
