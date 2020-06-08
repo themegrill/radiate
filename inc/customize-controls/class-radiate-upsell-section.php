@@ -17,22 +17,22 @@ class Radiate_Upsell_Custom_Control extends WP_Customize_Control {
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Header Options', 'radiate' ); ?>
 				</li>
 				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Footer Options', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'More Blog Layout', 'radiate' ); ?>
+				</li>
+				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Typography Options', 'radiate' ); ?>
-				</li>
-				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Block, Grid Blog', 'radiate' ); ?>
-				</li>
-				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( '10+ Footer Layouts', 'radiate' ); ?>
 				</li>
 				<li class="upsell-feature"><span
 						class="dashicons dashicons-yes"></span><?php esc_html_e( '100+ Customizer Options', 'radiate' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Advanced Front Page Options', 'radiate' ); ?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'More WooCommerce Features', 'radiate' ); ?>
 				</li>
 				<li class="upsell-feature"><span
-						class="dashicons dashicons-yes"></span><?php esc_html_e( 'More Color Options', 'radiate' ); ?>
+						class="dashicons dashicons-yes"></span><?php esc_html_e( 'Page Settings', 'radiate' ); ?>
 				</li>
 			</ul>
 
