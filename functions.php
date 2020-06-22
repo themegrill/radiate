@@ -78,6 +78,15 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 			'caption',
 		) );
 
+		// Gutenberg wide layout support.
+		add_theme_support( 'align-wide' );
+
+		// Gutenberg block styles support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
+
 		// Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-zoom' );
@@ -117,8 +126,6 @@ function radiate_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
-
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
@@ -141,6 +148,16 @@ function radiate_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
+
+/**
+ * Enqueue Google fonts and editor styles.
+ */
+function radiate_block_editor_styles() {
+	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
+	wp_enqueue_style( 'spacious-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
 
 /**
  * Implement the Custom Header feature.
