@@ -1,0 +1,15 @@
+/* Basic Block Editor CSS */
+.editor-styles-wrapper {
+	font-family: 'Merriweather', Georgia, serif;
+	font-weight: 300;
+	font-style: normal;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: #444444;
+}
+
+.editor-styles-wrapper > * {
+	font-family: 'Merriweather', Georgia, serif;
+	color: #444444;
+}
