@@ -43,6 +43,15 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		// Gutenberg wide layout support.
+		add_theme_support( 'align-wide' );
+
+		// Gutenberg block layout support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg editor support.
+		add_theme_support( 'responsive-embeds' );
+
 		// Supporting title tag via add_theme_support (since WordPress 4.1)
 		add_theme_support( 'title-tag' );
 
@@ -117,8 +126,6 @@ function radiate_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
-
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
@@ -141,6 +148,17 @@ function radiate_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
+
+/**
+ * Enqueue Google fonts and editor styles.
+ */
+function radiate_block_editor_styles() {
+	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300' );
+	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
+
 
 /**
  * Implement the Custom Header feature.
