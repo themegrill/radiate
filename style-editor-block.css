@@ -377,15 +377,6 @@ textarea {
 	color: #632E9B;
 	text-decoration: none;
 }
-
-.editor-styles-wrapper a:visited {
-}
-
-.editor-styles-wrapper a:hover,
-.editor-styles-wrapper a:focus,
-.editor-styles-wrapper a:active {
-}
-
 /* Alignment */
 .editor-styles-wrapper .alignleft {
 	display: inline;
@@ -442,24 +433,6 @@ textarea {
 .editor-styles-wrapper .wp-caption .wp-caption-text {
 	margin: 8px 0;
 	margin: 0.8075rem 0;
-}
-
-.editor-styles-wrapper .site-main .gallery {
-}
-
-.editor-styles-wrapper .gallery-caption {
-}
-
-.editor-styles-wrapper .site-main .gallery a img {
-}
-
-.editor-styles-wrapper .site-main .gallery dd {
-}
-
-.editor-styles-wrapper .site-main .gallery-columns-4 .gallery-item {
-}
-
-.editor-styles-wrapper .site-main .gallery-columns-4 .gallery-item img {
 }
 
 /* =WordPress Gallery Support
