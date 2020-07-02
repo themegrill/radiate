@@ -1255,6 +1255,16 @@ img.header-image {
 ul.wp-block-gallery.columns-3 {
 	padding: 0;
 }
+/* Gutenberg Blocks Layout.
+--------------------------------------------------------------*/
+.wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
+.wp-block-social-links.alignleft,
+.wp-block-social-links.alignright,
+.wp-block-social-links.aligncenter {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
 
 /* =Navigation
 ----------------------------------------------- */
@@ -1273,6 +1283,20 @@ ul.wp-block-gallery.columns-3 {
 	float: right;
 	text-align: right;
 	max-width: 48%;
+}
+
+.no-sidebar-full-width #primary .entry-content > .alignfull,
+.no-sidebar #primary .entry-content > .alignfull {
+margin-left: calc(50% - 50vw);
+margin-right: calc(50% - 50vw);
+max-width: unset;
+}
+.no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover-image, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover, .no-sidebar-full-width #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover-image,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover,
+.no-sidebar #primary .entry-content > .alignfull.wp-block-cover-image {
+width: unset;
 }
 
 /* =Comments
@@ -1770,6 +1794,13 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 /* =Responsive Structure
 ----------------------------------------------- */
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+	.no-sidebar #primary .entry-content > .alignfull {
+	   margin-left: -100px;
+	   margin-right: -100px;
+	}
+ }
+
 @media screen and (max-width: 1308px) {
 	#page {
 		width: 100%;
