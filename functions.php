@@ -162,21 +162,13 @@ add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
  * Enqueue Google fonts and editor styles.
  */
 function radiate_block_editor_styles() {
-<<<<<<< HEAD
 	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300' );
 	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
-=======
-	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
-	wp_enqueue_style( 'spacious-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
->>>>>>> 539bf064143e9d52d5b3f5f672dcc66b466e3f74
 }
 
 add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 539bf064143e9d52d5b3f5f672dcc66b466e3f74
 /**
  * Implement the Custom Header feature.
  */
