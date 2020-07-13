@@ -188,7 +188,7 @@ h6 {
 	line-height: 25px;
 }
 
-.wp-block-separator hr {
+hr, .wp-block-separator hr {
 	background-color: #eaeaea;
 	border: 0;
 	height: 1px;
@@ -255,7 +255,9 @@ i {
 	font-style: italic;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote,
+.wp-block-quote.is-style-large {
 	-moz-border-bottom-colors: none;
 	-moz-border-left-colors: none;
 	-moz-border-right-colors: none;
@@ -269,7 +271,19 @@ blockquote {
 	padding: 20px 20px 5px;
 }
 
-blockquote cite {
+.wp-block-quote.has-text-align-right {
+	border-right: 3px solid  #632E9B;
+	border-left: 1px solid #EAEAEA;
+}
+
+.wp-block-quote.has-text-align-right {
+	border: 1px solid #EAEAEA;
+}
+
+blockquote cite,
+.wp-block-quote cite,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.has-text-align-right cite {
 	color: #333333;
 	font: 300 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	letter-spacing: 1px;
