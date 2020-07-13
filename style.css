@@ -1305,7 +1305,7 @@ margin-left: calc(50% - 50vw);
 margin-right: calc(50% - 50vw);
 max-width: unset;
 }
-.full-width #primary .entry-content > .alignfull.wp-block-cover, 
+.full-width #primary .entry-content > .alignfull.wp-block-cover,
 .full-width #primary .entry-content > .alignfull.wp-block-cover-image {
 width: unset;
 }
@@ -1805,13 +1805,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 /* =Responsive Structure
 ----------------------------------------------- */
-@media screen and (max-width: 1400px) and (min-width: 1200px) {
-	.no-sidebar #primary .entry-content > .alignfull {
-	   margin-left: -100px;
-	   margin-right: -100px;
-	}
- }
-
 @media screen and (max-width: 1308px) {
 	#page {
 		width: 100%;
