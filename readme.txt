@@ -67,6 +67,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 = TBD =
 * Enhancement - Gutenberg compatibility.
 * Tweak       - Change http protocol to https.
+* Remove - Unrequired deprecated demo config for theme demo lists.
 
 = Version 1.3.4 -2020-05-22 =
 * Add   - Required header fields: `Tested up to` and `Requires PHP` in style.css.
