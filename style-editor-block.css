@@ -14,11 +14,11 @@
 }
 
 .wp-block {
-	max-width: 1218px;
+	max-width: 1140px;
 }
 
 .editor-styles-wrapper .wp-block[data-align="wide"] {
-	max-width: 1308px;
+	max-width: 1200px;
 }
 
 .editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
@@ -71,7 +71,7 @@
 }
 
 .editor-styles-wrapper hr,
-.editor-styles-wrapper .wp-block-separator hr {
+.editor-styles-wrapper .wp-block-separator {
 	background-color: #eaeaea;
 	border: 0;
 	height: 1px;
