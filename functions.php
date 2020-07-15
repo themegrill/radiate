@@ -43,6 +43,15 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		// Gutenberg wide layout support.
+		add_theme_support( 'align-wide' );
+
+		// Gutenberg block layout support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg editor support.
+		add_theme_support( 'responsive-embeds' );
+
 		// Supporting title tag via add_theme_support (since WordPress 4.1)
 		add_theme_support( 'title-tag' );
 
@@ -77,6 +86,15 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+
+		// Gutenberg wide layout support.
+		add_theme_support( 'align-wide' );
+
+		// Gutenberg block styles support.
+		add_theme_support( 'wp-block-styles' );
+
+		// Gutenberg responsive embeds support.
+		add_theme_support( 'responsive-embeds' );
 
 		// Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
@@ -141,6 +159,17 @@ function radiate_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
+
+/**
+ * Enqueue Google fonts and editor styles.
+ */
+function radiate_block_editor_styles() {
+	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300' );
+	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
+
 
 /**
  * Implement the Custom Header feature.
