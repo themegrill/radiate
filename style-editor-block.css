@@ -357,6 +357,12 @@
 	margin: 8px 0;
 }
 
+.editor-styles-wrapper embed,
+.editor-styles-wrapper iframe,
+.editor-styles-wrapper object {
+	max-width: 100%;
+}
+
 /* =WordPress Gallery Support
 ----------------------------------------------- */
 .editor-styles-wrapper .gallery {
