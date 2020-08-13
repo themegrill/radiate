@@ -56,18 +56,26 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'radiate' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'radiate' ),
+			)
+		);
 
 		// Enable support for Post Formats.
 		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 		// Setup the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'radiate_custom_background_args', array(
-			'default-color' => 'EAEAEA',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'radiate_custom_background_args',
+				array(
+					'default-color' => 'EAEAEA',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Adding excerpt option box for pages as well
 		add_post_type_support( 'page', 'excerpt' );
@@ -79,13 +87,16 @@ if ( ! function_exists( 'radiate_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Gutenberg wide layout support.
 		add_theme_support( 'align-wide' );
@@ -109,14 +120,16 @@ add_action( 'after_setup_theme', 'radiate_setup' );
  * Register widgetized area and update sidebar with default widgets.
  */
 function radiate_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'radiate' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'radiate' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'radiate_widgets_init' );
@@ -201,15 +214,9 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-admin.php';
-	require get_template_directory() . '/inc/admin/class-radiate-tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-radiate-dashboard.php';
 	require get_template_directory() . '/inc/admin/class-radiate-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-welcome-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-theme-review-notice.php';
 }
-
-/**
- * Load TGMPA Configs.
- */
-require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
-require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-radiate.php';
