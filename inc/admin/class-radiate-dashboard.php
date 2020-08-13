@@ -1,8 +1,18 @@
 <?php
+/**
+ * Radiate Dashboard Class.
+ *
+ * @author  ThemeGrill
+ * @package Radiate
+ * @since   Radiate 1.3.6
+ */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Class Radiate_Dashboard
+ */
 class Radiate_Dashboard {
 	private static $instance;
 
