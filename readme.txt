@@ -63,7 +63,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.3.6 -2020-08-17 =
 * Remove - TGMPA library to recommend plugins
 
 = Version 1.3.5 -2020-07-15 =
