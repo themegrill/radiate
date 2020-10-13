@@ -13,6 +13,7 @@ External resources linked to the theme.
   Licensed under SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Resources packed within the theme.
+* Images on screenshot is from https://pxhere.com/ link. License: Creative Commons Zero (CC0)
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 * Custom js file is our own creation and is licensed under the same license as this theme.
@@ -63,9 +64,6 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version 1.3.6 -2020-08-17 =
-* Remove - TGMPA library to recommend plugins
-
 = Version 1.3.5 -2020-07-15 =
 * Enhancement - Gutenberg compatibility.
 * Tweak       - Change http protocol to https.
