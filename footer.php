@@ -14,13 +14,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'radiate_credits' ); ?>
-			<?php _e( 'Proudly  powered by ', 'radiate' ); ?>
-			<a href="https://wordpress.org/" rel="generator"><?php _e( 'WordPress', 'radiate' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'radiate' ), '<a href="'.esc_url('https://themegrill.com/themes/radiate').'" rel="nofollow">Radiate</a>', 'ThemeGrill' ); ?>
-		</div><!-- .site-info -->
+		<div class="footer-socket-wrapper clearfix">
+			<div class="inner-wrap">
+				<div class="footer-socket-area">
+					<?php do_action( 'radiate_footer_copyright' ); ?>
+				</div>
+			</div>
+		</div>
 	</footer><!-- #colophon -->
    <a href="#masthead" id="scroll-up"><span class="genericon genericon-collapse"></span></a>
 </div><!-- #page -->
