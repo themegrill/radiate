@@ -14,12 +14,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="footer-socket-wrapper clearfix">
-			<div class="inner-wrap">
-				<div class="footer-socket-area">
-					<?php do_action( 'radiate_footer_copyright' ); ?>
+		<div class="site-info">
+					<?php do_action( 'radiate_credits' ); ?>
 				</div>
-			</div>
 		</div>
 	</footer><!-- #colophon -->
    <a href="#masthead" id="scroll-up"><span class="genericon genericon-collapse"></span></a>

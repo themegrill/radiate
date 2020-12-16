@@ -196,11 +196,11 @@ function radiate_internal_css() {
 	endif;
 }
 
-add_action( 'radiate_footer_copyright', 'radiate_footer_copyright', 10 );
+add_action( 'radiate_credits', 'radiate_credits', 10 );
 /**
  * function to show the footer info, copyright information
  */
-function radiate_footer_copyright()
+function radiate_credits()
 {
 	$site_link = '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name', 'display')) . '" ><span>' . get_bloginfo('name', 'display') . '</span></a>';
 
@@ -210,9 +210,9 @@ function radiate_footer_copyright()
 
 	$default_footer_value = sprintf(esc_html__('Copyright &copy; %1$s %2$s. All rights reserved.', 'radiate'), date('Y'), $site_link) . ' ' . sprintf(esc_html__('Theme: %1$s by %2$s.', 'radiate'), $tg_link, 'ThemeGrill') . ' ' . sprintf(esc_html__('Powered by %s.', 'radiate'), $wp_link);
 
-	$radiate_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
+	$radiate_credits = '<div class="copyright">' . $default_footer_value . '</div>';
 
-	echo $radiate_footer_copyright;
+	echo $radiate_credits;
 }
 
 /**
