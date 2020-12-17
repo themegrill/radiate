@@ -64,6 +64,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Tweak - Update footer credit link with `rel="nofollow"` attributes.
+
 = Version 1.3.5 -2020-07-15 =
 * Enhancement - Gutenberg compatibility.
 * Tweak       - Change http protocol to https.

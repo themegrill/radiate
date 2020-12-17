@@ -196,6 +196,25 @@ function radiate_internal_css() {
 	endif;
 }
 
+add_action( 'radiate_credits', 'radiate_credits', 10 );
+/**
+ * function to show the footer info, copyright information
+ */
+function radiate_credits()
+{
+	$site_link = '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name', 'display')) . '" ><span>' . get_bloginfo('name', 'display') . '</span></a>';
+
+	$wp_link = '<a href="' . esc_url('http://wordpress.org') . '" target="_blank" title="' . esc_attr__('WordPress', 'radiate') . '"rel="nofollow"><span>' . esc_html__('WordPress', 'radiate') . '</span></a>';
+
+	$tg_link = '<a href="' . esc_url('https://themegrill.com/themes/radiate') . '" target="_blank" title="' . esc_attr__('Radiate', 'radiate') . '" rel="nofollow" ><span>' . esc_html__('Radiate', 'radiate') . '</span></a>';
+
+	$default_footer_value = sprintf(esc_html__('Copyright &copy; %1$s %2$s. All rights reserved.', 'radiate'), date('Y'), $site_link) . ' ' . sprintf(esc_html__('Theme: %1$s by %2$s.', 'radiate'), $tg_link, 'ThemeGrill') . ' ' . sprintf(esc_html__('Powered by %s.', 'radiate'), $wp_link);
+
+	$radiate_credits = '<div class="copyright">' . $default_footer_value . '</div>';
+
+	echo $radiate_credits;
+}
+
 /**
  * Making the theme Woocommrece compatible
  */
