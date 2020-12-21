@@ -67,6 +67,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 = TBD =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes.
 
+= Version 1.3.6 -2020-08-17 =
+* Remove - TGMPA library to recommend plugins
+
 = Version 1.3.5 -2020-07-15 =
 * Enhancement - Gutenberg compatibility.
 * Tweak       - Change http protocol to https.
