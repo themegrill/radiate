@@ -71,4 +71,4 @@ if ( function_exists( 'wp_body_open' ) ) {
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="inner-wrap">
+		<div class="inner-wrap clearfix">
