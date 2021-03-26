@@ -64,6 +64,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Fix - Inner warp CSS clearfix issue. 
+
 = Version 1.3.7 -2020-12-21 =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes.
 
