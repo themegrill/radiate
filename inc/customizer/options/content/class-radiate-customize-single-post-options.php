@@ -1,0 +1,112 @@
+<?php
+/**
+ * Class to include Blog Single Post customize options.
+ *
+ * Class Radiate_Customize_Single_Post_Options
+ *
+ * @package    ThemeGrill
+ * @subpackage Radiate
+ * @since      Radiate 2.3.0
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Class to include Blog Single Post customize options.
+ *
+ * Class Radiate_Customize_Single_Post_Options
+ */
+class Radiate_Customize_Single_Post_Options extends Radiate_Customize_Base_Option {
+
+	/**
+	 * Include customize options.
+	 *
+	 * @param array $options Customize options provided via the theme.
+	 * @param \WP_Customize_Manager $wp_customize Theme Customizer object.
+	 *
+	 * @return mixed|void Customizer options for registering panels, sections as well as controls.
+	 */
+	public function register_options( $options, $wp_customize ) {
+
+		// Customize transport postMessage variable to set `postMessage` or `refresh` as required.
+		$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
+		$configs = array(
+
+			/**
+			 * Author Bio.
+			 */
+			array(
+				'name'     => 'author_bio_heading',
+				'type'     => 'control',
+				'control'  => 'radiate-title',
+				'label'    => esc_html__( 'Author Bio', 'radiate' ),
+				'section'  => 'radiate_single_post_section',
+				'priority' => 10,
+			),
+
+			array(
+				'name'      => 'radiate_author_bio_show',
+				'default'   => 0,
+				'type'      => 'control',
+				'control'   => 'checkbox',
+				'label'     => esc_html__( 'Check to enable the Author Bio in the single post page.', 'radiate' ),
+				// 'transport' => $customizer_selective_refresh,
+				'section'   => 'radiate_single_post_section',
+				'priority'  => 20,
+			),
+
+			/**
+			 * Related posts options.
+			 */
+			array(
+				'name'     => 'related_post_heading',
+				'type'     => 'control',
+				'control'  => 'radiate-title',
+				'label'    => esc_html__( 'Related Posts', 'radiate' ),
+				'section'  => 'radiate_single_post_section',
+				'priority' => 160,
+			),
+
+			array(
+				'name'     => 'radiate_related_posts_activate',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to activate the related posts', 'radiate' ),
+				'section'  => 'radiate_single_post_section',
+				'priority' => 170,
+			),
+
+			array(
+				'name'       => 'radiate_related_posts',
+				'default'    => 'categories',
+				'type'       => 'control',
+				'control'    => 'radio',
+				'label'      => esc_html__( 'Related Posts Must Be Shown As:', 'radiate' ),
+				'section'    => 'radiate_single_post_section',
+				'choices'    => array(
+					'categories' => esc_html__( 'Related Posts By Categories', 'radiate' ),
+					'tags'       => esc_html__( 'Related Posts By Tags', 'radiate' ),
+				),
+				'dependency' => array(
+					'radiate_related_posts_activate',
+					'!=',
+					0,
+				),
+				'priority'   => 180,
+			),
+
+		);
+
+		$options = array_merge( $options, $configs );
+
+		return $options;
+	}
+
+}
+
+return new Radiate_Customize_Single_Post_Options();
