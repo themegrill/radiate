@@ -55,273 +55,273 @@ function radiate_register_theme_customizer( $wp_customize ) {
 // 	);
 
 	// rename existing section
-	$wp_customize->add_section( 'title_tagline', array(
-		'title'    => __( 'Site Title', 'radiate' ),
-		'priority' => 20,
-	) );
+	// $wp_customize->add_section( 'title_tagline', array(
+	// 	'title'    => __( 'Site Title', 'radiate' ),
+	// 	'priority' => 20,
+	// ) );
 
-	$wp_customize->add_setting(
-		'radiate_color_scheme',
-		array(
-			'default'              => '#632E9B',
-			'capability'           => 'edit_theme_options',
-			'sanitize_callback'    => 'radiate_sanitize_hex_color',
-			'sanitize_js_callback' => 'radiate_sanitize_escaping',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_color_scheme',
+	// 	array(
+	// 		'default'              => '#632E9B',
+	// 		'capability'           => 'edit_theme_options',
+	// 		'sanitize_callback'    => 'radiate_sanitize_hex_color',
+	// 		'sanitize_js_callback' => 'radiate_sanitize_escaping',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'color_scheme',
-			array(
-				'label'    => __( 'Primary Color', 'radiate' ),
-				'section'  => 'colors',
-				'settings' => 'radiate_color_scheme',
-			)
-		)
-	);
+	// $wp_customize->add_control(
+	// 	new WP_Customize_Color_Control(
+	// 		$wp_customize,
+	// 		'color_scheme',
+	// 		array(
+	// 			'label'    => __( 'Primary Color', 'radiate' ),
+	// 			'section'  => 'colors',
+	// 			'settings' => 'radiate_color_scheme',
+	// 		)
+	// 	)
+	// );
 
-	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+	// if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 
-		$wp_customize->add_section(
-			'radiate_custom_css_section',
-			array(
-				'title'    => __( 'Custom CSS', 'radiate' ),
-				'priority' => 200,
-			)
-		);
+	// 	$wp_customize->add_section(
+	// 		'radiate_custom_css_section',
+	// 		array(
+	// 			'title'    => __( 'Custom CSS', 'radiate' ),
+	// 			'priority' => 200,
+	// 		)
+	// 	);
 
-		$wp_customize->add_setting(
-			'radiate_custom_css',
-			array(
-				'default'              => '',
-				'capability'           => 'edit_theme_options',
-				'sanitize_callback'    => 'wp_filter_nohtml_kses',
-				'sanitize_js_callback' => 'wp_filter_nohtml_kses',
-			)
-		);
+	// 	$wp_customize->add_setting(
+	// 		'radiate_custom_css',
+	// 		array(
+	// 			'default'              => '',
+	// 			'capability'           => 'edit_theme_options',
+	// 			'sanitize_callback'    => 'wp_filter_nohtml_kses',
+	// 			'sanitize_js_callback' => 'wp_filter_nohtml_kses',
+	// 		)
+	// 	);
 
-		$wp_customize->add_control(
-			new RADIATE_ADDITIONAL_Control (
-				$wp_customize,
-				'radiate_custom_css',
-				array(
-					'label'    => __( 'Add your custom css here and design live! (for advanced users)', 'radiate' ),
-					'section'  => 'radiate_custom_css_section',
-					'settings' => 'radiate_custom_css',
-				)
-			)
-		);
-	}
+	// 	$wp_customize->add_control(
+	// 		new RADIATE_ADDITIONAL_Control (
+	// 			$wp_customize,
+	// 			'radiate_custom_css',
+	// 			array(
+	// 				'label'    => __( 'Add your custom css here and design live! (for advanced users)', 'radiate' ),
+	// 				'section'  => 'radiate_custom_css_section',
+	// 				'settings' => 'radiate_custom_css',
+	// 			)
+	// 		)
+	// 	);
+	// }
 
-	$wp_customize->add_section(
-		'radiate_featured_section',
-		array(
-			'title'    => __( 'Front Page Featured Section', 'radiate' ),
-			'priority' => 220,
-		)
-	);
+	// $wp_customize->add_section(
+	// 	'radiate_featured_section',
+	// 	array(
+	// 		'title'    => __( 'Front Page Featured Section', 'radiate' ),
+	// 		'priority' => 220,
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'page-setting-one',
-		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_integer',
-		)
-	);
-	$wp_customize->add_setting(
-		'page-setting-two',
-		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_integer',
-		)
-	);
-	$wp_customize->add_setting(
-		'page-setting-three',
-		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_integer',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'page-setting-one',
+	// 	array(
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_sanitize_integer',
+	// 	)
+	// );
+	// $wp_customize->add_setting(
+	// 	'page-setting-two',
+	// 	array(
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_sanitize_integer',
+	// 	)
+	// );
+	// $wp_customize->add_setting(
+	// 	'page-setting-three',
+	// 	array(
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_sanitize_integer',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'page-setting-one',
-		array(
-			'type'    => 'dropdown-pages',
-			'label'   => __( 'First featured page', 'radiate' ),
-			'section' => 'radiate_featured_section',
-		)
-	);
-	$wp_customize->add_control(
-		'page-setting-two',
-		array(
-			'type'    => 'dropdown-pages',
-			'label'   => __( 'Second featured page', 'radiate' ),
-			'section' => 'radiate_featured_section',
-		)
-	);
-	$wp_customize->add_control(
-		'page-setting-three',
-		array(
-			'type'    => 'dropdown-pages',
-			'label'   => __( 'Third featured page', 'radiate' ),
-			'section' => 'radiate_featured_section',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'page-setting-one',
+	// 	array(
+	// 		'type'    => 'dropdown-pages',
+	// 		'label'   => __( 'First featured page', 'radiate' ),
+	// 		'section' => 'radiate_featured_section',
+	// 	)
+	// );
+	// $wp_customize->add_control(
+	// 	'page-setting-two',
+	// 	array(
+	// 		'type'    => 'dropdown-pages',
+	// 		'label'   => __( 'Second featured page', 'radiate' ),
+	// 		'section' => 'radiate_featured_section',
+	// 	)
+	// );
+	// $wp_customize->add_control(
+	// 	'page-setting-three',
+	// 	array(
+	// 		'type'    => 'dropdown-pages',
+	// 		'label'   => __( 'Third featured page', 'radiate' ),
+	// 		'section' => 'radiate_featured_section',
+	// 	)
+	// );
 
 	//Related post
-	$wp_customize->add_section(
-		'radiate_related_posts_section',
-		array(
-			'priority' => 245,
-			'title'    => esc_html__( 'Related Posts', 'radiate' ),
-		)
-	);
+	// $wp_customize->add_section(
+	// 	'radiate_related_posts_section',
+	// 	array(
+	// 		'priority' => 245,
+	// 		'title'    => esc_html__( 'Related Posts', 'radiate' ),
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_related_posts_activate',
-		array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_checkbox_sanitize',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_related_posts_activate',
+	// 	array(
+	// 		'default'           => 0,
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_checkbox_sanitize',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_related_posts_activate',
-		array(
-			'type'     => 'checkbox',
-			'label'    => esc_html__( 'Check to activate the related posts', 'radiate' ),
-			'section'  => 'radiate_related_posts_section',
-			'settings' => 'radiate_related_posts_activate',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'radiate_related_posts_activate',
+	// 	array(
+	// 		'type'     => 'checkbox',
+	// 		'label'    => esc_html__( 'Check to activate the related posts', 'radiate' ),
+	// 		'section'  => 'radiate_related_posts_section',
+	// 		'settings' => 'radiate_related_posts_activate',
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_related_posts',
-		array(
-			'default'           => 'categories',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_sanitize_radio',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_related_posts',
+	// 	array(
+	// 		'default'           => 'categories',
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_sanitize_radio',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_related_posts',
-		array(
-			'type'     => 'radio',
-			'label'    => esc_html__( 'Related Posts Must Be Shown As:', 'radiate' ),
-			'section'  => 'radiate_related_posts_section',
-			'settings' => 'radiate_related_posts',
-			'choices'  => array(
-				'categories' => esc_html__( 'Related Posts By Categories', 'radiate' ),
-				'tags'       => esc_html__( 'Related Posts By Tags', 'radiate' ),
-			),
-		) );
+	// $wp_customize->add_control(
+	// 	'radiate_related_posts',
+	// 	array(
+	// 		'type'     => 'radio',
+	// 		'label'    => esc_html__( 'Related Posts Must Be Shown As:', 'radiate' ),
+	// 		'section'  => 'radiate_related_posts_section',
+	// 		'settings' => 'radiate_related_posts',
+	// 		'choices'  => array(
+	// 			'categories' => esc_html__( 'Related Posts By Categories', 'radiate' ),
+	// 			'tags'       => esc_html__( 'Related Posts By Tags', 'radiate' ),
+	// 		),
+	// 	) );
 
 	// Author Bio
-	$wp_customize->add_section(
-		'radiate_author_bio',
-		array(
-			'title'    => __( 'Author Bio', 'radiate' ),
-			'priority' => 250,
-		)
-	);
+	// $wp_customize->add_section(
+	// 	'radiate_author_bio',
+	// 	array(
+	// 		'title'    => __( 'Author Bio', 'radiate' ),
+	// 		'priority' => 250,
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_author_bio_show',
-		array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_checkbox_sanitize',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_author_bio_show',
+	// 	array(
+	// 		'default'           => 0,
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_checkbox_sanitize',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_author_bio_show',
-		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to enable the Author Bio in the single post page.', 'radiate' ),
-			'section'  => 'radiate_author_bio',
-			'settings' => 'radiate_author_bio_show',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'radiate_author_bio_show',
+	// 	array(
+	// 		'type'     => 'checkbox',
+	// 		'label'    => __( 'Check to enable the Author Bio in the single post page.', 'radiate' ),
+	// 		'section'  => 'radiate_author_bio',
+	// 		'settings' => 'radiate_author_bio_show',
+	// 	)
+	// );
 
-	// Hide Search Icon
-	$wp_customize->add_section(
-		'radiate_search_icon',
-		array(
-			'title'    => __( 'Header Search Icon', 'radiate' ),
-			'priority' => 270,
-		)
-	);
+	// // Hide Search Icon
+	// $wp_customize->add_section(
+	// 	'radiate_search_icon',
+	// 	array(
+	// 		'title'    => __( 'Header Search Icon', 'radiate' ),
+	// 		'priority' => 270,
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_header_search_hide',
-		array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_checkbox_sanitize',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_header_search_hide',
+	// 	array(
+	// 		'default'           => 0,
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_checkbox_sanitize',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_header_search_hide',
-		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Check to hide Header Search Icon.', 'radiate' ),
-			'section'  => 'radiate_search_icon',
-			'settings' => 'radiate_header_search_hide',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'radiate_header_search_hide',
+	// 	array(
+	// 		'type'     => 'checkbox',
+	// 		'label'    => __( 'Check to hide Header Search Icon.', 'radiate' ),
+	// 		'section'  => 'radiate_search_icon',
+	// 		'settings' => 'radiate_header_search_hide',
+	// 	)
+	// );
 
 	// Responsive Menu Style
-	$wp_customize->add_section(
-		'radiate_menu_section',
-		array(
-			'title'    => esc_html__( 'Responsive Menu Style', 'radiate' ),
-			'priority' => 280,
-		)
-	);
+	// $wp_customize->add_section(
+	// 	'radiate_menu_section',
+	// 	array(
+	// 		'title'    => esc_html__( 'Responsive Menu Style', 'radiate' ),
+	// 		'priority' => 280,
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_new_menu_enable',
-		array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_checkbox_sanitize',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_new_menu_enable',
+	// 	array(
+	// 		'default'           => 0,
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_checkbox_sanitize',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_new_menu_enable',
-		array(
-			'type'     => 'checkbox',
-			'label'    => esc_html__( 'Switch to full width menu style.', 'radiate' ),
-			'section'  => 'radiate_menu_section',
-			'settings' => 'radiate_new_menu_enable',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'radiate_new_menu_enable',
+	// 	array(
+	// 		'type'     => 'checkbox',
+	// 		'label'    => esc_html__( 'Switch to full width menu style.', 'radiate' ),
+	// 		'section'  => 'radiate_menu_section',
+	// 		'settings' => 'radiate_new_menu_enable',
+	// 	)
+	// );
 
-	$wp_customize->add_setting(
-		'radiate_responsive_menu_style',
-		array(
-			'default'           => 0,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'radiate_checkbox_sanitize',
-		)
-	);
+	// $wp_customize->add_setting(
+	// 	'radiate_responsive_menu_style',
+	// 	array(
+	// 		'default'           => 0,
+	// 		'capability'        => 'edit_theme_options',
+	// 		'sanitize_callback' => 'radiate_checkbox_sanitize',
+	// 	)
+	// );
 
-	$wp_customize->add_control(
-		'radiate_responsive_menu_style',
-		array(
-			'type'     => 'checkbox',
-			'label'    => esc_html__( 'Switch to new responsive menu style.', 'radiate' ),
-			'section'  => 'radiate_menu_section',
-			'settings' => 'radiate_responsive_menu_style',
-		)
-	);
+	// $wp_customize->add_control(
+	// 	'radiate_responsive_menu_style',
+	// 	array(
+	// 		'type'     => 'checkbox',
+	// 		'label'    => esc_html__( 'Switch to new responsive menu style.', 'radiate' ),
+	// 		'section'  => 'radiate_menu_section',
+	// 		'settings' => 'radiate_responsive_menu_style',
+	// 	)
+	// );
 
 	function radiate_sanitize_hex_color( $color ) {
 		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
