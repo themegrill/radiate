@@ -153,6 +153,17 @@ add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 )
 
 
 /**
+ * Define URL Location Constants
+ */
+define( 'RADIATE_PARENT_DIR', get_template_directory() );
+define( 'RADIATE_INCLUDES_DIR', RADIATE_PARENT_DIR . '/inc' );
+define( 'RADIATE_CUSTOMIZER_DIR', RADIATE_INCLUDES_DIR . '/customizer' );
+
+define( 'RADIATE_PARENT_URL', get_template_directory_uri() );
+define( 'RADIATE_INCLUDES_URL', RADIATE_PARENT_URL . '/inc' );
+define( 'RADIATE_CUSTOMIZER_URL', RADIATE_INCLUDES_URL . '/customizer' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -170,7 +181,12 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/class-radiate-customizer.php';
+require get_template_directory() . '/inc/customizer/class-radiate-customizer-partials.php';
+require_once RADIATE_INCLUDES_DIR . '/enqueue-scripts.php';
+require_once RADIATE_INCLUDES_DIR . '/migration.php';
+require_once RADIATE_INCLUDES_DIR . '/demo-import-migration.php';
+require_once RADIATE_INCLUDES_DIR . '/depreciated/depreciated-functions.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -188,3 +204,5 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-radiate-upgrade-notice.php';
 	require get_template_directory() . '/inc/admin/class-radiate-theme-review-notice.php';
 }
+
+

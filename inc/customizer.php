@@ -368,7 +368,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 
 }
 
-add_action( 'customize_register', 'radiate_register_theme_customizer' );
+// add_action( 'customize_register', 'radiate_register_theme_customizer' );
 
 if ( ! function_exists( 'radiate_darkcolor' ) ) :
 	/**
