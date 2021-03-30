@@ -4,7 +4,7 @@
  *
  * @package    ThemeGrill
  * @subpackage Radiate
- * @since      Radiate 2.3.0
+ * @since      Radiate 1.4.0
  */
 
 // Exit if accessed directly.
