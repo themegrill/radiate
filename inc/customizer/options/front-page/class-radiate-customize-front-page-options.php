@@ -39,34 +39,37 @@ class Radiate_Customize_Front_Page_Options extends Radiate_Customize_Base_Option
 				'name'    => 'radiate_featured_page',
 				'type'    => 'control',
 				'control' => 'radiate-title',
-				'label'   => esc_html__( 'Note:If featured image is set for the following selected pages then the same image will appear in the featured section for the respective pages.', 'radiate' ),
 				'section' => 'radiate_front_page_options',
 			),
 
 			array(
-				'name'    => 'radiate_featured_page_select_option',
-				'default' => 9,
-				'type'    => 'control',
-				'control' => 'text',
-				'label'   => esc_html__( 'Enter the number of pages you wish to display. Default value is 9.', 'radiate' ),
-				'section' => 'radiate_front_page_options',
+				'name'      => 'page-setting-one',
+				'type'      => 'control',
+				'control'   => 'dropdown-pages',
+				'label'     => esc_html( 'First featured page', 'radiate' ),
+				'section'   => 'radiate_front_page_options',
+				'priority'  => 20,
+			),
+
+			array(
+				'name'      => 'page-setting-two',
+				'type'      => 'control',
+				'control'   => 'dropdown-pages',
+				'label'     => esc_html( 'Second featured page', 'radiate' ),
+				'section'   => 'radiate_front_page_options',
+				'priority'  => 20,
+			),
+
+			array(
+				'name'      => 'page-setting-three',
+				'type'      => 'control',
+				'control'   => 'dropdown-pages',
+				'label'     => esc_html( 'Third featured page', 'radiate' ),
+				'section'   => 'radiate_front_page_options',
+				'priority'  => 20,
 			),
 
 		);
-
-		$options = array_merge( $options, $configs );
-
-		for ( $i = 1; $i <= 3; $i++ ) {
-
-			$configs[] = array(
-				'name'       => 'page-setting-' . $i,
-				'default'    => 9,
-				'type'       => 'control',
-				'control'    => 'dropdown-pages',
-				'label'      => sprintf( esc_html__( 'Featured page %1$s', 'radiate' ), $i ),
-				'section'    => 'radiate_front_page_options',
-			);
-		}
 
 		$options = array_merge( $options, $configs );
 
