@@ -39,20 +39,20 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	// remove control
 	$wp_customize->remove_control( 'blogdescription' );
 
-// Register `RADIATE_Upsell_Section` type section.
-	$wp_customize->register_section_type( 'RADIATE_Upsell_Section' );
+// // Register `RADIATE_Upsell_Section` type section.
+// 	$wp_customize->register_section_type( 'RADIATE_Upsell_Section' );
 
-// Add `RADIATE_Upsell_Section` to display pro link.
-	$wp_customize->add_section(
-		new RADIATE_Upsell_Section( $wp_customize, 'radiate_upsell_section',
-			array(
-				'title'      => esc_html__( 'View PRO version', 'radiate' ),
-				'url'        => 'https://themegrill.com/themes/radiate/?utm_source=radiate-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
-				'capability' => 'edit_theme_options',
-				'priority'   => 1,
-			)
-		)
-	);
+// // Add `RADIATE_Upsell_Section` to display pro link.
+// 	$wp_customize->add_section(
+// 		new RADIATE_Upsell_Section( $wp_customize, 'radiate_upsell_section',
+// 			array(
+// 				'title'      => esc_html__( 'View PRO version', 'radiate' ),
+// 				'url'        => 'https://themegrill.com/themes/radiate/?utm_source=radiate-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+// 				'capability' => 'edit_theme_options',
+// 				'priority'   => 1,
+// 			)
+// 		)
+// 	);
 
 	// rename existing section
 	$wp_customize->add_section( 'title_tagline', array(
