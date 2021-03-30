@@ -323,48 +323,48 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	// 	)
 	// );
 
-	function radiate_sanitize_hex_color( $color ) {
-		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
-			return '#' . $unhashed;
-		}
+	// function radiate_sanitize_hex_color( $color ) {
+	// 	if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+	// 		return '#' . $unhashed;
+	// 	}
 
-		return $color;
-	}
+	// 	return $color;
+	// }
 
-	function radiate_sanitize_integer( $input ) {
-		if ( is_numeric( $input ) ) {
-			return intval( $input );
-		}
-	}
+	// function radiate_sanitize_integer( $input ) {
+	// 	if ( is_numeric( $input ) ) {
+	// 		return intval( $input );
+	// 	}
+	// }
 
-	function radiate_sanitize_escaping( $input ) {
-		$input = esc_attr( $input );
+	// function radiate_sanitize_escaping( $input ) {
+	// 	$input = esc_attr( $input );
 
-		return $input;
-	}
+	// 	return $input;
+	// }
 
-	function radiate_checkbox_sanitize( $input ) {
-		if ( $input == 1 ) {
-			return 1;
-		} else {
-			return '';
-		}
-	}
+	// function radiate_checkbox_sanitize( $input ) {
+	// 	if ( $input == 1 ) {
+	// 		return 1;
+	// 	} else {
+	// 		return '';
+	// 	}
+	// }
 
-	function radiate_sanitize_radio( $input, $setting ) {
-		// Ensuring that the input is a slug.
-		$input = sanitize_key( $input );
-		// Get the list of choices from the control associated with the setting.
-		$choices = $setting->manager->get_control( $setting->id )->choices;
+	// function radiate_sanitize_radio( $input, $setting ) {
+	// 	// Ensuring that the input is a slug.
+	// 	$input = sanitize_key( $input );
+	// 	// Get the list of choices from the control associated with the setting.
+	// 	$choices = $setting->manager->get_control( $setting->id )->choices;
 
-		// If the input is a valid key, return it, else, return the default.
-		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-	}
+	// 	// If the input is a valid key, return it, else, return the default.
+	// 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	// }
 
-	// Fake sanitize function
-	function radiate_sanitize_important_links() {
-		return false;
-	}
+	// // Fake sanitize function
+	// function radiate_sanitize_important_links() {
+	// 	return false;
+	// }
 
 }
 
