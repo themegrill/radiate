@@ -33,6 +33,16 @@ class Radiate_Customize_Register_Section_Panels extends Radiate_Customize_Base_O
 
 		$configs = array(
 
+			// View Pro Version section.
+			array(
+				'name'             => 'radiate_customize_upsell_section',
+				'type'             => 'section',
+				'title'            => esc_html__( 'View Pro Version', 'radiate' ),
+				'url'              => 'https://themegrill.com/radiate-pricing/?utm_source=radiate-customizer&utm_medium=view-pro-link&utm_campaign=radiate-pricing',
+				'priority'         => 1,
+				'section_callback' => 'Radiate_Upsell_Section',
+			),
+
 			/**
 			 * Panels.
 			 */
