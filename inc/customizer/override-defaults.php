@@ -3,8 +3,8 @@
  * Override default customizer panels, sections, settings or controls.
  *
  * @package    ThemeGrill
- * @subpackage Spacious
- * @since      Spacious 2.3.0
+ * @subpackage Radiate
+ * @since      Radiate1.4.0
  */
 
 // Exit if accessed directly.
@@ -71,7 +71,7 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		array(
 			'selector'        => '#site-title a',
 			'render_callback' => array(
-				'Spacious_Customizer_Partials',
+				'Radiate_Customizer_Partials',
 				'render_customize_partial_blogname',
 			),
 		)
