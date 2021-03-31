@@ -67,10 +67,6 @@ class Radiate_Dynamic_CSS {
 
 		$parse_css .= radiate_parse_css( '#632e9b', $primary_color, $primary_color_css );
 
-		// Add the custom CSS rendered dynamically, which is static.
-		$parse_css .= self::render_custom_output();
-
-
 		$parse_css .= $dynamic_css;
 
 		return apply_filters( 'radiate_theme_dynamic_css', $parse_css );
