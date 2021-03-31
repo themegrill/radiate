@@ -57,9 +57,6 @@ class Radiate_Dynamic_CSS {
 			'blockquote' => array(
 				'border-left-color' => esc_html( $primary_color ),
 			),
-//			'' => array(
-//				'background' => esc_html( $primary_dark ),
-//			),
 			'#featured_pages a.more-link:hover' => array(
 				'border-color' => esc_html( $primary_color ),
 			),
