@@ -43,13 +43,15 @@ class Radiate_Dynamic_CSS {
 
 		// For primary color option.
 		$primary_color_css = array(
-			'a, .site-title a:hover, .header-search-icon:before,.default-style2 .widget li::before,.posted-on:hover a span, .posted-on:hover a span.day, #content .entry-title a:hover, .entry-meta span:hover, #content .entry-meta span a:hover, #content .comments-area article header cite a:hover, #content .comments-area a.comment-edit-link:hover, #content .comments-area a.comment-permalink:hover, .comments-area .comment-author-link a:hover, .comment .comment-reply-link:hover, .site-header .menu-toggle, .site-header .menu-toggle:hover, #featured_pages a.more-link:hover,.layout-one.layout-two #content a.more-link:hover, a#scroll-up span' => array(
+			'.site-title a:hover, a, .header-search-icon:before, #content .comments-area a.comment-edit-link:hover, #content .comments-area a.comment-permalink:hover, #content .comments-area article header cite a:hover,#content .entry-meta span a:hover,#content .entry-title a:hover,.comment .comment-reply-link:hover, .comments-area .comment-author-link a:hover,.entry-meta span:hover,.site-header .menu-toggle,.site-header .menu-toggle:hover, #featured_pages a.more-link:hover, a#scroll-up span, .woocommerce .woocommerce-message::before' => array(
 				'color' => esc_html( $primary_color ),
 			),
-			'.main-navigation a:hover, .main-navigation ul li.current-menu-item a, .main-navigation ul li.current_page_ancestor a, .main-navigation ul li.current-menu-ancestor a, .main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a, .main-navigation ul li ul li a:hover, .main-navigation ul li ul li:hover > a, .main-navigation ul li.current-menu-item ul li a:hover, #masthead .search-form,.default-style2 .widget-title::before, button, input[type="button"], input[type="reset"], input[type="submit"], .main-small-navigation ul li ul li a:hover, .main-small-navigation ul li ul li:hover > a, .main-small-navigation ul li.current-menu-item ul li a:hover, a#back-top:before, .comments-area .comment-author-link span, .slider-meta .slider-button a:hover, .slider-nav a:hover' => array(
+			'#masthead .search-form,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a, button,input[type=button],input[type=reset],input[type=submit], .main-small-navigation ul li ul li a:hover,.main-small-navigation ul li:hover,.main-small-navigation ul li a:hover,.main-small-navigation ul li ul li:hover>a,.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item,.main-small-navigation ul li.current-menu-item ul li a:hover, a#back-top:before, .woocommerce ul.products li.product .onsale,.woocommerce span.onsale,.woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
+			.wocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover,
+			.woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover' => array(
 				'background-color' => esc_html( $primary_color ),
 			),
-			'.main-small-navigation li:hover, .main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item, .main-small-navigation ul li ul li.current-menu-item > a' => array(
+			'.main-small-navigation ul li ul li.current-menu-item > a' => array(
 				'background' => esc_html( $primary_color ),
 			),
 			'blockquote' => array(
@@ -58,7 +60,7 @@ class Radiate_Dynamic_CSS {
 //			'' => array(
 //				'background' => esc_html( $primary_dark ),
 //			),
-			'#featured_pages a.more-link:hover,.layout-one.layout-two #content a.more-link:hover, .slider-meta .slider-button a:hover, .slider-nav a:hover' => array(
+			'#featured_pages a.more-link:hover' => array(
 				'border-color' => esc_html( $primary_color ),
 			),
 		);
