@@ -185,7 +185,6 @@ require get_template_directory() . '/inc/customizer/class-radiate-customizer.php
 require get_template_directory() . '/inc/customizer/class-radiate-customizer-partials.php';
 require_once RADIATE_INCLUDES_DIR . '/class-radiate-dynamic-css.php';
 require_once RADIATE_INCLUDES_DIR . '/enqueue-scripts.php';
-require_once RADIATE_INCLUDES_DIR . '/migration.php';
 require_once RADIATE_INCLUDES_DIR . '/demo-import-migration.php';
 require_once RADIATE_INCLUDES_DIR . '/depreciated/depreciated-functions.php';
 
