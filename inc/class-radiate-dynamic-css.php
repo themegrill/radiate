@@ -67,11 +67,35 @@ class Radiate_Dynamic_CSS {
 
 		$parse_css .= radiate_parse_css( '#632e9b', $primary_color, $primary_color_css );
 
+		// Add the custom CSS rendered dynamically, which is static.
+		$parse_css .= self::render_custom_output();
+
 		$parse_css .= $dynamic_css;
 
 		return apply_filters( 'radiate_theme_dynamic_css', $parse_css );
 
 	}
+
+	/**
+	 * Function to output Custom CSS code, which does not have the specific CSS design option, ie, static CSS code.
+	 *
+	 * @return string
+	 */
+	public static function render_custom_output() {
+
+		$primary_color = get_theme_mod( 'radiate_color_scheme', '#632e9b' );
+		$primary_dark  = radiate_darkcolor( $primary_color, -50 );
+
+		$radiate_custom_css = '';
+
+		if ( $primary_color && $primary_color != '#632e9b' ) {
+			$radiate_custom_css .= '@media (max-width: 768px){.better-responsive-menu .sub-toggle{background:' . $primary_dark . '}}';
+		}
+
+		return $radiate_custom_css;
+
+	}
+
 
 }
 
