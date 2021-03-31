@@ -49,7 +49,6 @@ $wp_customize->get_control( 'background_attachment' )->priority = 50;
 $wp_customize->get_control( 'custom_logo' )->priority     = 6;
 $wp_customize->get_control( 'site_icon' )->priority       = 9;
 $wp_customize->get_control( 'blogname' )->priority        = 10;
-$wp_customize->get_control( 'blogdescription' )->priority = 14;
 
 $wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
 $wp_customize->get_control( 'header_textcolor' )->section   = 'title_tagline';
@@ -62,7 +61,9 @@ $wp_customize->get_section( 'header_image' )->priority = 2;
 
 // Override Settings.
 $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+// remove control
+$wp_customize->remove_control( 'blogdescription' );
 
 if ( isset( $wp_customize->selective_refresh ) ) {
 	$wp_customize->selective_refresh->add_partial(
@@ -76,16 +77,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		)
 	);
 
-	$wp_customize->selective_refresh->add_partial(
-		'blogdescription',
-		array(
-			'selector'        => '#site-description',
-			'render_callback' => array(
-				'Spacious_Customizer_Partials',
-				'render_customize_partial_blogdescription',
-			),
-		)
-	);
 }
 
 /*

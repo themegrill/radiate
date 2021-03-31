@@ -51,8 +51,6 @@ class Radiate_Customize_Site_Identity_Options extends Radiate_Customize_Base_Opt
 				'priority' => 9,
 			),
 
-
-
 			/**
 			 * Colors.
 			 */
