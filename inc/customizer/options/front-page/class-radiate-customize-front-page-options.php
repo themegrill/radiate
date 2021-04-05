@@ -43,30 +43,30 @@ class Radiate_Customize_Front_Page_Options extends Radiate_Customize_Base_Option
 			),
 
 			array(
-				'name'      => 'page-setting-one',
-				'type'      => 'control',
-				'control'   => 'dropdown-pages',
-				'label'     => esc_html( 'First featured page', 'radiate' ),
-				'section'   => 'radiate_front_page_options',
-				'priority'  => 20,
+				'name'     => 'page-setting-one',
+				'type'     => 'control',
+				'control'  => 'dropdown-pages',
+				'label'    => esc_html( 'First featured page', 'radiate' ),
+				'section'  => 'radiate_front_page_options',
+				'priority' => 20,
 			),
 
 			array(
-				'name'      => 'page-setting-two',
-				'type'      => 'control',
-				'control'   => 'dropdown-pages',
-				'label'     => esc_html( 'Second featured page', 'radiate' ),
-				'section'   => 'radiate_front_page_options',
-				'priority'  => 20,
+				'name'     => 'page-setting-two',
+				'type'     => 'control',
+				'control'  => 'dropdown-pages',
+				'label'    => esc_html( 'Second featured page', 'radiate' ),
+				'section'  => 'radiate_front_page_options',
+				'priority' => 20,
 			),
 
 			array(
-				'name'      => 'page-setting-three',
-				'type'      => 'control',
-				'control'   => 'dropdown-pages',
-				'label'     => esc_html( 'Third featured page', 'radiate' ),
-				'section'   => 'radiate_front_page_options',
-				'priority'  => 20,
+				'name'     => 'page-setting-three',
+				'type'     => 'control',
+				'control'  => 'dropdown-pages',
+				'label'    => esc_html( 'Third featured page', 'radiate' ),
+				'section'  => 'radiate_front_page_options',
+				'priority' => 20,
 			),
 
 		);

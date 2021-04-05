@@ -49,14 +49,14 @@ class Radiate_Customize_Single_Post_Options extends Radiate_Customize_Base_Optio
 			),
 
 			array(
-				'name'      => 'radiate_author_bio_show',
-				'default'   => 0,
-				'type'      => 'control',
-				'control'   => 'checkbox',
-				'label'     => esc_html__( 'Check to enable the Author Bio in the single post page.', 'radiate' ),
+				'name'     => 'radiate_author_bio_show',
+				'default'  => 0,
+				'type'     => 'control',
+				'control'  => 'checkbox',
+				'label'    => esc_html__( 'Check to enable the Author Bio in the single post page.', 'radiate' ),
 				// 'transport' => $customizer_selective_refresh,
-				'section'   => 'radiate_single_post_section',
-				'priority'  => 20,
+				'section'  => 'radiate_single_post_section',
+				'priority' => 20,
 			),
 
 			/**
