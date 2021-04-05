@@ -61,13 +61,6 @@ class Radiate_Customize_Register_Section_Panels extends Radiate_Customize_Base_O
 			),
 
 			array(
-				'name'     => 'radiate_slider_options',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Slider', 'radiate' ),
-				'priority' => 30,
-			),
-
-			array(
 				'name'     => 'radiate_front_page_options',
 				'type'     => 'section',
 				'title'    => esc_html__( 'Front Page Featured Section', 'radiate' ),
