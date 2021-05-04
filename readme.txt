@@ -72,7 +72,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Fix - Inner warp CSS clearfix issue. 
-* Fix - Updated the license information for the images used in the screenshot.
+* Tweak - Update screenshot image source link.
 
 = Version 1.3.7 -2020-12-21 =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes.
