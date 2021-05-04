@@ -13,11 +13,12 @@ External resources linked to the theme.
   Licensed under SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Resources packed within the theme.
-* Images used in Screenshot License: Creative Commons Zero (CC0)
+* Images used in screenshot
+  Screenshot, Creative Commons Zero (CC0).
   https://pxhere.com/en/photo/163
-  https://pxhere.com/en/photo/173
-  https://pxhere.com/en/photo/99059
   https://pxhere.com/en/photo/169
+  https://pxhere.com/en/photo/99059
+  https://pxhere.com/en/photo/173
   
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
