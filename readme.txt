@@ -70,11 +70,11 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
-* Fix - Inner warp CSS clearfix issue. 
+= Version 1.3.8 -2021-05-07 =
+* Fix - Inner wrap CSS clearfix issue. 
 * Tweak - Update screenshot image source link.
 
-= Version 1.3.7 -2020-12-21 =
+= Version 1.3.7 -2020-12-21 == Version 1.3.7 -2020-12-21 =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes.
 
 = Version 1.3.6 -2020-08-17 =
