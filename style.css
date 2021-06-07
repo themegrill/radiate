@@ -1906,12 +1906,11 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	}
 
 	.main-small-navigation ul {
-    	position: absolute;
-    	max-height: 80vh;
-    	top: 100%;
-    	width: 200px;
-    	right: 60px;
-		margin-left: -134px;
+		position: absolute;
+		max-height: 80vh;
+		top: 100%;
+		width: 200px;
+		right: 60px;
 	}
 
 	.full-width-menu .main-small-navigation ul.menunav-menu,
