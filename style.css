@@ -1896,7 +1896,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	}
 
 	.main-small-navigation ul ul {
-		margin-left: 0;
+		margin-left: 60px;
 		position: relative;
 	}
 
@@ -1906,12 +1906,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	}
 
 	.main-small-navigation ul {
-		overflow: auto;
     	position: absolute;
     	max-height: 80vh;
     	top: 100%;
-    	width: 100%;
-    	left: 0;
+    	width: 200px;
+    	right: 60px;
+		margin-left: -134px;
 	}
 
 	.full-width-menu .main-small-navigation ul.menunav-menu,
