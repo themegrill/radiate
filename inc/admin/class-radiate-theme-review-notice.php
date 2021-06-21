@@ -80,21 +80,21 @@ class Radiate_Theme_Review_Notice {
 					<p>(
 						<?php
 						printf(
-						/* translators: %s: Smile icon */
+							/* translators: %s: Smile icon */
 							esc_html__( 'The above word is just to draw your attention. %s', 'radiate' ),
 							'<span class="dashicons dashicons-smiley smile-icon"></span>'
 						);
 						?>
-						)</p>
+					)</p>
 					<p>
 						<?php
-						printf(
-						/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
-							esc_html__( 'Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review.', 'radiate' ),
-							'<strong>',
-							esc_html( wp_get_theme( get_template() ) ),
-							'</strong>'
-						);
+							printf(
+								/* translators: %1$s: Opening of strong tag, %2$s: Theme's Name, %3$s: Closing of strong tag  */
+								esc_html__( 'Hope you are having a nice experience with %1$s %2$s %3$s theme. Please provide this theme a nice review.', 'radiate' ),
+								'<strong>',
+								esc_html( wp_get_theme( get_template() ) ),
+								'</strong>'
+							);
 						?>
 					</p>
 					<strong>
@@ -102,11 +102,11 @@ class Radiate_Theme_Review_Notice {
 					</strong>
 					<p>
 						<?php
-						printf(
-						/* translators: %s: Smiley icon */
-							esc_html__( 'Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s', 'radiate' ),
-							'<span class="dashicons dashicons-smiley smile-icon"></span>'
-						);
+							printf(
+								/* translators: %s: Smiley icon */
+								esc_html__( 'Basically, it would encourage us to release updates regularly with new features & bug fixes so that you can keep on using the theme without any issues and also to provide free support like we have been doing. %s', 'radiate' ),
+								'<span class="dashicons dashicons-smiley smile-icon"></span>'
+							);
 						?>
 					</p>
 
@@ -131,6 +131,7 @@ class Radiate_Theme_Review_Notice {
 							<span><?php esc_html_e( 'I have a query', 'radiate' ); ?></span>
 						</a>
 					</div> <!-- /.links -->
+
 				</div> <!-- /.radiate-message__text -->
 
 				<a class="notice-dismiss" href="<?php echo esc_url( $dismiss_url ); ?>"></a>
@@ -144,14 +145,15 @@ class Radiate_Theme_Review_Notice {
 	 * `I already did` button or `dismiss` button: remove the review notice permanently.
 	 */
 	public function ignore_theme_review_notice() {
-		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET[ 'nag_radiate_ignore_theme_review_notice' ] ) && isset( $_GET[ '_radiate_ignore_theme_review_notice_nonce' ] ) ) {
 
-			if ( ! wp_verify_nonce( wp_unslash( $_GET[ '_radiate_ignore_theme_review_notice_nonce' ] ), 'nag_radiate_ignore_theme_review_notice_nonce' ) ) {
+		/* If user clicks to ignore the notice, add that to their user meta */
+		if ( isset( $_GET['nag_radiate_ignore_theme_review_notice'] ) && isset( $_GET['_radiate_ignore_theme_review_notice_nonce'] ) ) {
+
+			if ( ! wp_verify_nonce( wp_unslash( $_GET['_radiate_ignore_theme_review_notice_nonce'] ), 'nag_radiate_ignore_theme_review_notice_nonce' ) ) {
 				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'radiate' ) );
 			}
 
-			if ( '0' === $_GET[ 'nag_radiate_ignore_theme_review_notice' ] ) {
+			if ( '0' === $_GET['nag_radiate_ignore_theme_review_notice'] ) {
 				add_user_meta( get_current_user_id(), 'radiate_ignore_theme_review_notice', 'true', true );
 			}
 		}
@@ -161,14 +163,15 @@ class Radiate_Theme_Review_Notice {
 	 * `Maybe later` button: remove the review notice partially.
 	 */
 	public function ignore_theme_review_notice_partially() {
-		/* If user clicks to ignore the notice, add that to their user meta */
-		if ( isset( $_GET[ 'nag_radiate_ignore_theme_review_notice_partially' ] ) && isset( $_GET[ '_radiate_ignore_theme_review_notice_nonce' ] ) ) {
 
-			if ( ! wp_verify_nonce( wp_unslash( $_GET[ '_radiate_ignore_theme_review_notice_nonce' ] ), 'nag_radiate_ignore_theme_review_notice_partially_nonce' ) ) {
+		/* If user clicks to ignore the notice, add that to their user meta */
+		if ( isset( $_GET['nag_radiate_ignore_theme_review_notice_partially'] ) && isset( $_GET['_radiate_ignore_theme_review_notice_nonce'] ) ) {
+
+			if ( ! wp_verify_nonce( wp_unslash( $_GET['_radiate_ignore_theme_review_notice_nonce'] ), 'nag_radiate_ignore_theme_review_notice_partially_nonce' ) ) {
 				wp_die( esc_html__( 'Action failed. Please refresh the page and retry.', 'radiate' ) );
 			}
 
-			if ( '0' === $_GET[ 'nag_radiate_ignore_theme_review_notice_partially' ] ) {
+			if ( '0' === $_GET['nag_radiate_ignore_theme_review_notice_partially'] ) {
 				update_user_meta( get_current_user_id(), 'nag_radiate_ignore_theme_review_notice_partially', time() );
 			}
 		}
