@@ -148,7 +148,7 @@ function radiate_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
+	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300&display=swap' );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
@@ -177,7 +177,7 @@ add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
  * Enqueue Google fonts and editor styles.
  */
 function radiate_block_editor_styles() {
-	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300' );
+	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300&display=swap' );
 	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
 }
 
