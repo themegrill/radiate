@@ -71,6 +71,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 
 == CHANGE LOG ==
 = TBD =
+* Fix - Font display swap property and value for google fonts.
+
+= TBD =
 * Fix - Mobile menu issue while full-width menu style disabled.
 
 = Version 1.3.8 -2021-05-07 =
