@@ -70,7 +70,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.3.9 -2021-06-23 =
 * Fix - Mobile menu issue while full-width menu style disabled.
 
 = Version 1.3.8 -2021-05-07 =
