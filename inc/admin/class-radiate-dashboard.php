@@ -101,7 +101,7 @@ class Radiate_Dashboard {
 						<h3><?php esc_html_e( 'Next Steps', 'radiate' ); ?></h3>
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'radiate' ) . '</a>', esc_url( 'https://docs.themegrill.com/radiate' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'radiate' ) . '</a>', esc_url( 'https://demo.themegrill.com/radiate-demos' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'radiate' ) . '</a>', esc_url( 'https://themegrilldemos.com/radiate-demos/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-migrate">' . esc_html__( 'Premium Version', 'radiate' ) . '</a>', esc_url( 'https://themegrill.com/themes/radiate' ) ); ?></li>
 						</ul>
 					</div>
@@ -109,7 +109,7 @@ class Radiate_Dashboard {
 					<div class="welcome-panel-column">
 						<h3><?php esc_html_e( 'Further Actions', 'radiate' ); ?></h3>
 						<ul>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-businesswoman">' . esc_html__( 'Got theme support question?', '' ) . '</a>', esc_url( 'https://wordpress.org/support/theme//' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-businesswoman">' . esc_html__( 'Got theme support question?', 'radiate' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/radiate/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-thumbs-up">' . esc_html__( 'Leave a review', 'radiate' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/radiate/reviews/' ) ); ?></li>
 						</ul>
 					</div>

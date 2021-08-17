@@ -1,6 +1,6 @@
 == RADIATE ==
 
-Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on https://themegrill.com/forums.
+Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on https://themegrill.com/contact/.
 
 /**********************************************************/
 
@@ -42,7 +42,7 @@ Radiate is distributed under the terms of the GNU GPL
 Get theme instruction at https://docs.themegrill.com/radiate/
 
 = Free Support =
-Get free support at https://themegrill.com/support-forum
+Get free support at https://themegrill.com/contact/
 
 = Theme Features Usage =
 All available options can be used from Appearance->Customize
@@ -71,9 +71,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 
 == CHANGE LOG ==
 = TBD =
-* Fix - Font display swap property and value for google fonts.
-
-= TBD =
+* Enhancement - Added CSS font-display property and swap value for better performance.
 * Fix - Mobile menu issue while full-width menu style disabled.
 
 = Version 1.3.8 -2021-05-07 =
