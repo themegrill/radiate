@@ -72,6 +72,8 @@ If you want to translate this theme to your language, Please visit:- https://tra
 == CHANGE LOG ==
 = TBD =
 * Enhancement - Added CSS font-display property and swap value for better performance.
+
+= Version 1.3.9 -2021-06-23 =
 * Fix - Mobile menu issue while full-width menu style disabled.
 
 = Version 1.3.8 -2021-05-07 =
