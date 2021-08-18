@@ -70,7 +70,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.4.0 -2021-08-18 =
 * Enhancement - Added CSS font-display property and swap value for better performance.
 
 = Version 1.3.9 -2021-06-23 =
