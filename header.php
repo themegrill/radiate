@@ -51,7 +51,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 				<p class="site-description"><?php echo $description; ?></p>
 			<?php endif; ?>
 			</div>
-			<?php error_log( print_r( get_theme_mod( 'radiate_header_search_hide', 0 ), true ) ); ?>
 
 			<?php if ( get_theme_mod( 'radiate_header_search_hide', 0 ) == 0 || empty( get_theme_mod( 'radiate_header_search_hide', 0 ) ) ) { ?>
 				<div class="header-search-icon"></div>
