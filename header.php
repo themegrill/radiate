@@ -26,9 +26,11 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 
 <div id="parallax-bg">
-	<?php if ( get_header_image() && function_exists( 'the_custom_header_markup' ) && is_front_page() && has_header_video() ) :
+	<?php
+	if ( get_header_image() && function_exists( 'the_custom_header_markup' ) && is_front_page() && has_header_video() ) :
 		the_custom_header_markup();
-	endif; ?>
+	endif;
+	?>
 </div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'radiate' ); ?></a>
@@ -37,22 +39,26 @@ if ( function_exists( 'wp_body_open' ) ) {
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-wrap clearfix">
 			<div class="site-branding">
-            <?php if ( is_front_page() || is_home() ) : ?>
-   				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <?php else : ?>
-               <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
-            <?php endif; ?>
-            <?php
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
-               <p class="site-description"><?php echo $description; ?></p>
-            <?php endif;?>
+			<?php if ( is_front_page() || is_home() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+			<?php endif; ?>
+			<?php
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $description; ?></p>
+			<?php endif; ?>
 			</div>
+			<?php error_log( print_r( get_theme_mod( 'radiate_header_search_hide', 0 ), true ) ); ?>
 
-			<?php if ( get_theme_mod( 'radiate_header_search_hide', 0 ) == 0 ) { ?>
+			<?php if ( get_theme_mod( 'radiate_header_search_hide', 0 ) == 0 || empty( get_theme_mod( 'radiate_header_search_hide', 0 ) ) ) { ?>
 				<div class="header-search-icon"></div>
-				<?php get_search_form();
-			} ?>
+				<?php
+				get_search_form();
+			}
+			?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h4 class="menu-toggle"></h4>
@@ -62,9 +68,9 @@ if ( function_exists( 'wp_body_open' ) ) {
 					array(
 						'theme_location'  => 'primary',
 						'menu_class'      => 'clearfix ',
-						'container_class' => 'menu-primary-container'
+						'container_class' => 'menu-primary-container',
 					)
-				); 
+				);
 				?>
 			</nav><!-- #site-navigation -->
 		</div><!-- .inner-wrap header-wrap -->
