@@ -36,8 +36,13 @@ if ( ! class_exists( 'Radiate_admin' ) ) :
 			$welcome_data = array(
 				'uri'      => esc_url( admin_url( '/themes.php?page=demo-importer&browse=all&radiate-hide-notice=welcome' ) ),
 				'btn_text' => esc_html__( 'Processing...', 'radiate' ),
-				'nonce'    => wp_create_nonce( 'radiate_demo_import_nonce' ),
 			);
+
+			// Only add nonce and ajaxurl if user has appropriate capabilities
+			if ( current_user_can( 'manage_options' ) ) {
+				$welcome_data['nonce']   = wp_create_nonce( 'radiate_demo_import_nonce' );
+				$welcome_data['ajaxurl'] = admin_url( 'admin-ajax.php' );
+			}
 
 			wp_localize_script( 'radiate-plugin-install-helper', 'radiateRedirectDemoPage', $welcome_data );
 		}

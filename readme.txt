@@ -70,6 +70,9 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.4.3 -2025-08-12 =
+* Update    - General security measure.
+
 = Version 1.4.2 -2025-06-27 =
 * Fix - Header search issue. 
 
