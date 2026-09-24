@@ -1,0 +1,64 @@
+{
+  "runner": "playwright",
+  "package_manager": "npm",
+  "install": "npm ci",
+  "command": "npx playwright test",
+  "config": "playwright.config.ts",
+  "spec_dir": "tests/e2e/specs",
+  "spec_extension": ".spec.ts",
+  "json_report": "test-results/results.json",
+  "env": {
+    "base_url": "RADIATE_BASE_URL",
+    "admin_user": "RADIATE_ADMIN_USER",
+    "admin_pass": "RADIATE_ADMIN_PASS"
+  },
+  "tiers": {
+    "fresh": "@fresh",
+    "demo": "@demo"
+  },
+  "area_paths": {
+    "homepage": [
+      "style.css",
+      "functions.php",
+      "header.php",
+      "footer.php",
+      "index.php",
+      "front-page.php",
+      "content.php",
+      "inc/extras.php",
+      "inc/template-tags.php",
+      "inc/customizer.php",
+      "inc/custom-header.php",
+      "js/custom.js",
+      "js/skip-link-focus-fix.js",
+      "genericons/**"
+    ],
+    "mobile-menu": [
+      "style.css",
+      "functions.php",
+      "header.php",
+      "js/navigation.js",
+      "js/custom.js",
+      "inc/extras.php",
+      "inc/customizer.php"
+    ],
+    "header": [
+      "style.css",
+      "functions.php",
+      "header.php",
+      "searchform.php",
+      "js/custom.js",
+      "inc/custom-header.php",
+      "inc/customizer.php"
+    ],
+    "search": [
+      "style.css",
+      "functions.php",
+      "search.php",
+      "searchform.php",
+      "content-none.php",
+      "content.php",
+      "inc/template-tags.php"
+    ]
+  }
+}
