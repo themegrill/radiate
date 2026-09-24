@@ -10,6 +10,7 @@ Thumbs.db
 /node_modules
 /package.json
 /package-lock.json
+/.npmrc
 /Gruntfile.js
 /.sass-cache
 /dist
