@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, expectLoggedOut } from "../../fixtures";
 
 /**
  * @area homepage
@@ -41,6 +41,7 @@ test("skip link is the first Tab stop and targets the content region @fresh @hom
   page,
 }) => {
   await page.goto("/");
+  await expectLoggedOut(page);
   await page.keyboard.press("Tab");
 
   const skip = page.getByRole("link", { name: "Skip to content" });

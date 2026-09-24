@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { test as setup, expect, type Page } from "@playwright/test";
+import { type Page } from "@playwright/test";
+import { test as setup, expect } from "./fixtures";
 import { ADMIN_STATE, hasAdminCredentials } from "./utils/login";
 
 /**

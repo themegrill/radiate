@@ -1,4 +1,5 @@
-import { test, expect, type Page } from "@playwright/test";
+import { type Page } from "@playwright/test";
+import { test, expect, expectLoggedOut } from "../../fixtures";
 import { ADMIN_STATE, hasAdminCredentials } from "../../utils/login";
 
 /** Pixels the fixed header's top edge sits below the admin bar's bottom edge. */
@@ -28,6 +29,7 @@ test("logged-out visitors see the site title at the top of the page on a phone @
 }) => {
   await page.setViewportSize({ width: 375, height: 812 });
   await page.goto("/");
+  await expectLoggedOut(page);
 
   const title = page.locator("#masthead .site-title a");
   await expect(title).toBeVisible();

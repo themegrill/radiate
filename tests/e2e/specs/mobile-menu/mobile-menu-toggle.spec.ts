@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, expectLoggedOut } from "../../fixtures";
 
 const MOBILE = { width: 375, height: 812 };
 const DESKTOP = { width: 1440, height: 900 };
@@ -18,6 +18,7 @@ test("the toggle opens and closes the primary menu at a phone viewport @fresh @m
 }) => {
   await page.setViewportSize(MOBILE);
   await page.goto("/");
+  await expectLoggedOut(page);
 
   // Assert on the first menu link, not the <ul>: its items float, so the list
   // itself has zero height and Playwright would report it hidden regardless.
@@ -50,6 +51,7 @@ test("desktop shows the primary menu inline with no toggle @fresh @mobile-menu",
 }) => {
   await page.setViewportSize(DESKTOP);
   await page.goto("/");
+  await expectLoggedOut(page);
 
   const nav = page.locator("#site-navigation");
   await expect(nav.locator(".menu-toggle")).toBeHidden();
