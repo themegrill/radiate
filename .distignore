@@ -1,0 +1,25 @@
+# Development and VCS
+/.git
+/.github
+/.gitignore
+/.distignore
+/.DS_Store
+Thumbs.db
+
+# Build tooling
+/node_modules
+/package.json
+/package-lock.json
+/Gruntfile.js
+/.sass-cache
+/dist
+*.zip
+
+# QA (claudegrill + Playwright)
+/.themegrill-qa
+/tests
+/playwright.config.ts
+/test-results
+/playwright-report
+/blob-report
+/playwright
