@@ -42,7 +42,7 @@ on:
     # No `synchronize`: a push does not spend runner minutes.
     types: [opened, reopened, ready_for_review]
   issue_comment:
-    types: [created]ßß
+    types: [created]
   workflow_dispatch:
 
 jobs:
