@@ -113,3 +113,40 @@ jQuery(document).ready(function() {
     }( container ) );
 } ) ();
 
+
+// Flip submenus that would overflow either edge of the viewport (CSS decides which way).
+( function () {
+	var container = document.getElementById( 'site-navigation' );
+
+	if ( ! container ) {
+		return;
+	}
+
+	function flipSubmenus( e ) {
+		var item = e.target,
+			items = [],
+			i, submenu, rect;
+
+		// Outermost first, so a flipped parent is in place before its children are measured.
+		while ( item && item !== container ) {
+			if ( item.classList && ( item.classList.contains( 'menu-item-has-children' ) || item.classList.contains( 'page_item_has_children' ) ) ) {
+				items.unshift( item );
+			}
+			item = item.parentNode;
+		}
+
+		for ( i = 0; i < items.length; ++i ) {
+			submenu = items[i].getElementsByTagName( 'ul' )[0];
+			submenu.classList.remove( 'sub-menu--flip' );
+			rect = submenu.getBoundingClientRect();
+
+			if ( rect.right > document.documentElement.clientWidth || rect.left < 0 ) {
+				submenu.classList.add( 'sub-menu--flip' );
+			}
+		}
+	}
+
+	container.addEventListener( 'mouseover', flipSubmenus );
+	container.addEventListener( 'focusin', flipSubmenus );
+	container.addEventListener( 'touchstart', flipSubmenus );
+} )();

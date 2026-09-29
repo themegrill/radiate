@@ -881,6 +881,19 @@ img.header-image {
 	left: 100%;
 }
 
+/* Submenus flipped by navigation.js when they would overflow the viewport (LTR: open leftward; see rtl.css). */
+.main-navigation ul li:hover > ul.sub-menu--flip,
+.main-navigation ul li.focus > ul.sub-menu--flip {
+	left: auto;
+	right: 0;
+}
+
+.main-navigation ul ul li:hover > ul.sub-menu--flip,
+.main-navigation ul ul li.focus > ul.sub-menu--flip {
+	left: auto;
+	right: 100%;
+}
+
 .main-navigation ul ul a {
 	min-width: 200px;
 }

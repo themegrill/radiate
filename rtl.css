@@ -99,6 +99,19 @@ img.header-image {
     right: 100%;
 }
 
+/* Submenus flipped by navigation.js: open rightward instead. */
+.main-navigation ul li:hover > ul.sub-menu--flip,
+.main-navigation ul li.focus > ul.sub-menu--flip {
+    left: 0;
+    right: auto;
+}
+
+.main-navigation ul ul li:hover > ul.sub-menu--flip,
+.main-navigation ul ul li.focus > ul.sub-menu--flip {
+    left: 100%;
+    right: auto;
+}
+
 .entry-content ul,
 .entry-content ol {
     padding: 0 35px 0 0;
