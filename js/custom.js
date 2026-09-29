@@ -44,4 +44,18 @@ jQuery(document).ready(function() {
     jQuery('.better-responsive-menu  #site-navigation .menu-toggle').click(function() {
       jQuery('.better-responsive-menu  #site-navigation .menu-primary-container > ul,.better-responsive-menu  #site-navigation .menu > ul').slideToggle('slow');
     });
+
+    // Back to the desktop menu once the viewport grows past the mobile breakpoint (768px in style.css).
+    jQuery(window).on('resize', function() {
+      var nav = jQuery('#site-navigation');
+
+      if (window.innerWidth <= 768) {
+        return;
+      }
+
+      nav.filter('.main-small-navigation').removeClass('main-small-navigation').addClass('main-navigation');
+
+      // Lists opened or closed by the mobile toggle keep an inline display value.
+      nav.find('ul[style]').css('display', '');
+    });
 });
