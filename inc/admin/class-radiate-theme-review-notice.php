@@ -181,7 +181,6 @@ class Radiate_Theme_Review_Notice {
 	 * Remove the data set after the theme has been switched to other theme.
 	 */
 	public function review_notice_data_remove() {
-		$get_all_users        = get_users();
 		$theme_installed_time = get_option( 'radiate_theme_installed_time' );
 
 		// Delete options data.
@@ -189,20 +188,22 @@ class Radiate_Theme_Review_Notice {
 			delete_option( 'radiate_theme_installed_time' );
 		}
 
+		// Only load users who actually have one of these notice-dismissal flags set.
+		$user_ids = get_users(
+			array(
+				'meta_query' => array(
+					'relation' => 'OR',
+					array( 'key' => 'radiate_ignore_theme_review_notice' ),
+					array( 'key' => 'nag_radiate_ignore_theme_review_notice_partially' ),
+				),
+				'fields'     => 'ID',
+			)
+		);
+
 		// Delete user meta data for theme review notice.
-		foreach ( $get_all_users as $user ) {
-			$ignored_notice           = get_user_meta( $user->ID, 'radiate_ignore_theme_review_notice', true );
-			$ignored_notice_partially = get_user_meta( $user->ID, 'nag_radiate_ignore_theme_review_notice_partially', true );
-
-			// Delete permanent notice remove data.
-			if ( $ignored_notice ) {
-				delete_user_meta( $user->ID, 'radiate_ignore_theme_review_notice' );
-			}
-
-			// Delete partial notice remove data.
-			if ( $ignored_notice_partially ) {
-				delete_user_meta( $user->ID, 'nag_radiate_ignore_theme_review_notice_partially' );
-			}
+		foreach ( $user_ids as $user_id ) {
+			delete_user_meta( $user_id, 'radiate_ignore_theme_review_notice' );
+			delete_user_meta( $user_id, 'nag_radiate_ignore_theme_review_notice_partially' );
 		}
 	}
 }
