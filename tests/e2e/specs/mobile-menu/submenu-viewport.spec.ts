@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, expectLoggedOut } from "../../fixtures";
 
 /**
  * @area mobile-menu
@@ -16,6 +16,7 @@ test("nested submenus at the menu edge stay inside the viewport @fresh @mobile-m
 }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto("/");
+  await expectLoggedOut(page);
 
   await page.evaluate(() => {
     const list = document.querySelector("#site-navigation ul") as HTMLElement;

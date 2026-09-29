@@ -138,7 +138,9 @@ jQuery(document).ready(function() {
 		for ( i = 0; i < items.length; ++i ) {
 			submenu = items[i].getElementsByTagName( 'ul' )[0];
 			submenu.classList.remove( 'sub-menu--flip' );
-			rect = submenu.getBoundingClientRect();
+
+			// Measure a link: in RTL the nested list itself collapses to zero width while its links overflow.
+			rect = ( submenu.getElementsByTagName( 'a' )[0] || submenu ).getBoundingClientRect();
 
 			if ( rect.right > document.documentElement.clientWidth || rect.left < 0 ) {
 				submenu.classList.add( 'sub-menu--flip' );

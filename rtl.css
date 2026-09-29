@@ -99,6 +99,14 @@ img.header-image {
     right: 100%;
 }
 
+/* style.css also sets left: 100% on nested lists, which collapses them to zero width here. */
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul,
+.main-navigation ul ul ul li:hover > ul,
+.main-navigation ul ul ul li.focus > ul {
+    left: auto;
+}
+
 /* Submenus flipped by navigation.js: open rightward instead. */
 .main-navigation ul li:hover > ul.sub-menu--flip,
 .main-navigation ul li.focus > ul.sub-menu--flip {
