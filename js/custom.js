@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
 
       nav.filter('.main-small-navigation').removeClass('main-small-navigation').addClass('main-navigation');
 
-      // Lists opened or closed by the mobile toggle keep an inline display value.
-      nav.find('ul[style]').css('display', '');
+      // Lists opened or closed by the mobile toggle keep an inline display value; finish any running slide first or it rewrites it.
+      nav.find('ul[style]').stop(true, true).css('display', '');
     });
 });

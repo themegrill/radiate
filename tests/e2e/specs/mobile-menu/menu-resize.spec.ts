@@ -69,3 +69,51 @@ test("widening the viewport after closing the new-style mobile menu keeps the de
 
   await expect(menu).toBeVisible();
 });
+
+/**
+ * @area mobile-menu
+ * @tier fresh
+ * @guards radiate-pro#53
+ * @source fix/53-menu-desktop-reset 2026-09-29; js/custom.js
+ * @why The new-style toggle closes the menu with a 600ms slide. Widening the
+ *      viewport while it was still running let the slide finish afterwards and
+ *      write display: none back, hiding the desktop menu. Guards that the reset
+ *      wins over an animation in flight. Does not assert the classic style.
+ */
+test("widening the viewport while the new-style menu is closing keeps the desktop menu visible @fresh @mobile-menu", async ({
+  page,
+}) => {
+  // The class must exist before the theme scripts run, as it does when PHP prints it.
+  await page.addInitScript(() => {
+    const observer = new MutationObserver(() => {
+      if (document.body) {
+        document.body.classList.add("better-responsive-menu");
+        observer.disconnect();
+      }
+    });
+    observer.observe(document, { childList: true, subtree: true });
+  });
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto("/");
+  await expectLoggedOut(page);
+
+  const nav = page.locator("#site-navigation");
+  const menu = nav.locator("ul").first();
+  await nav.locator(".menu-toggle").click();
+  await expect(menu).toBeVisible();
+
+  // Slow the slide down so the resize reliably lands while it is running.
+  await page.evaluate(() => {
+    (window as any).jQuery.fx.speeds.slow = 1500;
+  });
+  await nav.locator(".menu-toggle").click();
+  await page.setViewportSize({ width: 1280, height: 800 });
+
+  // Wait for any slide still queued: the bug only shows once it finishes.
+  await page.waitForFunction(
+    () => !(window as any).jQuery("#site-navigation ul").is(":animated"),
+    undefined,
+    { timeout: 10_000 },
+  );
+  await expect(menu).toBeVisible();
+});
