@@ -174,29 +174,22 @@ function radiate_scripts() {
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
 
 /**
- * Enqueue editor styles.
+ * Enqueue block editor styles and fonts.
+ *
+ * Hooked on `enqueue_block_assets` because styles enqueued on
+ * `enqueue_block_editor_assets` stay outside the block editor iframe, or only
+ * reach it through a compatibility path WordPress warns about.
  */
 function radiate_block_editor_styles() {
-	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
-}
-
-add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
-
-/**
- * Load the Google fonts inside the block editor canvas.
- *
- * Styles enqueued on `enqueue_block_editor_assets` stay outside the editor iframe,
- * so the fonts are loaded here instead.
- */
-function radiate_block_editor_fonts() {
 	if ( ! is_admin() ) {
 		return;
 	}
 
 	wp_enqueue_style( 'radiate-editor-googlefonts', 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@400&display=swap', array(), null );
+	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
 }
 
-add_action( 'enqueue_block_assets', 'radiate_block_editor_fonts' );
+add_action( 'enqueue_block_assets', 'radiate_block_editor_styles' );
 
 
 /**
