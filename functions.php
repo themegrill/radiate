@@ -153,7 +153,7 @@ function radiate_scripts() {
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
-	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20260930', true );
 
 	wp_enqueue_script( 'radiate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
