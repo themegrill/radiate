@@ -59,6 +59,10 @@
       "content-none.php",
       "content.php",
       "inc/template-tags.php"
+    ],
+    "block-editor": [
+      "style-editor-block.css",
+      "functions.php"
     ]
   }
 }
