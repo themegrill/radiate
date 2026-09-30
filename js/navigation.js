@@ -81,6 +81,10 @@ jQuery(document).ready(function() {
     var container;
     container = document.getElementById( 'site-navigation' );
 
+    if ( ! container ) {
+        return;
+    }
+
     /**
      * Toggles `focus` class to allow submenu access on tablets.
      */
