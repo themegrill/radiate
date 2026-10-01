@@ -57,5 +57,9 @@ jQuery(document).ready(function() {
 
       // Lists opened or closed by the mobile toggle keep an inline display value; finish any running slide first or it rewrites it.
       nav.find('ul[style]').stop(true, true).css('display', '');
+
+      // Those submenus are closed again now, so their toggles go back to the closed arrow.
+      nav.find('.sub-toggle.active').removeClass('active');
+      nav.find('.sub-toggle .genericon-collapse').removeClass('genericon-collapse').addClass('genericon-expand');
     });
 });
