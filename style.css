@@ -1863,6 +1863,12 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		color: #fff;
 	}
 
+	.sub-toggle .genericon-collapse::before {
+		content: "\f432";
+		line-height: 22px !important;
+		color: #fff;
+	}
+
 	#primary,
 	#secondary {
 		float: none;
