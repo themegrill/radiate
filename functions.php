@@ -137,7 +137,7 @@ add_action( 'widgets_init', 'radiate_widgets_init' );
 /**
  * Assign the Radiate version to a variable.
  */
-$radiate_theme = wp_get_theme( 'radiate' );
+$radiate_theme = wp_get_theme( get_template() );
 
 define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
 
@@ -146,7 +146,7 @@ define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
  */
 function radiate_scripts() {
 	// Load our main stylesheet.
-	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'radiate-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300&display=swap' );
 
@@ -157,7 +157,7 @@ function radiate_scripts() {
 
 	wp_enqueue_script( 'radiate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), RADIATE_THEME_VERSION, true );
 
 	$radiate_header_image_link = get_header_image();
 	wp_localize_script( 'radiate-custom-js', 'radiateScriptParam', array( 'radiate_image_link' => $radiate_header_image_link ) );
