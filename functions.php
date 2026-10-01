@@ -166,8 +166,8 @@ function radiate_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.3', false );
-	wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' );
+	// Empty handle kept so scripts that list 'html5shiv' as a dependency still load.
+	wp_register_script( 'html5shiv', false, array(), wp_get_theme()->get( 'Version' ), false );
 
 }
 

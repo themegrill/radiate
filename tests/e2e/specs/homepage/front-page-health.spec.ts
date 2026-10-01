@@ -50,24 +50,28 @@ test("skip link is the first Tab stop and targets the content region @fresh @hom
   await expect(page.locator("#content")).toHaveCount(1);
 });
 
-// Quarantined: not fixed yet and no issue filed. Drop `.fixme` in the PR that fixes it.
 /**
  * @area homepage
  * @tier fresh
+ * @guards themegrill/radiate-pro#38
  * @source human 2026-09-24
- * @why functions.php:170 registers html5shiv with
+ * @why functions.php registered html5shiv with
  *      wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' ), which
  *      WordPress 6.9+ deprecates, so every front-end page prints a
  *      "Deprecated: WP_Dependencies->add_data()" notice when WP_DEBUG_DISPLAY
  *      is on (confirmed on test-theme.local, WP 7.1). Only observable where
  *      debug display is enabled; on a site with it off this passes regardless.
- *      Asserts no PHP notice markup in the body, not the absence of html5shiv.
+ *      Asserts no PHP notice markup anywhere in the response (it is printed
+ *      inside <head>), not the absence of html5shiv.
  */
-test.fixme("front page prints no PHP notices or deprecations @fresh @homepage", async ({
+test("front page prints no PHP notices or deprecations @fresh @homepage", async ({
   page,
 }) => {
-  await page.goto("/");
-  await expect(page.locator("body")).not.toContainText(
-    /(Deprecated|Notice|Warning|Fatal error):\s/,
+  // Read the raw response: PHP prints the notice while wp_head() runs, before
+  // <body>, so a body locator would miss it.
+  const response = await page.goto("/");
+  const html = await response!.text();
+  expect(html).not.toMatch(
+    /(?:^|>|\s)(?:<b>)?(?:Deprecated|Notice|Warning|Fatal error)(?:<\/b>)?:\s/,
   );
 });
