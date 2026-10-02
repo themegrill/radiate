@@ -85,6 +85,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 * Fix    - WooCommerce quantity field not matching the height of the Add to Cart button.
 * Fix    - Mobile menu staying in its mobile state after the window is resized to desktop width.
 * Fix    - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
+* Fix    - Admin bar covered by the fixed header on mobile for logged-in users.
 
 = Version 1.4.3 -2025-08-12 =
 * Update    - General security measure.
