@@ -137,7 +137,7 @@ add_action( 'widgets_init', 'radiate_widgets_init' );
 /**
  * Assign the Radiate version to a variable.
  */
-$radiate_theme = wp_get_theme( 'radiate' );
+$radiate_theme = wp_get_theme( get_template() );
 
 define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
 
@@ -146,18 +146,18 @@ define( 'RADIATE_THEME_VERSION', $radiate_theme->get( 'Version' ) );
  */
 function radiate_scripts() {
 	// Load our main stylesheet.
-	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'radiate-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300&display=swap' );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
-	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20260930', true );
 
 	wp_enqueue_script( 'radiate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), RADIATE_THEME_VERSION, true );
 
 	$radiate_header_image_link = get_header_image();
 	wp_localize_script( 'radiate-custom-js', 'radiateScriptParam', array( 'radiate_image_link' => $radiate_header_image_link ) );
@@ -166,22 +166,30 @@ function radiate_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.3', false );
-	wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' );
+	// Empty handle kept so scripts that list 'html5shiv' as a dependency still load.
+	wp_register_script( 'html5shiv', false, array(), wp_get_theme()->get( 'Version' ), false );
 
 }
 
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );
 
 /**
- * Enqueue Google fonts and editor styles.
+ * Enqueue block editor styles and fonts.
+ *
+ * Hooked on `enqueue_block_assets` because styles enqueued on
+ * `enqueue_block_editor_assets` stay outside the block editor iframe, or only
+ * reach it through a compatibility path WordPress warns about.
  */
 function radiate_block_editor_styles() {
-	wp_enqueue_style( 'radiate-editor-googlefonts', '//fonts.googleapis.com/css2?family=Roboto|Merriweather:400,300&display=swap' );
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	wp_enqueue_style( 'radiate-editor-googlefonts', 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@400&display=swap', array(), null );
 	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'radiate_block_editor_styles', 1, 1 );
+add_action( 'enqueue_block_assets', 'radiate_block_editor_styles' );
 
 
 /**

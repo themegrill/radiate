@@ -33,4 +33,23 @@
 			}
 		} );
 	} );
+
+	// Custom background: core rewrites the theme's background style element, but the theme paints #content.
+	function radiateUpdateBackground() {
+		var image = wp.customize( 'background_image' )();
+
+		$( '#content' ).css( {
+			'background-color'     : wp.customize( 'background_color' )() || '',
+			'background-image'     : image ? 'url("' + image + '")' : 'none',
+			'background-repeat'    : wp.customize( 'background_repeat' )(),
+			'background-position'  : 'top ' + wp.customize( 'background_position_x' )(),
+			'background-attachment': wp.customize( 'background_attachment' )()
+		} );
+	}
+
+	$.each( [ 'color', 'image', 'repeat', 'position_x', 'attachment' ], function ( i, prop ) {
+		wp.customize( 'background_' + prop, function ( value ) {
+			value.bind( radiateUpdateBackground );
+		} );
+	} );
 } )( jQuery );

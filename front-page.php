@@ -10,9 +10,9 @@
 get_header(); ?>
 
 	<?php
-	$page_array = array( get_theme_mod( 'page-setting-one' ), get_theme_mod( 'page-setting-two' ), get_theme_mod( 'page-setting-three' ) );
+	$page_array = array( get_theme_mod( 'page-setting-one', 0 ), get_theme_mod( 'page-setting-two', 0 ), get_theme_mod( 'page-setting-three', 0 ) );
 
-	if ( $page_array[0] != 0 ||  $page_array[1] != 0 || $page_array[2] != 0 ) {
+	if ( ! empty( $page_array[0] ) || ! empty( $page_array[1] ) || ! empty( $page_array[2] ) ) {
 		$get_featured_pages = new WP_Query( array(
 					'posts_per_page' 			=> 3,
 					'post_type'					=> array( 'page' ),

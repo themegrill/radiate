@@ -19,7 +19,7 @@ Resources packed within the theme.
   https://pxhere.com/en/photo/169
   https://pxhere.com/en/photo/99059
   https://pxhere.com/en/photo/173
-  
+
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
 * Custom js file is our own creation and is licensed under the same license as this theme.
@@ -70,11 +70,27 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.5.0 - 2026-10-05 =
+* Dev    - WordPress 7.1 compatibility.
+* Update - Remove the unused IE8 html5shiv script.
+* Dev    - Minimum WordPress version to 5.8 and minimun PHP version to 7.4.
+* Tweak  - Improve performance of the theme review notice cleanup on sites with many users.
+* Tweak  - Assets now use the theme version for cache busting, so updates load without clearing the cache.
+* Fix    - Incorrect welcome notice link and "0 Comment" label text.
+* Fix    - JavaScript error when the navigation menu is missing.
+* Fix    - Custom background not updating live in the Customizer preview.
+* Fix    - Submenu arrows not switching between open and closed on mobile.
+* Fix    - PHP notices on the front page when the featured pages are not set.
+* Fix    - Desktop submenus opening off-screen near the edge of the viewport.
+* Fix    - WooCommerce quantity field not matching the height of the Add to Cart button.
+* Fix    - Mobile menu staying in its mobile state after the window is resized to desktop width.
+* Fix    - Block editor typography (fonts, sizes, and colors) didn't reflect the Customizer's configured settings.
+
 = Version 1.4.3 -2025-08-12 =
 * Update    - General security measure.
 
 = Version 1.4.2 -2025-06-27 =
-* Fix - Header search issue. 
+* Fix - Header search issue.
 
 = Version 1.4.0 -2021-08-18 =
 * Enhancement - Added CSS font-display property and swap value for better performance.
@@ -83,7 +99,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 * Fix - Mobile menu issue while full-width menu style disabled.
 
 = Version 1.3.8 -2021-05-07 =
-* Fix - Inner wrap CSS clearfix issue. 
+* Fix - Inner wrap CSS clearfix issue.
 * Tweak - Update screenshot image source link.
 
 = Version 1.3.7 -2020-12-21 == Version 1.3.7 -2020-12-21 =
