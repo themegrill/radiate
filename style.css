@@ -1984,8 +1984,10 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 		width: 100%;
 	}
 
+	/* The desktop float shrinks a submenu to its content, so its rows and arrows would stop short of the right edge. */
 	.better-responsive-menu .main-navigation ul li ul {
 		position: static;
+		width: 100%;
 	}
 
 	.better-responsive-menu .main-navigation ul ul li {
