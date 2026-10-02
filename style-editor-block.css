@@ -281,7 +281,7 @@
 .editor-styles-wrapper input[type="search"],
 .editor-styles-wrapper textarea {
 	color: #666;
-	border: 1px solid #eaeaea;
+	border: 1px solid #ccc;
 	border-radius: 3px;
 }
 
