@@ -489,6 +489,17 @@ input[type="search"] {
 	padding: 3px;
 }
 
+/* Quantity field is as tall as the Add to Cart button: WooCommerce gives that 0.618em padding either side of a 1em line. */
+.woocommerce div.product:not(.product-type-grouped) form.cart .quantity .qty {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	height: 2.236em;
+	padding: 0 2px;
+}
+
 textarea {
 	overflow: auto;
 	/* Removes default vertical scrollbar in IE6/7/8/9 */
