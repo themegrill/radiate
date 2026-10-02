@@ -21,10 +21,11 @@
 	max-width: 1200px;
 }
 
-.editor-styles-wrapper .wp-block.editor-post-title__block .editor-post-title__input {
+.editor-styles-wrapper .editor-post-title__input {
 	margin-bottom: 40px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 3rem;
+	font-size: 30px;
+	line-height: 1.5;
 	color: #444444;
 	font-weight: 300;
 }
@@ -37,6 +38,8 @@
 .editor-styles-wrapper h5,
 .editor-styles-wrapper h6 {
 	font-family: 'Roboto', sans-serif;
+	/* The front end resets headings to the body weight. */
+	font-weight: inherit;
 	clear: both;
 }
 

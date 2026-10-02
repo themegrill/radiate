@@ -186,10 +186,46 @@ function radiate_block_editor_styles() {
 	}
 
 	wp_enqueue_style( 'radiate-editor-googlefonts', 'https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@400&display=swap', array(), null );
-	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css' );
+	// Theme version, so a theme update busts the cached editor stylesheet.
+	wp_enqueue_style( 'radiate-block-editor-styles', get_template_directory_uri() . '/style-editor-block.css', array(), wp_get_theme( get_template() )->get( 'Version' ) );
+
+	$editor_css = radiate_block_editor_dynamic_css();
+
+	if ( $editor_css ) {
+		wp_add_inline_style( 'radiate-block-editor-styles', $editor_css );
+	}
 }
 
 add_action( 'enqueue_block_assets', 'radiate_block_editor_styles' );
+
+if ( ! function_exists( 'radiate_block_editor_dynamic_css' ) ) :
+
+	/**
+	 * Build block editor CSS from the Customizer primary color.
+	 *
+	 * Mirrors the post content rules of radiate_customizer_css(), scoped to the editor canvas.
+	 * Like the front end, nothing is output while the color is at its default.
+	 *
+	 * @return string Editor CSS.
+	 */
+	function radiate_block_editor_dynamic_css() {
+		$wrapper = '.editor-styles-wrapper';
+		// Only a valid hex color reaches the CSS, so a stored value cannot break out of its rule.
+		$primary = sanitize_hex_color( get_theme_mod( 'radiate_color_scheme' ) );
+
+		if ( ! $primary || '#632e9b' === strtolower( $primary ) ) {
+			return '';
+		}
+
+		// The front end's plain `button` rule, at the same specificity, so core-styled and editor buttons still win.
+		$buttons = $wrapper . ' input[type="button"], ' . $wrapper . ' input[type="reset"], ' . $wrapper . ' input[type="submit"], :where(' . $wrapper . ') button';
+
+		return $wrapper . ' blockquote { border-color: #EAEAEA #EAEAEA #EAEAEA ' . $primary . '; }'
+			. $wrapper . ' a { color: ' . $primary . '; }'
+			. $buttons . ' { background-color: ' . $primary . '; }';
+	}
+
+endif;
 
 
 /**
