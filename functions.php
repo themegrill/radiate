@@ -191,7 +191,8 @@ function radiate_block_editor_styles() {
 
 	$editor_css = radiate_block_editor_dynamic_css();
 
-	if ( $editor_css ) {
+	// The hook can run more than once per screen (the Customizer does); add the CSS once.
+	if ( $editor_css && ! wp_styles()->get_data( 'radiate-block-editor-styles', 'after' ) ) {
 		wp_add_inline_style( 'radiate-block-editor-styles', $editor_css );
 	}
 }
