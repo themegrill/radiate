@@ -44,4 +44,22 @@ jQuery(document).ready(function() {
     jQuery('.better-responsive-menu  #site-navigation .menu-toggle').click(function() {
       jQuery('.better-responsive-menu  #site-navigation .menu-primary-container > ul,.better-responsive-menu  #site-navigation .menu > ul').slideToggle('slow');
     });
+
+    // Back to the desktop menu once the viewport grows past the mobile breakpoint (768px in style.css).
+    jQuery(window).on('resize', function() {
+      var nav = jQuery('#site-navigation');
+
+      if (window.innerWidth <= 768) {
+        return;
+      }
+
+      nav.filter('.main-small-navigation').removeClass('main-small-navigation').addClass('main-navigation');
+
+      // Lists opened or closed by the mobile toggle keep an inline display value; finish any running slide first or it rewrites it.
+      nav.find('ul[style]').stop(true, true).css('display', '');
+
+      // Those submenus are closed again now, so their toggles go back to the closed arrow.
+      nav.find('.sub-toggle.active').removeClass('active');
+      nav.find('.sub-toggle .genericon-collapse').removeClass('genericon-collapse').addClass('genericon-expand');
+    });
 });
