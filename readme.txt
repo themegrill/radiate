@@ -73,7 +73,7 @@ If you want to translate this theme to your language, Please visit:- https://tra
 = Version 1.5.0 - 2026-10-05 =
 * Dev    - WordPress 7.1 compatibility.
 * Update - Remove the unused IE8 html5shiv script.
-* Dev    - Minimum WordPress version to 5.8 and minimun PHP version to 7.4.
+* Dev    - Minimum WordPress version to 5.8 and minimum PHP version to 7.4.
 * Tweak  - Improve performance of the theme review notice cleanup on sites with many users.
 * Tweak  - Assets now use the theme version for cache busting, so updates load without clearing the cache.
 * Fix    - Incorrect welcome notice link and "0 Comment" label text.

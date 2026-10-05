@@ -141,6 +141,12 @@ jQuery(document).ready(function() {
 
 		for ( i = 0; i < items.length; ++i ) {
 			submenu = items[i].getElementsByTagName( 'ul' )[0];
+
+			// Menu plugins can mark an item as having children without printing a submenu.
+			if ( ! submenu ) {
+				return;
+			}
+
 			submenu.classList.remove( 'sub-menu--flip' );
 
 			// Measure a link: in RTL the nested list itself collapses to zero width while its links overflow.
