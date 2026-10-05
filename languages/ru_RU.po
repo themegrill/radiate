@@ -160,7 +160,7 @@ msgstr "Создан на"
 
 #: ../footer.php:20
 msgid "WordPress"
-msgstr "Wordpress"
+msgstr "WordPress"
 
 #: ../footer.php:22
 #, php-format
