@@ -1850,10 +1850,6 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 
 /* All Mobile Portrait size smaller than 768 (devices and browsers) */
 @media screen and (max-width: 768px) {
-	.header-wrap {
-		position: relative;
-	}
-
 	.better-responsive-menu #site-navigation ul li .sub-menu {
 		display: none;
 	}
@@ -2009,7 +2005,7 @@ div#wp-custom-header:hover .wp-custom-header-video-button {
 	}
 
 	body.admin-bar .header-wrap {
-		top: 0;
+		top: 46px;
 	}
 
 	.site-title {
