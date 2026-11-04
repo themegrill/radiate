@@ -30,3 +30,4 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+// Pilot test: harmless change to trigger the lint workflow.
